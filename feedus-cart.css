@@ -22,14 +22,6 @@
   }
 }
 
-/* 장바구니 테이블 전체 border 색상 primary */
-.woocommerce-cart-form .shop_table,
-.woocommerce-cart-form .shop_table *,
-.woocommerce-cart-form .shop_table tr,
-.woocommerce-cart-form .shop_table th,
-.woocommerce-cart-form .shop_table td {
-  border-color: #007D51 !important;
-}
 .woocommerce-cart-form .cart_item,
 .woocommerce-cart-form .cart_item td,
 .woocommerce-cart-form .cart_item th {
