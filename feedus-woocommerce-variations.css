@@ -8,17 +8,6 @@ textarea {
 
 /* WooCommerce Variations Form – Product Page Layout */
 
-/* Product page vertical spacing */
-.variations_form table.variations {
-  margin-bottom: 14px !important;
-}
-.brxe-product-price {
-  margin-bottom: 20px !important;
-}
-.brxe-product-short-description {
-  margin-bottom: 20px !important;
-}
-
 /* 1) Size label + dropdown: vertical stack */
 .variations_form table.variations tr {
   display: flex;
