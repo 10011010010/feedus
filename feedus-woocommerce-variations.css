@@ -126,6 +126,34 @@
   -webkit-appearance: auto !important;
 }
 
+/* ===== Simple (non-variable) product: match variation form styles ===== */
+
+/* Quantity input */
+.brxe-product-add-to-cart > form.cart .quantity input.qty {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: #007D51 !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+}
+
+/* +/- buttons */
+.brxe-product-add-to-cart > form.cart .quantity .action.minus,
+.brxe-product-add-to-cart > form.cart .quantity .action.plus {
+  margin-bottom: 0 !important;
+  border-color: #007D51 !important;
+  border-radius: 100% !important;
+  width: 46px !important;
+  height: 46px !important;
+}
+
+/* Quantity row spacing */
+.brxe-product-add-to-cart > form.cart .quantity {
+  margin-bottom: 14px;
+}
+
 /* Fix: Mobile button visibility */
 .brxe-product-add-to-cart,
 .brxe-product-add-to-cart .variations_form,
