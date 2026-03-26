@@ -94,11 +94,12 @@
   background-color: #007D51;
 }
 
-/* 7) Button padding */
+/* 7) Button padding & weight */
 .variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart,
 .variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
   padding: 14px 40px;
   width: 100% !important;
+  font-weight: 500 !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
@@ -173,10 +174,15 @@
 }
 .brxe-product-add-to-cart > form.cart .single_add_to_cart_button span {
   margin: 0 !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
 }
 .brxe-product-add-to-cart > form.cart .single_add_to_cart_button:hover {
   color: #007D51;
   background-color: #ffffff;
+}
+.brxe-product-add-to-cart > form.cart .single_add_to_cart_button:hover span {
+  color: #007D51 !important;
 }
 
 /* Fix: Mobile button visibility */
