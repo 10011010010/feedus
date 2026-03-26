@@ -53,7 +53,10 @@
 .variations_form .wc-variation-mode-selector { order: 1; }
 .variations_form .woocommerce-variation-add-to-cart > .quantity { order: 2; }
 .variations_form .wc-locked-variations-container { order: 3; }
-.variations_form .single_add_to_cart_button { order: 4; }
+.variations_form .single_add_to_cart_button {
+  order: 4;
+  display: none !important;
+}
 .variations_form .wc-multiple-variation-buttons { order: 5; }
 
 /* 4) Buttons: "Add to List" top, "Add All to Cart" bottom */
