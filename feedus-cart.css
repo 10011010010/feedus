@@ -41,6 +41,10 @@ form.woocommerce-cart-form .quantity .action.plus {
   color: #007D51 !important;
   border-top: none !important;
   border-bottom: none !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  flex-shrink: 0 !important;
 }
 form.woocommerce-cart-form .quantity .action.minus {
   border-right: 1px solid #007D51 !important;
