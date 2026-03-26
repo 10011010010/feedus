@@ -50,6 +50,11 @@
 .cart_totals .shop_table td {
   border-color: #007D51 !important;
 }
+.cart_totals .shop_table th,
+.cart_totals .shop_table td {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
 
 .wc-proceed-to-checkout .checkout-button:hover {
   color: #007D51 !important;
