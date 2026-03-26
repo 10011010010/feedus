@@ -56,16 +56,16 @@ form.woocommerce-cart-form .quantity .action.plus svg {
 }
 
 /* 장바구니 테이블: 상품명 + 가격 세로 배치 */
-.woocommerce-cart-form .shop_table thead .product-price {
-  display: none !important;
-}
-.woocommerce-cart-form .shop_table thead .product-remove {
+.woocommerce-cart-form .shop_table thead .product-price,
+.woocommerce-cart-form .shop_table thead .product-remove,
+.woocommerce-cart-form .shop_table thead .product-thumbnail {
   display: none !important;
 }
 .woocommerce-cart-form .shop_table thead tr {
   display: grid;
-  grid-template-columns: 110px 1fr 150px 120px auto;
+  grid-template-columns: 1fr 150px 120px;
   align-items: center;
+  padding-left: 120px;
 }
 .woocommerce-cart-form .cart_item {
   display: grid !important;
@@ -132,6 +132,9 @@ form.woocommerce-cart-form .quantity .action.plus svg {
 }
 .woocommerce-cart-form .shop_table thead tr {
   margin-top: 10px !important;
+}
+.woocommerce-cart-form .shop_table thead .product-subtotal {
+  text-align: right !important;
 }
 
 /* 결제하기 버튼 영역 위 마진 */
