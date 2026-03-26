@@ -39,6 +39,16 @@ form.woocommerce-cart-form .quantity .input-text.qty {
 form.woocommerce-cart-form .quantity .action.minus,
 form.woocommerce-cart-form .quantity .action.plus {
   color: #007D51 !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+form.woocommerce-cart-form .quantity .action.minus {
+  border-right: 1px solid #007D51 !important;
+  border-left: none !important;
+}
+form.woocommerce-cart-form .quantity .action.plus {
+  border-left: 1px solid #007D51 !important;
+  border-right: none !important;
 }
 form.woocommerce-cart-form .quantity .action.minus svg,
 form.woocommerce-cart-form .quantity .action.plus svg {
