@@ -70,28 +70,28 @@
   order: 2;
 }
 
-/* 5) "Add All to Cart" styling */
+/* 5) "Add All to Cart" styling – green bg */
 .variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart {
   display: inline-flex !important;
-  color: #007D51;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #007D51;
   border-color: #007D51;
 }
 .variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart:hover {
-  color: #ffffff;
-  background-color: #007D51;
+  color: #007D51;
+  background-color: #ffffff;
 }
 
-/* 6) "Add to List" styling */
+/* 6) "Add to List" styling – white bg */
 .variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
   display: inline-flex !important;
-  color: #ffffff;
-  background-color: #007D51;
+  color: #007D51;
+  background-color: #ffffff;
   border-color: #007D51;
 }
 .variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn:hover {
-  color: #007D51;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #007D51;
 }
 
 /* 7) Button padding */
