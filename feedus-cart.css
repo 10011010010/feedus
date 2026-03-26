@@ -32,6 +32,18 @@
 form.woocommerce-cart-form .quantity {
   border-color: #007D51 !important;
 }
+form.woocommerce-cart-form .quantity .input-text.qty {
+  color: #007D51 !important;
+  font-weight: 500 !important;
+}
+form.woocommerce-cart-form .quantity .action.minus,
+form.woocommerce-cart-form .quantity .action.plus {
+  color: #007D51 !important;
+}
+form.woocommerce-cart-form .quantity .action.minus svg,
+form.woocommerce-cart-form .quantity .action.plus svg {
+  stroke: #007D51 !important;
+}
 
 /* 장바구니 테이블 헤더 line-height 초기화 */
 .woocommerce-cart-form .shop_table thead th {
