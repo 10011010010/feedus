@@ -97,6 +97,7 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   grid-row: 1 / 3;
   white-space: nowrap;
   min-width: 0;
+  text-align: right !important;
 }
 .woocommerce-cart-form .cart_item .product-remove {
   grid-column: 5;
