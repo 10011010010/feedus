@@ -32,7 +32,7 @@
   border: 1px solid #007D51 !important;
   border-radius: var(--feedus-border-radius-pill, 50px) !important;
   padding: 14px 40px !important;
-  width: 100% !important;
+  width: auto !important;
   font-family: var(--feedus-font-body, inherit);
   font-size: 1rem !important;
   font-weight: 500 !important;
