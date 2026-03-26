@@ -38,6 +38,11 @@
   font-weight: 500 !important;
   transition: all var(--feedus-duration-medium, 0.3s) ease;
 }
+/* 장바구니 합계 테이블: 가격 우측 정렬 */
+.cart_totals .shop_table td {
+  text-align: right !important;
+}
+
 .wc-proceed-to-checkout .checkout-button:hover {
   color: #007D51 !important;
   background-color: #ffffff !important;
