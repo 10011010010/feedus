@@ -63,7 +63,7 @@ form.woocommerce-cart-form .quantity .action.plus svg {
 }
 .woocommerce-cart-form .shop_table thead tr {
   display: grid;
-  grid-template-columns: 1fr 150px 120px;
+  grid-template-columns: 1fr 150px 120px 40px;
   align-items: center;
   padding-left: 120px;
 }
