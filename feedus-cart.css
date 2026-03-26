@@ -34,7 +34,7 @@
   padding: 14px 40px !important;
   width: auto !important;
   font-family: var(--feedus-font-body, inherit);
-  font-size: 1rem !important;
+  font-size: 18px !important;
   font-weight: 500 !important;
   transition: all var(--feedus-duration-medium, 0.3s) ease;
 }
