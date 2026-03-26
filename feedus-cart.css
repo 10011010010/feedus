@@ -22,6 +22,11 @@
   }
 }
 
+/* 결제하기 버튼 영역 위 마진 */
+.wc-proceed-to-checkout {
+  margin-top: 20px !important;
+}
+
 /* "결제하기" button: primary style */
 .wc-proceed-to-checkout .checkout-button {
   display: inline-flex !important;
