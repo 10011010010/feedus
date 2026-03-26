@@ -85,7 +85,8 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   grid-template-columns: 110px 1fr 150px 120px auto;
   grid-template-rows: auto auto;
   align-items: center;
-  gap: 10px !important;
+  column-gap: 10px !important;
+  row-gap: 0 !important;
   border: none !important;
 }
 .woocommerce-cart-form .cart_item .product-thumbnail {
