@@ -45,6 +45,47 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   stroke: #007D51 !important;
 }
 
+/* 장바구니 테이블: 상품명 + 가격 세로 배치 */
+.woocommerce-cart-form .shop_table thead .product-price {
+  display: none !important;
+}
+.woocommerce-cart-form .shop_table thead tr {
+  display: grid;
+  grid-template-columns: 50px 110px 1fr auto auto;
+  align-items: center;
+}
+.woocommerce-cart-form .cart_item {
+  display: grid !important;
+  grid-template-columns: 50px 110px 1fr auto auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+}
+.woocommerce-cart-form .cart_item .product-remove {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+.woocommerce-cart-form .cart_item .product-thumbnail {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+.woocommerce-cart-form .cart_item .product-name {
+  grid-column: 3;
+  grid-row: 1;
+}
+.woocommerce-cart-form .cart_item .product-price {
+  grid-column: 3;
+  grid-row: 2;
+  text-align: left !important;
+}
+.woocommerce-cart-form .cart_item .product-quantity {
+  grid-column: 4;
+  grid-row: 1 / 3;
+}
+.woocommerce-cart-form .cart_item .product-subtotal {
+  grid-column: 5;
+  grid-row: 1 / 3;
+}
+
 /* 장바구니 상품 썸네일 */
 .woocommerce-cart-form .product-thumbnail img {
   width: 100px !important;
