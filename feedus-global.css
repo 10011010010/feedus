@@ -1490,6 +1490,11 @@ textarea::placeholder {
 
 .feedus-tax-invoice-text {
   line-height: 1.4;
+  margin: 0 !important;
+}
+
+.feedus-tax-invoice-label {
+  margin: 0 !important;
 }
 
 /* ==========================================================================
