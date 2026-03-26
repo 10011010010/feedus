@@ -154,14 +154,22 @@
   margin-bottom: 14px;
 }
 
-/* "장바구니" button: match "Add to List" style */
+/* "장바구니" button: match variation button style */
 .brxe-product-add-to-cart > form.cart .single_add_to_cart_button {
   display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
   color: #ffffff;
   background-color: #007D51;
-  border-color: #007D51;
+  border: 1px solid #007D51;
+  border-radius: var(--feedus-border-radius-pill, 999px);
   padding: 14px 40px;
   width: 100% !important;
+  font-family: var(--feedus-font-body, inherit);
+  font-size: 1rem;
+  transition: all var(--feedus-duration-medium, 0.3s) ease;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 .brxe-product-add-to-cart > form.cart .single_add_to_cart_button:hover {
   color: #007D51;
