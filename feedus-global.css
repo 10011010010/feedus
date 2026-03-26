@@ -1431,18 +1431,20 @@ textarea::placeholder {
 }
 
 /* --------------------------------------------------------------------------
-   세금계산서 체크박스 (체크아웃)
+   세금계산서 체크박스 (체크아웃) - 주문요약 테이블과 결제수단 사이
    -------------------------------------------------------------------------- */
-.feedus-tax-invoice-row th,
-.feedus-tax-invoice-row td {
-  padding: 12px 0;
-  border-top: 1px solid var(--feedus-gray-light);
+.feedus-tax-invoice-box {
+  background-color: var(--feedus-gray-light);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 20px 0;
 }
 
 .feedus-tax-invoice-label {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   cursor: pointer;
   font-family: var(--feedus-font-body);
   font-size: 0.95rem;

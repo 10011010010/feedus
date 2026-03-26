@@ -17,22 +17,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * 1. 체크아웃 페이지에 세금계산서 체크박스 출력
  */
-add_action( 'woocommerce_review_order_before_order_total', 'feedus_tax_invoice_checkbox' );
+add_action( 'woocommerce_review_order_before_payment', 'feedus_tax_invoice_checkbox' );
 function feedus_tax_invoice_checkbox() {
     ?>
-    <tr class="feedus-tax-invoice-row">
-        <th><?php esc_html_e( '세금계산서 발행', 'feedus-tax-invoice' ); ?></th>
-        <td>
-            <label class="feedus-tax-invoice-label" for="feedus_tax_invoice">
-                <input type="checkbox"
-                       id="feedus_tax_invoice"
-                       name="feedus_tax_invoice"
-                       class="feedus-tax-invoice-checkbox"
-                       value="1" />
-                <span class="feedus-tax-invoice-text">세금계산서 발행 요청 (부가세 10% 추가)</span>
-            </label>
-        </td>
-    </tr>
+    <div class="feedus-tax-invoice-box">
+        <label class="feedus-tax-invoice-label" for="feedus_tax_invoice">
+            <input type="checkbox"
+                   id="feedus_tax_invoice"
+                   name="feedus_tax_invoice"
+                   class="feedus-tax-invoice-checkbox"
+                   value="1" />
+            <span class="feedus-tax-invoice-text">세금계산서 발행 요청 (부가세 10% 추가)</span>
+        </label>
+    </div>
     <?php
 }
 
