@@ -104,7 +104,7 @@ form.woocommerce-cart-form .quantity .action.plus svg {
 }
 .woocommerce-cart-form .cart_item .product-name a {
   font-size: 18px !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
 }
 .woocommerce-cart-form .cart_item .product-price {
   grid-column: 2;
