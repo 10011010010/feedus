@@ -129,6 +129,9 @@ form.woocommerce-cart-form .quantity .action.plus svg {
 .woocommerce-cart-form .shop_table thead th {
   line-height: normal !important;
 }
+.woocommerce-cart-form .shop_table thead tr {
+  margin-top: 10px !important;
+}
 
 /* 결제하기 버튼 영역 위 마진 */
 .wc-proceed-to-checkout {
