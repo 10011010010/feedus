@@ -130,6 +130,7 @@ textarea {
   border-color: #007D51 !important;
 }
 .wc-locked-variations-container .wc-remove-locked-variation { color: red !important; }
+.wc-locked-variations-container .dashicons-trash { margin-bottom: 0 !important; }
 .wc-locked-variation-details { display: flex; flex-direction: column; gap: 2px; }
 .wc-locked-variation-attributes,
 .wc-locked-variation-price { margin: 0 !important; }
