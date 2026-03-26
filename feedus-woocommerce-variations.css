@@ -165,7 +165,7 @@
 }
 
 /* "장바구니" button: match variation button style */
-.brxe-product-add-to-cart > form.cart .single_add_to_cart_button {
+.brxe-product-add-to-cart > form.cart:not(.variations_form) .single_add_to_cart_button {
   display: inline-flex !important;
   justify-content: center;
   align-items: center;
@@ -181,16 +181,16 @@
   visibility: visible !important;
   opacity: 1 !important;
 }
-.brxe-product-add-to-cart > form.cart .single_add_to_cart_button span {
+.brxe-product-add-to-cart > form.cart:not(.variations_form) .single_add_to_cart_button span {
   margin: 0 !important;
   color: #ffffff !important;
   font-weight: 500 !important;
 }
-.brxe-product-add-to-cart > form.cart .single_add_to_cart_button:hover {
+.brxe-product-add-to-cart > form.cart:not(.variations_form) .single_add_to_cart_button:hover {
   color: #007D51;
   background-color: #ffffff;
 }
-.brxe-product-add-to-cart > form.cart .single_add_to_cart_button:hover span {
+.brxe-product-add-to-cart > form.cart:not(.variations_form) .single_add_to_cart_button:hover span {
   color: #007D51 !important;
 }
 
