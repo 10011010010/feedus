@@ -215,3 +215,10 @@ textarea {
   visibility: visible !important;
   opacity: 1 !important;
 }
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .wc-locked-variation-qty {
+    width: 80px !important;
+  }
+}
