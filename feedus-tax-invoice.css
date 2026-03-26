@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Feedus 세금계산서 체크박스 - 체크아웃 스타일
+   Feedus 영수증 발행 선택 - 체크아웃 스타일
    feedus-tax-invoice.php 플러그인과 함께 사용
    ========================================================================== */
 
@@ -11,62 +11,214 @@
   border: none !important;
 }
 
-/* 소계, 배송, 총계 등 tfoot th 볼드 처리 */
+/* 소계, 배송, 총계 등 tfoot th */
 .woocommerce-checkout-review-order-table tfoot th {
   font-weight: 500 !important;
 }
 
-/* 세금계산서 체크박스 박스 */
-.feedus-tax-invoice-box {
-  background-color: var(--feedus-gray-light);
+/* --------------------------------------------------------------------------
+   영수증 발행 선택 박스
+   -------------------------------------------------------------------------- */
+.feedus-receipt-box {
+  background-color: var(--feedus-gray-light, #f2f2f2);
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 16px 20px;
+  padding: 20px;
   margin: 20px 0 0 0;
 }
 
-.feedus-tax-invoice-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
+/* 1단계: 메인 라벨 */
+.feedus-receipt-main-label {
   font-family: var(--feedus-font-body);
   font-size: 0.95rem;
-  color: var(--feedus-black);
+  font-weight: 500;
+  color: var(--feedus-primary, #007D51);
+  margin: 0 0 12px 0 !important;
+}
+
+/* 라디오 버튼 행 */
+.feedus-receipt-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: var(--feedus-font-body);
+  font-size: 0.9rem;
+  color: var(--feedus-black, #1a1a1a);
+  padding: 8px 0;
   margin: 0 !important;
 }
 
-.feedus-tax-invoice-checkbox {
+.feedus-receipt-radio-label span {
+  margin: 0 !important;
+}
+
+/* 커스텀 라디오 버튼 */
+.feedus-receipt-radio {
   appearance: none;
   -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  border: 2px solid var(--feedus-gray);
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 2px solid var(--feedus-gray, #6c757d);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+.feedus-receipt-radio:checked {
+  border-color: var(--feedus-primary, #007D51);
+}
+
+.feedus-receipt-radio:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--feedus-primary, #007D51);
+  border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   2단계: 분기 영역 공통
+   -------------------------------------------------------------------------- */
+.feedus-receipt-tax-invoice,
+.feedus-receipt-cash {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* 확인 체크박스 */
+.feedus-receipt-confirm-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-family: var(--feedus-font-body);
+  font-size: 0.85rem;
+  color: var(--feedus-black, #1a1a1a);
+  margin: 0 0 14px 0 !important;
+  line-height: 1.5;
+}
+
+.feedus-receipt-confirm-label span {
+  margin: 0 !important;
+}
+
+/* 커스텀 체크박스 */
+.feedus-receipt-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+  border: 2px solid var(--feedus-gray, #6c757d);
   border-radius: 4px;
   cursor: pointer;
   position: relative;
   transition: all 0.1s ease;
 }
 
-.feedus-tax-invoice-checkbox:checked {
-  background-color: var(--feedus-primary);
-  border-color: var(--feedus-primary);
+.feedus-receipt-checkbox:checked {
+  background-color: var(--feedus-primary, #007D51);
+  border-color: var(--feedus-primary, #007D51);
 }
 
-.feedus-tax-invoice-checkbox:checked::after {
+.feedus-receipt-checkbox:checked::after {
   content: '';
   position: absolute;
-  top: 2px;
-  left: 6px;
+  top: 1px;
+  left: 5px;
   width: 5px;
-  height: 10px;
-  border: solid var(--feedus-white);
+  height: 9px;
+  border: solid var(--feedus-white, #fff);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
 
-.feedus-tax-invoice-text {
-  line-height: 1.4;
-  margin: 0 !important;
+/* --------------------------------------------------------------------------
+   입력 필드
+   -------------------------------------------------------------------------- */
+.feedus-receipt-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.feedus-receipt-input {
+  font-family: var(--feedus-font-body);
+  font-size: 0.9rem;
+  color: var(--feedus-black, #1a1a1a);
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.feedus-receipt-input:focus {
+  outline: none;
+  border-color: var(--feedus-primary, #007D51);
+}
+
+.feedus-receipt-input::placeholder {
+  color: #aaa;
+}
+
+/* 현금영수증 드롭다운 */
+.feedus-receipt-select {
+  font-family: var(--feedus-font-body);
+  font-size: 0.9rem;
+  color: var(--feedus-black, #1a1a1a);
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  width: 100%;
+  cursor: pointer;
+}
+
+.feedus-receipt-select:focus {
+  outline: none;
+  border-color: var(--feedus-primary, #007D51);
+}
+
+.feedus-receipt-cash-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.feedus-receipt-cash-input-wrap {
+  margin-top: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   안내 문구
+   -------------------------------------------------------------------------- */
+.feedus-receipt-notice {
+  margin-top: 14px;
+  padding: 12px;
+  background-color: rgba(0, 125, 81, 0.05);
+  border-radius: 6px;
+}
+
+.feedus-receipt-notice p {
+  font-family: var(--feedus-font-body);
+  font-size: 0.8rem;
+  color: var(--feedus-gray, #6c757d);
+  line-height: 1.6;
+  margin: 0 0 4px 0 !important;
+}
+
+.feedus-receipt-notice p:last-child {
+  margin-bottom: 0 !important;
 }
