@@ -1,3 +1,11 @@
+/* Global input line-height */
+.input,
+input:not([type=submit]),
+select,
+textarea {
+  line-height: 30px !important;
+}
+
 /* WooCommerce Variations Form – Product Page Layout */
 
 /* 1) Size label + dropdown: vertical stack */
@@ -129,6 +137,7 @@
   padding: 8px 10px !important;
   color: #007D51 !important;
   font-weight: 500 !important;
+  width: 120px !important;
 }
 .wc-locked-variation-qty::-webkit-inner-spin-button,
 .wc-locked-variation-qty::-webkit-outer-spin-button {
