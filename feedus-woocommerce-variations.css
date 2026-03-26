@@ -53,9 +53,15 @@
 .variations_form .wc-variation-mode-selector { order: 1; }
 .variations_form .woocommerce-variation-add-to-cart > .quantity { order: 2; }
 .variations_form .wc-locked-variations-container { order: 3; }
-.variations_form .single_add_to_cart_button {
+.variations_form .single_add_to_cart_button,
+.woocommerce-variation-add-to-cart .single_add_to_cart_button {
   order: 4;
   display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .variations_form .wc-multiple-variation-buttons { order: 5; }
 
