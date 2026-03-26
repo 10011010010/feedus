@@ -64,12 +64,12 @@ form.woocommerce-cart-form .quantity .action.plus svg {
 }
 .woocommerce-cart-form .shop_table thead tr {
   display: grid;
-  grid-template-columns: 110px 1fr 150px auto auto;
+  grid-template-columns: 110px 1fr 150px 120px auto;
   align-items: center;
 }
 .woocommerce-cart-form .cart_item {
   display: grid !important;
-  grid-template-columns: 110px 1fr 150px auto auto;
+  grid-template-columns: 110px 1fr 150px 120px auto;
   grid-template-rows: auto auto;
   align-items: center;
   gap: 10px !important;
