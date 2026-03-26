@@ -12,6 +12,7 @@ textarea {
 .variations_form table.variations tr {
   display: flex;
   flex-direction: column;
+  margin-bottom: 14px !important;
 }
 .variations_form table.variations th.label,
 .variations_form table.variations td.value {
