@@ -1430,6 +1430,13 @@ textarea::placeholder {
   border-radius: var(--feedus-border-radius-pill);
 }
 
+.woocommerce-checkout-review-order-table,
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td,
+.woocommerce-checkout-review-order-table tr {
+  border: none !important;
+}
+
 /* --------------------------------------------------------------------------
    세금계산서 체크박스 (체크아웃) - 주문요약 테이블과 결제수단 사이
    -------------------------------------------------------------------------- */
