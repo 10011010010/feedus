@@ -45,6 +45,9 @@
 /* 장바구니 수량 컨테이너 border 색상 */
 form.woocommerce-cart-form .quantity {
   border-color: #007D51 !important;
+  width: 140px !important;
+  min-width: 140px !important;
+  flex-shrink: 0 !important;
 }
 form.woocommerce-cart-form .quantity .input-text.qty {
   color: #007D51 !important;
