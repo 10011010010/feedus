@@ -15,6 +15,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * 0. 플러그인 CSS 로드
+ */
+add_action( 'wp_enqueue_scripts', 'feedus_tax_invoice_styles' );
+function feedus_tax_invoice_styles() {
+    if ( is_checkout() ) {
+        wp_enqueue_style(
+            'feedus-tax-invoice',
+            plugin_dir_url( __FILE__ ) . 'feedus-tax-invoice.css',
+            array(),
+            '1.0.0'
+        );
+    }
+}
+
+/**
  * 1. 체크아웃 페이지에 세금계산서 체크박스 출력
  */
 add_action( 'woocommerce_review_order_before_payment', 'feedus_tax_invoice_checkbox' );
