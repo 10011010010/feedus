@@ -160,6 +160,12 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   padding-bottom: 20px !important;
 }
 
+/* 총계 가격 스타일 */
+.cart_totals .order-total td .woocommerce-Price-amount {
+  font-size: 80px !important;
+  font-weight: 500 !important;
+}
+
 .wc-proceed-to-checkout .checkout-button:hover {
   color: #007D51 !important;
   background-color: #ffffff !important;
