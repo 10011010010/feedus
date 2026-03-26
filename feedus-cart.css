@@ -136,6 +136,7 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   padding-bottom: 10px !important;
   border-radius: 100px !important;
   min-width: 160px !important;
+  float: right !important;
 }
 .woocommerce-cart-form .shop_table .actions {
   padding-top: 10px !important;
