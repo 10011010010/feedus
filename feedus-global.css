@@ -1430,6 +1430,59 @@ textarea::placeholder {
   border-radius: var(--feedus-border-radius-pill);
 }
 
+/* --------------------------------------------------------------------------
+   세금계산서 체크박스 (체크아웃)
+   -------------------------------------------------------------------------- */
+.feedus-tax-invoice-row th,
+.feedus-tax-invoice-row td {
+  padding: 12px 0;
+  border-top: 1px solid var(--feedus-gray-light);
+}
+
+.feedus-tax-invoice-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: var(--feedus-font-body);
+  font-size: 0.95rem;
+  color: var(--feedus-black);
+}
+
+.feedus-tax-invoice-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid var(--feedus-gray);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--feedus-duration-fast) ease;
+}
+
+.feedus-tax-invoice-checkbox:checked {
+  background-color: var(--feedus-primary);
+  border-color: var(--feedus-primary);
+}
+
+.feedus-tax-invoice-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--feedus-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.feedus-tax-invoice-text {
+  line-height: 1.4;
+}
+
 /* ==========================================================================
    20. PRINT STYLES
    ========================================================================== */
