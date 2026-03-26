@@ -120,6 +120,7 @@ form.woocommerce-cart-form .quantity .action.plus svg {
 }
 .woocommerce-cart-form .shop_table .actions {
   padding-top: 10px !important;
+  text-align: right !important;
 }
 .woocommerce-cart-form .shop_table tbody tr:last-child {
   display: block !important;
