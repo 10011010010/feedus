@@ -154,6 +154,20 @@
   margin-bottom: 14px;
 }
 
+/* "장바구니" button: match "Add to List" style */
+.brxe-product-add-to-cart > form.cart .single_add_to_cart_button {
+  display: inline-flex !important;
+  color: #ffffff;
+  background-color: #007D51;
+  border-color: #007D51;
+  padding: 14px 40px;
+  width: 100% !important;
+}
+.brxe-product-add-to-cart > form.cart .single_add_to_cart_button:hover {
+  color: #007D51;
+  background-color: #ffffff;
+}
+
 /* Fix: Mobile button visibility */
 .brxe-product-add-to-cart,
 .brxe-product-add-to-cart .variations_form,
