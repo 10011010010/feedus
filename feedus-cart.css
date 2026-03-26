@@ -30,6 +30,11 @@
 .woocommerce-cart-form .shop_table td {
   border-color: #007D51 !important;
 }
+.woocommerce-cart-form .cart_item,
+.woocommerce-cart-form .cart_item td,
+.woocommerce-cart-form .cart_item th {
+  border: none !important;
+}
 
 /* 장바구니 테이블 영역 패딩 제거 */
 #brxe-ayskvm {
@@ -86,6 +91,7 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   grid-template-rows: auto auto;
   align-items: center;
   gap: 10px !important;
+  border: none !important;
 }
 .woocommerce-cart-form .cart_item .product-thumbnail {
   grid-column: 1;
