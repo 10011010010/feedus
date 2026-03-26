@@ -100,6 +100,11 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   margin: 0 !important;
   line-height: 1.3 !important;
   align-self: end;
+  font-size: 18px !important;
+}
+.woocommerce-cart-form .cart_item .product-name a {
+  font-size: 18px !important;
+  font-weight: 400 !important;
 }
 .woocommerce-cart-form .cart_item .product-price {
   grid-column: 2;
