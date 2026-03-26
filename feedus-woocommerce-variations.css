@@ -51,6 +51,7 @@ textarea {
 }
 .variations_form .quantity {
   margin-bottom: 14px;
+  justify-content: flex-end;
 }
 
 /* Reorder elements */
@@ -171,6 +172,7 @@ textarea {
 /* Quantity row spacing */
 .brxe-product-add-to-cart > form.cart .quantity {
   margin-bottom: 14px;
+  justify-content: flex-end;
 }
 
 /* "장바구니" button: match variation button style */
