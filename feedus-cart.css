@@ -22,6 +22,15 @@
   }
 }
 
+/* 장바구니 테이블 전체 border 색상 primary */
+.woocommerce-cart-form .shop_table,
+.woocommerce-cart-form .shop_table *,
+.woocommerce-cart-form .shop_table tr,
+.woocommerce-cart-form .shop_table th,
+.woocommerce-cart-form .shop_table td {
+  border-color: #007D51 !important;
+}
+
 /* 장바구니 테이블 영역 패딩 제거 */
 #brxe-ayskvm {
   padding-top: 0 !important;
