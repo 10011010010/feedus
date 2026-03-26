@@ -171,6 +171,9 @@
   visibility: visible !important;
   opacity: 1 !important;
 }
+.brxe-product-add-to-cart > form.cart .single_add_to_cart_button span {
+  margin: 0 !important;
+}
 .brxe-product-add-to-cart > form.cart .single_add_to_cart_button:hover {
   color: #007D51;
   background-color: #ffffff;
