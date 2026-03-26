@@ -96,16 +96,20 @@ form.woocommerce-cart-form .quantity .action.plus svg {
 .woocommerce-cart-form .cart_item .product-name {
   grid-column: 2;
   grid-row: 1;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-  line-height: 1.2 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+  align-self: end;
 }
 .woocommerce-cart-form .cart_item .product-price {
   grid-column: 2;
   grid-row: 2;
   text-align: left !important;
-  padding-top: 0 !important;
-  margin-top: -10px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+  align-self: start;
+  font-size: 15px !important;
 }
 .woocommerce-cart-form .cart_item .product-quantity {
   grid-column: 3;
