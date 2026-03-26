@@ -43,6 +43,14 @@
   text-align: right !important;
 }
 
+/* 장바구니 합계 테이블: 라인 색상 primary */
+.cart_totals .shop_table,
+.cart_totals .shop_table tr,
+.cart_totals .shop_table th,
+.cart_totals .shop_table td {
+  border-color: #007D51 !important;
+}
+
 .wc-proceed-to-checkout .checkout-button:hover {
   color: #007D51 !important;
   background-color: #ffffff !important;
