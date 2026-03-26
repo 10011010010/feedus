@@ -45,6 +45,13 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   stroke: #007D51 !important;
 }
 
+/* 장바구니 갱신 버튼 */
+.woocommerce-cart-form .actions button[name="update_cart"] {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-radius: 100px !important;
+}
+
 /* 장바구니 테이블 헤더 line-height 초기화 */
 .woocommerce-cart-form .shop_table thead th {
   line-height: normal !important;
