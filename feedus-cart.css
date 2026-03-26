@@ -45,6 +45,12 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   stroke: #007D51 !important;
 }
 
+/* 장바구니 상품 썸네일 */
+.woocommerce-cart-form .product-thumbnail img {
+  width: 80px !important;
+  height: 80px !important;
+}
+
 /* 장바구니 갱신 버튼 */
 .woocommerce-cart-form .actions button[name="update_cart"] {
   padding-top: 10px !important;
