@@ -214,6 +214,10 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   .woocommerce-cart-form .shop_table thead {
     display: none !important;
   }
+  .woocommerce-cart-form .cart_item td::before,
+  .woocommerce-cart-form .cart_item th::before {
+    display: none !important;
+  }
   .woocommerce-cart-form .cart_item {
     grid-template-columns: 110px 1fr auto auto !important;
     grid-template-rows: auto auto auto !important;
