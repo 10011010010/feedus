@@ -104,8 +104,8 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   grid-column: 2;
   grid-row: 2;
   text-align: left !important;
-  padding-top: 2px !important;
-  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-top: -10px !important;
 }
 .woocommerce-cart-form .cart_item .product-quantity {
   grid-column: 3;
