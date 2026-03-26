@@ -11,6 +11,11 @@
   border: none !important;
 }
 
+/* 소계, 배송, 총계 등 tfoot th 볼드 처리 */
+.woocommerce-checkout-review-order-table tfoot th {
+  font-weight: 500 !important;
+}
+
 /* 세금계산서 체크박스 박스 */
 .feedus-tax-invoice-box {
   background-color: var(--feedus-gray-light);
