@@ -117,6 +117,9 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   border-radius: 100px !important;
   min-width: 160px !important;
 }
+.woocommerce-cart-form .shop_table .actions {
+  margin-top: 10px !important;
+}
 
 /* 장바구니 테이블 헤더 line-height 초기화 */
 .woocommerce-cart-form .shop_table thead th {
