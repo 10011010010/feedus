@@ -255,4 +255,9 @@ form.woocommerce-cart-form .quantity .action.plus svg {
     grid-row: 3;
     justify-self: end;
   }
+  .woocommerce-cart-form .shop_table tbody tr:last-child {
+    margin-top: 20px !important;
+    border-top: 1px solid #007D51 !important;
+    padding-top: 20px !important;
+  }
 }
