@@ -22,6 +22,11 @@
   }
 }
 
+/* 장바구니 테이블 헤더 line-height 초기화 */
+.woocommerce-cart-form .shop_table thead th {
+  line-height: normal !important;
+}
+
 /* 결제하기 버튼 영역 위 마진 */
 .wc-proceed-to-checkout {
   margin-top: 20px !important;
