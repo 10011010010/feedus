@@ -140,6 +140,9 @@ form.woocommerce-cart-form .quantity .action.plus svg {
   border-radius: 100px !important;
   min-width: 160px !important;
   float: right !important;
+  border: 1px solid var(--bricks-color-grey-300) !important;
+  background-color: var(--bricks-color-grey-100) !important;
+  color: var(--primary-color-green) !important;
 }
 .woocommerce-cart-form .shop_table .actions {
   padding-top: 10px !important;
