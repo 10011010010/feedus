@@ -221,7 +221,7 @@ form.woocommerce-cart-form .quantity .action.plus svg {
     grid-template-rows: auto auto auto !important;
     margin-bottom: 20px !important;
     padding-top: 20px !important;
-    border-top: 1px solid #007D51 !important;
+    border-top: 1px solid rgba(0, 125, 81, 0.3) !important;
   }
   .woocommerce-cart-form .cart_item .product-thumbnail {
     grid-column: 1;
