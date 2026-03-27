@@ -114,12 +114,24 @@ function feedus_thankyou_page_customizations() {
         var shippingTitle = document.querySelector('.woocommerce-column--shipping-address .woocommerce-column__title');
         if (shippingTitle) shippingTitle.textContent = '배송지 정보';
 
-        // 7. tfoot 결제 방법 행 삭제
+        // 7. tfoot 결제 방법 행 삭제 + 배송 행 수정
         var tfootRows = document.querySelectorAll('.woocommerce-table--order-details tfoot tr');
         tfootRows.forEach(function(row) {
             var th = row.querySelector('th');
-            if (th && th.textContent.trim().replace(':', '') === '결제 방법') {
+            if (!th) return;
+            var label = th.textContent.trim().replace(':', '');
+
+            if (label === '결제 방법') {
                 row.remove();
+            }
+
+            if (label === '배송') {
+                th.textContent = '배송비:';
+                var td = row.querySelector('td');
+                if (td) {
+                    var shipped = td.querySelector('.shipped_via');
+                    if (shipped) shipped.remove();
+                }
             }
         });
     })();
