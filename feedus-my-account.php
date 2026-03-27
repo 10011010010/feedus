@@ -10,7 +10,16 @@
  * 5. 주소 페이지: 청구 주소 숨기고 배송 주소만 표시
  * 6. 주소 페이지 안내 문구 변경
  * 7. 계정 정보 페이지: "비밀번호 변경" legend 삭제 + fieldset border 제거
+ * 8. 계정 정보 페이지: 성(last_name) 필드 숨기기 + 필수 해제
  */
+
+// 계정 정보 저장 시 성(last_name) 필수 해제
+add_filter( 'woocommerce_save_account_details_required_fields', 'feedus_remove_last_name_required' );
+
+function feedus_remove_last_name_required( $fields ) {
+	unset( $fields['account_last_name'] );
+	return $fields;
+}
 
 // 대시보드, 다운로드 메뉴 삭제
 add_filter( 'woocommerce_account_menu_items', 'feedus_remove_my_account_links' );
@@ -75,6 +84,10 @@ function feedus_myaccount_kakao_address_script() {
 			display: none !important;
 		}
 		#account_display_name_description {
+			display: none !important;
+		}
+		#account_last_name_field,
+		.woocommerce-form-row--last:has(#account_last_name) {
 			display: none !important;
 		}
 	</style>
