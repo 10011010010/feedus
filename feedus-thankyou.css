@@ -1,30 +1,208 @@
 /* ==========================================================================
-   FEEDUS - Thank You 페이지 스타일
-   WooCommerce 주문 완료(Thank You) 페이지 전용 CSS
+   FEEDUS - Thank You (Order Received) Page Styles
+   WPCode #327 [Thank you] CSS 스니펫에 적용
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   은행 세부 사항(BACS) 섹션 완전 제거
+   1. 주문 요약 리스트 숨김 (JS 로드 전 깜빡임 방지)
+   -------------------------------------------------------------------------- */
+.woocommerce-thankyou-order-received,
+.woocommerce-order-overview.woocommerce-thankyou-order-details {
+  display: none !important;
+}
+
+.woocommerce-table--order-details .shipped_via {
+  display: none !important;
+}
+
+/* 결제 방법 행 숨김 */
+.woocommerce-table--order-details tfoot tr.feedus-hide {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   1-1. 은행 세부 사항(BACS) 섹션 완전 제거
    -------------------------------------------------------------------------- */
 section.woocommerce-bacs-bank-details {
   display: none !important;
 }
 
 /* --------------------------------------------------------------------------
-   총계 금액 34px 강제
+   2. 주문 상품 정보 테이블 - border 제거
    -------------------------------------------------------------------------- */
-.woocommerce-table--order-details tfoot tr.feedus-total-row td .woocommerce-Price-amount {
-  font-size: 34px !important;
+.woocommerce-order-details .woocommerce-table--order-details,
+.woocommerce-order-details .woocommerce-table--order-details th,
+.woocommerce-order-details .woocommerce-table--order-details td,
+.woocommerce-order-details .woocommerce-table--order-details tr,
+.woocommerce-order-details .woocommerce-table--order-details thead,
+.woocommerce-order-details .woocommerce-table--order-details tbody,
+.woocommerce-order-details .woocommerce-table--order-details tfoot {
+  border: none !important;
+  border-collapse: collapse;
+}
+
+/* 행 간 구분선: 얇은 하단 라인만 유지 */
+.woocommerce-order-details .woocommerce-table--order-details tbody tr {
+  border-bottom: 1px solid rgba(0, 125, 81, 0.15) !important;
+}
+
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr {
+  border-bottom: 1px solid rgba(0, 125, 81, 0.15) !important;
+}
+
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child {
+  border-bottom: none !important;
+}
+
+/* 테이블 셀 패딩 */
+.woocommerce-order-details .woocommerce-table--order-details th,
+.woocommerce-order-details .woocommerce-table--order-details td {
+  padding: 14px 0 !important;
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  color: var(--feedus-primary);
+}
+
+/* thead 숨김 */
+.woocommerce-order-details .woocommerce-table--order-details thead {
+  display: none;
+}
+
+/* 상품명 */
+.woocommerce-order-details .woocommerce-table--order-details .product-name {
+  font-weight: 400;
+}
+
+.woocommerce-order-details .woocommerce-table--order-details .product-name a {
+  color: var(--feedus-primary);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* 수량 */
+.woocommerce-order-details .woocommerce-table--order-details .product-quantity {
+  font-weight: 500;
+}
+
+/* 가격 우측 정렬 */
+.woocommerce-order-details .woocommerce-table--order-details .product-total,
+.woocommerce-order-details .woocommerce-table--order-details td:last-child {
+  text-align: right;
+}
+
+/* tfoot: 소계, 배송, 총계 */
+.woocommerce-order-details .woocommerce-table--order-details tfoot th {
+  font-weight: 400;
+}
+
+.woocommerce-order-details .woocommerce-table--order-details tfoot td {
+  text-align: right;
 }
 
 /* --------------------------------------------------------------------------
-   "주의:" → "주의 메세지" 텍스트 교체
+   2-1. 총계 행 강조 (34px 가격)
+   .feedus-total-row 클래스로 타겟팅 (주의 행이 뒤에 올 수 있으므로)
+   -------------------------------------------------------------------------- */
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr.feedus-total-row th,
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr.feedus-total-row td {
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  padding-top: 20px !important;
+}
+
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr.feedus-total-row td .woocommerce-Price-amount,
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr.feedus-total-row td .woocommerce-Price-amount span {
+  font-size: 34px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+/* --------------------------------------------------------------------------
+   2-2. "주의:" → "주의 메세지" 텍스트 교체
    (주의 행은 총계 뒤에 동적으로 추가되므로 last-child 사용)
    -------------------------------------------------------------------------- */
-.woocommerce-table--order-details tfoot tr:last-child th {
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child th {
   font-size: 0 !important;
 }
-.woocommerce-table--order-details tfoot tr:last-child th::before {
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child th::before {
   content: "주의 메세지" !important;
-  font-size: 1rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--feedus-primary);
+}
+
+/* --------------------------------------------------------------------------
+   3. 청구 주소 숨김
+   -------------------------------------------------------------------------- */
+.woocommerce-column--billing-address {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. 배송지 정보 스타일
+   -------------------------------------------------------------------------- */
+.woocommerce-column--shipping-address {
+  width: 100% !important;
+}
+
+/* 2컬럼 레이아웃 → 1컬럼으로 (청구 주소 삭제 후) */
+.woocommerce-columns--addresses {
+  display: block !important;
+}
+
+.woocommerce-column--shipping-address .woocommerce-column__title {
+  font-family: var(--feedus-font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--feedus-primary);
+  margin-bottom: 12px !important;
+}
+
+.woocommerce-column--shipping-address address {
+  font-style: normal;
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--feedus-primary);
+}
+
+.woocommerce-column--shipping-address .woocommerce-customer-details--phone {
+  margin-top: 8px !important;
+  margin-bottom: 0 !important;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   5. 주문 상품 정보 / 배송지 정보 제목 스타일
+   -------------------------------------------------------------------------- */
+.woocommerce-order-details__title,
+.woocommerce-column--shipping-address .woocommerce-column__title {
+  font-family: var(--feedus-font-heading);
+  font-size: 28px !important;
+  font-weight: 600;
+  color: var(--feedus-primary);
+  margin-bottom: 16px !important;
+  padding-top: 10px;
+  border-top: 1px solid var(--feedus-primary);
+}
+
+@media screen and (max-width: 767px) {
+  .woocommerce-order-details__title,
+  .woocommerce-column--shipping-address .woocommerce-column__title {
+    font-size: 24px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. 전체 감사 페이지 섹션 간격
+   -------------------------------------------------------------------------- */
+.woocommerce-order-details {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.woocommerce-customer-details {
+  margin-top: 10px;
 }
