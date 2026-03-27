@@ -1484,3 +1484,14 @@ textarea::placeholder {
 section.woocommerce-bacs-bank-details {
   display: none !important;
 }
+
+/* --------------------------------------------------------------------------
+   Thank You 페이지: "주의:" → "주의 메세지" 텍스트 교체
+   -------------------------------------------------------------------------- */
+.woocommerce-table--order-details tfoot tr:last-child th {
+  font-size: 0 !important;
+}
+.woocommerce-table--order-details tfoot tr:last-child th::before {
+  content: "주의 메세지" !important;
+  font-size: 1rem;
+}
