@@ -1,0 +1,67 @@
+/* ==========================================================================
+   FEEDUS - 주문 완료(Thank You) 페이지 전용 스타일
+   Bricks Builder > 해당 페이지에만 로드
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 배송주소만 표시, 청구주소 숨김
+   -------------------------------------------------------------------------- */
+
+/* 청구 주소 숨김 */
+.woocommerce-customer-details .woocommerce-column--billing-address {
+  display: none !important;
+}
+
+/* 청구 주소 제목 숨김 (Bricks 구조) */
+.woocommerce-customer-details .woocommerce-column__title {
+  display: none !important;
+}
+
+/* 배송 주소만 전체 너비 표시 */
+.woocommerce-customer-details .woocommerce-column--shipping-address {
+  display: block !important;
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+/* 배송 주소 제목만 표시 */
+.woocommerce-customer-details .woocommerce-column--shipping-address .woocommerce-column__title {
+  display: block !important;
+}
+
+/* 배송 주소 없으면 주소 섹션 전체 숨김 */
+.woocommerce-customer-details:not(:has(.woocommerce-column--shipping-address)) {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. 총계 행 & 주의메세지 행 스타일
+   마지막 행 = 총계 또는 주의메세지 (배송메세지 입력 시)
+   -------------------------------------------------------------------------- */
+
+/* 총계 행 강조 */
+.feedus-total-row th,
+.feedus-total-row td {
+  font-weight: var(--fw-bold) !important;
+  font-size: 1.1rem;
+  color: var(--feedus-primary);
+}
+
+/* WooCommerce 기본 order-total 대응 */
+.woocommerce-table--order-details tfoot .order-total th,
+.woocommerce-table--order-details tfoot .order-total td {
+  font-weight: var(--fw-bold) !important;
+  font-size: 1.1rem;
+  color: var(--feedus-primary);
+}
+
+/* 주의메세지 행 - 총계와 구분 */
+.feedus-notice-row th,
+.feedus-notice-row td {
+  font-weight: var(--fw-regular) !important;
+  font-size: 0.9rem;
+  color: var(--feedus-gray);
+  padding-top: 12px;
+  border-top: 1px dashed #ddd;
+}
