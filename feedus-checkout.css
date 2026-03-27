@@ -313,7 +313,7 @@
 }
 
 /* ── Shipping: 무료배송 존재 시 유료배송 옵션 숨김 ── */
-#shipping_method:has(.shipping_method[value^="free_shipping"]) li:not(:has(.shipping_method[value^="free_shipping"])) {
+ul.woocommerce-shipping-methods:has(input[value^="free_shipping"]) li:has(input[value^="flat_rate"]) {
   display: none !important;
 }
 
