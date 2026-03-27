@@ -38,6 +38,21 @@ function feedus_replace_dashboard_with_orders() {
 	add_action( 'woocommerce_account_dashboard', 'feedus_show_orders_on_dashboard' );
 }
 
+// 대시보드 환영 메시지를 출력 버퍼로 강제 제거
+add_action( 'woocommerce_before_account_dashboard', 'feedus_ob_start_dashboard' );
+add_action( 'woocommerce_account_dashboard', 'feedus_ob_end_dashboard', 1 );
+
+function feedus_ob_start_dashboard() {
+	ob_start();
+}
+
+function feedus_ob_end_dashboard() {
+	$content = ob_get_clean();
+	// 대시보드 <p> 태그(환영 메시지 + 안내 문구) 제거, 테이블 등은 유지
+	$content = preg_replace( '/<p\b[^>]*>.*?<\/p>/s', '', $content );
+	echo $content;
+}
+
 // 주소 페이지: 청구 주소 숨기고 배송 주소만 표시
 add_filter( 'woocommerce_my_account_get_addresses', 'feedus_only_shipping_address' );
 
@@ -88,6 +103,10 @@ function feedus_myaccount_kakao_address_script() {
 		}
 		#account_last_name_field,
 		.woocommerce-form-row--last:has(#account_last_name) {
+			display: none !important;
+		}
+		/* 대시보드 환영 메시지 + 안내 문구 강제 숨김 */
+		.woocommerce-MyAccount-content > p {
 			display: none !important;
 		}
 	</style>
