@@ -9,6 +9,7 @@
  * 4. 대시보드 환영 메시지 삭제
  * 5. 주소 페이지: 청구 주소 숨기고 배송 주소만 표시
  * 6. 주소 페이지 안내 문구 변경
+ * 7. 계정 정보 페이지: "비밀번호 변경" legend 삭제 + fieldset border 제거
  */
 
 // 대시보드, 다운로드 메뉴 삭제
@@ -64,6 +65,16 @@ function feedus_myaccount_kakao_address_script() {
 		return;
 	}
 	?>
+	<style>
+		.woocommerce-EditAccountForm fieldset {
+			border: none !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		.woocommerce-EditAccountForm fieldset legend {
+			display: none !important;
+		}
+	</style>
 	<script>
 	(function($) {
 		'use strict';
