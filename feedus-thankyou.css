@@ -15,10 +15,26 @@
   display: none !important;
 }
 
-/* 결제 방법 행 강제 숨김 */
-.woocommerce-table--order-details tfoot tr:has(th[scope="row"]:empty),
-.woocommerce-table--order-details tfoot tr:last-child:not(:has(.woocommerce-Price-amount)) {
+/* 결제 방법 행 강제 숨김 (tfoot 4번째 행) */
+.woocommerce-table--order-details tfoot tr:nth-child(4) {
   display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.woocommerce-table--order-details tfoot tr:nth-child(4) th,
+.woocommerce-table--order-details tfoot tr:nth-child(4) td {
+  display: none !important;
+  padding: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important;
+  border: none !important;
 }
 
 
