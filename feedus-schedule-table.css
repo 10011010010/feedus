@@ -16,17 +16,17 @@
   padding: 14px 16px;
   text-align: left;
   white-space: nowrap;
-  border-bottom: 1px solid rgba(0, 125, 81, 0.15);
+  border-bottom: 1px solid var(--feedus-primary);
 }
 
 #footable_329 td.feedus-schedule-region {
   font-family: var(--feedus-font-body);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--feedus-primary);
   padding: 14px 16px;
   text-align: center;
-  border-bottom: 1px solid rgba(0, 125, 81, 0.15);
+  border-bottom: 1px solid var(--feedus-primary);
 }
 
 #footable_329 tbody tr:last-child th,
@@ -44,7 +44,7 @@
 
 /* 행 간 구분선만 유지 */
 #footable_329 tbody tr {
-  border-bottom: 1px solid rgba(0, 125, 81, 0.15) !important;
+  border-bottom: 1px solid var(--feedus-primary) !important;
 }
 
 #footable_329 tbody tr:last-child {
