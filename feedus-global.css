@@ -1430,24 +1430,6 @@ textarea::placeholder {
   border-radius: var(--feedus-border-radius-pill);
 }
 
-/* My Account 대시보드 인사말 & 안내 문구 숨김 */
-.woocommerce-MyAccount-content > p:first-of-type,
-.woocommerce-MyAccount-content > p:nth-of-type(2) {
-  display: none;
-}
-
-/* My Account 주문 보기/결제 버튼 패딩 제거 */
-.woocommerce-MyAccount-orders .woocommerce-button.button {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-/* My Account 주문 테이블 셀 패딩 */
-.woocommerce-MyAccount-orders th,
-.woocommerce-MyAccount-orders td {
-  padding: 4px;
-}
-
 /* ==========================================================================
    20. PRINT STYLES
    ========================================================================== */
