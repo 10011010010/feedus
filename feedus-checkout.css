@@ -1,0 +1,338 @@
+/* ==========================================================================
+   FEEDUS - Checkout Page Styles
+   WooCommerce Classic Checkout + Kakao Address Search
+   ========================================================================== */
+
+/* ── Layout: 2-column grid (Bricks 기본 grid 보완) ── */
+.woocommerce-checkout .col2-set {
+  display: contents;
+}
+
+.woocommerce-checkout .col2-set .col-1,
+.woocommerce-checkout .col2-set .col-2 {
+  width: 100%;
+}
+
+/* ── Section Headings ── */
+.woocommerce-checkout h3 {
+  font-family: var(--feedus-font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--feedus-primary);
+  margin-bottom: 24px !important;
+  letter-spacing: -0.03em;
+}
+
+/* ── Form Fields ── */
+.woocommerce-checkout .form-row {
+  margin-bottom: 16px !important;
+  padding: 0 !important;
+}
+
+.woocommerce-checkout .form-row label {
+  display: block;
+  font-family: var(--feedus-font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--feedus-primary);
+  margin-bottom: 6px !important;
+  letter-spacing: -0.02em;
+}
+
+.woocommerce-checkout .form-row label .required {
+  color: var(--feedus-primary);
+}
+
+.woocommerce-checkout .form-row label .optional {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(var(--feedus-primary-rgb), 0.5);
+}
+
+.woocommerce-checkout .form-row input.input-text,
+.woocommerce-checkout .form-row textarea,
+.woocommerce-checkout .form-row select {
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--feedus-black);
+  padding: 12px 20px;
+  border: 1px solid var(--feedus-primary);
+  border-radius: var(--feedus-border-radius-pill);
+  background-color: transparent;
+  width: 100%;
+  transition: border-color var(--feedus-duration-default) ease,
+    box-shadow var(--feedus-duration-default) ease;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 1.5;
+}
+
+.woocommerce-checkout .form-row input.input-text:focus,
+.woocommerce-checkout .form-row textarea:focus,
+.woocommerce-checkout .form-row select:focus {
+  outline: none;
+  border-color: var(--feedus-primary);
+  box-shadow: 0 0 0 2px rgba(var(--feedus-primary-rgb), 0.15);
+}
+
+.woocommerce-checkout .form-row input.input-text::placeholder,
+.woocommerce-checkout .form-row textarea::placeholder {
+  color: rgba(var(--feedus-primary-rgb), 0.4);
+  font-weight: 300;
+}
+
+/* Readonly fields (주소 검색으로 자동 입력되는 필드) */
+.woocommerce-checkout .form-row input.input-text[readonly] {
+  background-color: var(--feedus-gray-light);
+  cursor: pointer;
+  color: var(--feedus-black);
+}
+
+/* Textarea (주문 메모) */
+.woocommerce-checkout .form-row textarea {
+  border-radius: var(--feedus-border-radius);
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ── Kakao Address Search Button ── */
+.feedus-address-search-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--feedus-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary);
+  border: 1px solid var(--feedus-primary);
+  border-radius: var(--feedus-border-radius-pill);
+  padding: 8px 18px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all var(--feedus-duration-default) ease;
+  line-height: 1;
+}
+
+.feedus-address-search-btn span {
+  color: #ffffff !important;
+}
+
+.feedus-address-search-btn:hover {
+  background-color: transparent;
+  color: var(--feedus-primary) !important;
+}
+
+.feedus-address-search-btn:hover span {
+  color: var(--feedus-primary) !important;
+}
+
+.feedus-address-search-btn svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  stroke: #ffffff !important;
+}
+
+.feedus-address-search-btn:hover svg {
+  stroke: var(--feedus-primary) !important;
+}
+
+/* ── "다른 주소로 배송할까요?" 체크박스 ── */
+.woocommerce-checkout #ship-to-different-address {
+  margin-bottom: 20px !important;
+}
+
+.woocommerce-checkout #ship-to-different-address label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.woocommerce-checkout #ship-to-different-address input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--feedus-primary);
+  border: 1px solid var(--feedus-primary);
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Order Review (고객님의 주문) ── */
+.woocommerce-checkout #order_review_heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px !important;
+}
+
+.woocommerce-checkout-review-order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td {
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--feedus-primary);
+  padding: 14px 0 !important;
+  border-bottom: 1px solid var(--feedus-primary) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.woocommerce-checkout-review-order-table thead th {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.woocommerce-checkout-review-order-table .product-total,
+.woocommerce-checkout-review-order-table td:last-child {
+  text-align: right;
+}
+
+.woocommerce-checkout-review-order-table .product-name {
+  font-weight: 400;
+}
+
+.woocommerce-checkout-review-order-table .product-name .product-quantity {
+  font-weight: 500;
+}
+
+.woocommerce-checkout-review-order-table tfoot .order-total th,
+.woocommerce-checkout-review-order-table tfoot .order-total td {
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: none !important;
+  padding-top: 20px !important;
+}
+
+.woocommerce-checkout-review-order-table tfoot .order-total .woocommerce-Price-amount {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* ── Payment Methods ── */
+.woocommerce-checkout-payment {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-top: 24px;
+}
+
+.woocommerce-checkout-payment .payment_methods {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 20px !important;
+  border: none !important;
+}
+
+.woocommerce-checkout-payment .payment_methods li {
+  padding: 16px 20px !important;
+  border: 1px solid var(--feedus-primary) !important;
+  border-radius: var(--feedus-border-radius) !important;
+  margin-bottom: 10px !important;
+  background: transparent !important;
+}
+
+.woocommerce-checkout-payment .payment_methods li label {
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--feedus-primary);
+  cursor: pointer;
+  padding-left: 4px;
+}
+
+.woocommerce-checkout-payment .payment_methods li input[type="radio"] {
+  accent-color: var(--feedus-primary);
+}
+
+.woocommerce-checkout-payment .payment_box {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--feedus-primary);
+  padding: 10px 0 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  line-height: 1.6;
+}
+
+.woocommerce-checkout-payment .payment_box::before {
+  display: none !important;
+}
+
+.woocommerce-checkout-payment .payment_box p {
+  font-size: 14px !important;
+  color: rgba(var(--feedus-primary-rgb), 0.7) !important;
+}
+
+/* ── Place Order Button (주문 확정) ── */
+.woocommerce-checkout #place_order {
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 40px !important;
+  font-family: var(--feedus-font-body);
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  color: var(--feedus-white) !important;
+  background-color: var(--feedus-primary) !important;
+  border: 1px solid var(--feedus-primary) !important;
+  border-radius: var(--feedus-border-radius-pill) !important;
+  cursor: pointer;
+  transition: all var(--feedus-duration-medium) ease;
+  line-height: 1.4;
+}
+
+.woocommerce-checkout #place_order:hover {
+  color: var(--feedus-primary) !important;
+  background-color: var(--feedus-white) !important;
+}
+
+/* ── Privacy Policy ── */
+.woocommerce-checkout .woocommerce-privacy-policy-text p {
+  font-size: 13px !important;
+  color: rgba(var(--feedus-primary-rgb), 0.6) !important;
+  font-weight: 300 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 16px !important;
+}
+
+.woocommerce-checkout .woocommerce-privacy-policy-text a {
+  color: var(--feedus-primary);
+  text-decoration: underline;
+}
+
+/* ── Shipping row hide (배송 영역 WPCode에서 이미 숨김 처리) ── */
+
+/* ── Responsive: Mobile ── */
+@media screen and (max-width: 767px) {
+  .woocommerce-checkout h3 {
+    font-size: 20px;
+  }
+
+  .woocommerce-checkout .form-row input.input-text,
+  .woocommerce-checkout .form-row textarea,
+  .woocommerce-checkout .form-row select {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+
+  .woocommerce-checkout-review-order-table tfoot .order-total .woocommerce-Price-amount {
+    font-size: 24px;
+  }
+
+  .woocommerce-checkout #place_order {
+    font-size: 18px !important;
+    padding: 14px 30px !important;
+  }
+}
