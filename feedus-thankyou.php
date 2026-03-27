@@ -145,6 +145,10 @@ function feedus_thankyou_page_customizations() {
                 row.style.cssText = 'display:none!important';
             }
 
+            if (label === '총계') {
+                row.classList.add('feedus-total-row');
+            }
+
             if (label === '배송') {
                 th.textContent = '배송비:';
                 var td = row.querySelector('td');

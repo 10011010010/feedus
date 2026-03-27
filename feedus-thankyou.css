@@ -93,17 +93,19 @@
   text-align: right;
 }
 
-/* 총계 행 강조 */
-.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child th,
-.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child td {
-  font-weight: 600;
-  font-size: 18px;
+/* 총계 행 강조 (.feedus-total-row 클래스는 JS에서 추가) */
+.woocommerce-table--order-details tfoot tr.feedus-total-row th,
+.woocommerce-table--order-details tfoot tr.feedus-total-row td {
+  font-weight: 600 !important;
+  font-size: 18px !important;
   padding-top: 20px !important;
 }
 
-/* 총계 가격 폰트 사이즈 */
-.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount,
-.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount * {
+/* 총계 가격 폰트 사이즈 34px */
+.woocommerce-table--order-details tfoot tr.feedus-total-row td .woocommerce-Price-amount,
+.woocommerce-table--order-details tfoot tr.feedus-total-row td .woocommerce-Price-amount *,
+.woocommerce-table--order-details tfoot tr.feedus-total-row td bdi,
+.woocommerce-table--order-details tfoot tr.feedus-total-row td span {
   font-size: 34px !important;
   font-weight: 600 !important;
 }
