@@ -1,0 +1,52 @@
+/* ==========================================================================
+   FEEDUS - 직배송 지역 테이블 스타일
+   WPCode > CSS 스니펫 > 사이트 전체 헤더에 추가
+   ========================================================================== */
+
+#footable_329 {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#footable_329 th.feedus-schedule-day {
+  font-family: var(--feedus-font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--feedus-primary);
+  padding: 14px 16px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(0, 125, 81, 0.15);
+}
+
+#footable_329 td.feedus-schedule-region {
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--feedus-primary);
+  padding: 14px 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 125, 81, 0.15);
+}
+
+#footable_329 tbody tr:last-child th,
+#footable_329 tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* 테이블 기본 border 제거 */
+#footable_329,
+#footable_329 th,
+#footable_329 td,
+#footable_329 tr {
+  border: none !important;
+}
+
+/* 행 간 구분선만 유지 */
+#footable_329 tbody tr {
+  border-bottom: 1px solid rgba(0, 125, 81, 0.15) !important;
+}
+
+#footable_329 tbody tr:last-child {
+  border-bottom: none !important;
+}
