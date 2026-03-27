@@ -3,51 +3,61 @@
    WPCode > CSS 스니펫 > 사이트 전체 헤더에 추가
    ========================================================================== */
 
+/* 테이블 전체 border 초기화 */
+#footable_329,
+#footable_329 th,
+#footable_329 td,
+#footable_329 tr,
+#footable_329 thead,
+#footable_329 tbody {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
 #footable_329 {
   width: 100%;
   border-collapse: collapse;
 }
 
+/* 전치 후: 요일 셀 (월/수/금) */
 #footable_329 th.feedus-schedule-day {
-  font-family: var(--feedus-font-body);
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--feedus-white, #ffffff);
-  background-color: var(--feedus-primary);
-  padding: 14px 16px;
-  text-align: left;
+  font-family: var(--feedus-font-body) !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary, #007D51) !important;
+  padding: 14px 16px !important;
+  text-align: left !important;
   white-space: nowrap;
-  border-bottom: 1px solid var(--feedus-primary);
+  vertical-align: middle !important;
 }
 
+/* 전치 후: 지역 셀 */
 #footable_329 td.feedus-schedule-region {
-  font-family: var(--feedus-font-body);
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--feedus-primary);
-  padding: 14px 16px;
-  text-align: center;
-  border-bottom: 1px solid var(--feedus-primary);
+  font-family: var(--feedus-font-body) !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  color: var(--feedus-primary, #007D51) !important;
+  padding: 14px 16px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
 }
 
-#footable_329 tbody tr:last-child th,
-#footable_329 tbody tr:last-child td {
-  border-bottom: none;
+/* 행 간 구분선 */
+#footable_329.feedus-transposed tbody tr {
+  border-bottom: 1px solid var(--feedus-primary, #007D51) !important;
 }
 
-/* 테이블 기본 border 제거 */
-#footable_329,
-#footable_329 th,
-#footable_329 td,
-#footable_329 tr {
-  border: none !important;
-}
-
-/* 행 간 구분선만 유지 */
-#footable_329 tbody tr {
-  border-bottom: 1px solid var(--feedus-primary) !important;
-}
-
-#footable_329 tbody tr:last-child {
+#footable_329.feedus-transposed tbody tr:last-child {
   border-bottom: none !important;
+}
+
+/* 전치 전 원본 테이블 글자색도 프라이머리로 (폴백) */
+#footable_329 thead th {
+  color: var(--feedus-primary, #007D51) !important;
+}
+
+#footable_329 tbody td {
+  color: var(--feedus-primary, #007D51) !important;
 }

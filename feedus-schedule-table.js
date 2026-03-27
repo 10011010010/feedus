@@ -9,9 +9,19 @@
 (function () {
   'use strict';
 
+  var transposed = false;
+
   function transposeTable() {
+    if (transposed) return;
+
     var table = document.getElementById('footable_329');
     if (!table) return;
+
+    var tbody = table.querySelector('tbody');
+    if (!tbody) return;
+
+    var bodyRows = tbody.querySelectorAll('tr');
+    if (!bodyRows.length) return;
 
     // 원본 데이터 수집 (thead + tbody)
     var headers = [];
@@ -21,44 +31,36 @@
     });
 
     var rows = [];
-    var bodyRows = table.querySelectorAll('tbody tr');
     bodyRows.forEach(function (tr) {
       var row = [];
       tr.querySelectorAll('td').forEach(function (td) {
         row.push(td.textContent.trim());
       });
-      rows.push(row);
+      if (row.length) rows.push(row);
     });
 
     if (!headers.length || !rows.length) return;
 
-    // 전치: headers[i]가 첫 번째 셀, rows[j][i]가 나머지 셀
+    transposed = true;
+
     var colCount = headers.length;
     var rowCount = rows.length;
 
-    // 새 thead 생성 (빈 첫 번째 셀 + 지역1~N)
-    var newThead = document.createElement('thead');
-    var newHeadRow = document.createElement('tr');
-    newHeadRow.className = 'footable-header';
+    // colgroup 제거
+    var colgroup = table.querySelector('colgroup');
+    if (colgroup) colgroup.remove();
 
-    // 첫 번째 빈 헤더 (요일 컬럼)
-    var emptyTh = document.createElement('th');
-    emptyTh.textContent = '';
-    emptyTh.className = 'footable-first-visible';
-    newHeadRow.appendChild(emptyTh);
-
-    // 숨김 처리 (헤더 불필요 시)
-    newThead.style.display = 'none';
-    newThead.appendChild(newHeadRow);
+    // thead 숨김
+    var thead = table.querySelector('thead');
+    if (thead) thead.style.display = 'none';
 
     // 새 tbody 생성
     var newTbody = document.createElement('tbody');
 
     for (var i = 0; i < colCount; i++) {
       var tr = document.createElement('tr');
-      tr.className = 'ninja_table_row_' + i;
 
-      // 첫 번째 셀: 요일 (th)
+      // 첫 번째 셀: 요일
       var th = document.createElement('th');
       th.textContent = headers[i];
       th.className = 'feedus-schedule-day';
@@ -76,18 +78,48 @@
       newTbody.appendChild(tr);
     }
 
-    // 기존 thead/tbody 교체
-    var oldThead = table.querySelector('thead');
-    var oldTbody = table.querySelector('tbody');
+    // tbody 교체
+    tbody.parentNode.replaceChild(newTbody, tbody);
 
-    if (oldThead) table.replaceChild(newThead, oldThead);
-    if (oldTbody) table.replaceChild(newTbody, oldTbody);
+    // 테이블에 전치 완료 표시
+    table.classList.add('feedus-transposed');
   }
 
-  // DOM 준비 후 실행
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', transposeTable);
-  } else {
+  // 1차: DOM 준비 후 시도
+  function init() {
     transposeTable();
+
+    // 2차: Ninja Tables AJAX 로드 대비 - MutationObserver
+    if (!transposed) {
+      var target = document.getElementById('footable_parent_329');
+      if (!target) target = document.body;
+
+      var observer = new MutationObserver(function (mutations) {
+        transposeTable();
+        if (transposed) {
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(target, { childList: true, subtree: true });
+
+      // 안전장치: 10초 후 observer 해제
+      setTimeout(function () {
+        observer.disconnect();
+      }, 10000);
+    }
+
+    // 3차: 폴백 - 짧은 딜레이 후 재시도
+    if (!transposed) {
+      setTimeout(transposeTable, 500);
+      setTimeout(transposeTable, 1000);
+      setTimeout(transposeTable, 2000);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
