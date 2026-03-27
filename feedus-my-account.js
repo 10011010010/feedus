@@ -10,23 +10,34 @@
 (function () {
   'use strict';
 
-  // WooCommerce 주소 편집 폼 페이지 (/edit-address/shipping 등)
-  var addressForm = document.querySelector('.woocommerce-address-fields');
-  if (addressForm) {
-    initAddressEdit();
-    return;
+  function init() {
+    // WooCommerce 주소 편집 폼 페이지 (/edit-address/shipping 등)
+    var addressForm = document.querySelector('.woocommerce-address-fields');
+    if (addressForm) {
+      initAddressEdit();
+      return;
+    }
+
+    // WooCommerce 주소 표시 페이지 (/edit-address/)
+    var addressDisplay = document.querySelector('.woocommerce-Addresses');
+    if (addressDisplay) {
+      initInlineAddressForm();
+    }
   }
 
-  // WooCommerce 주소 표시 페이지 (/edit-address/)
-  var addressDisplay = document.querySelector('.woocommerce-Addresses');
-  if (addressDisplay) {
-    initInlineAddressForm();
+  // DOM 로드 후 실행
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 
   /* --------------------------------------------------------------------------
      주소 표시 페이지 → 인라인 편집 폼으로 교체
      -------------------------------------------------------------------------- */
   function initInlineAddressForm() {
+    var addressDisplay = document.querySelector('.woocommerce-Addresses');
+    if (!addressDisplay) return;
     var addressColumns = addressDisplay.querySelectorAll('.woocommerce-Address');
 
     addressColumns.forEach(function (col) {
