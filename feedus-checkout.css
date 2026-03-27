@@ -317,6 +317,15 @@ ul.woocommerce-shipping-methods:has(input[value^="free_shipping"]) li:has(input[
   display: none !important;
 }
 
+/* 무료배송 라디오 버튼 숨김 + 라벨 마진 제거 */
+#shipping_method_0_free_shipping1 {
+  display: none !important;
+}
+
+label[for="shipping_method_0_free_shipping1"] {
+  margin: 0 !important;
+}
+
 /* ── Responsive: Mobile ── */
 @media screen and (max-width: 767px) {
   .woocommerce-checkout h3 {
