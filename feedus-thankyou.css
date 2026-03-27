@@ -91,6 +91,12 @@
   padding-top: 20px !important;
 }
 
+/* 총계 가격 폰트 사이즈 */
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount {
+  font-size: 34px;
+  font-weight: 600;
+}
+
 /* --------------------------------------------------------------------------
    3. 청구 주소 숨김 (JS 로드 전 깜빡임 방지)
    -------------------------------------------------------------------------- */
