@@ -26,6 +26,12 @@ add_filter( 'woocommerce_get_order_item_totals', function( $total_rows, $order )
     }
     if ( isset( $total_rows['shipping'] ) ) {
         $total_rows['shipping']['label'] = '배송비:';
+        // .shipped_via 텍스트 서버 사이드 제거
+        $total_rows['shipping']['value'] = preg_replace(
+            '/<small\b[^>]*class=["\']shipped_via["\'][^>]*>.*?<\/small>/is',
+            '',
+            $total_rows['shipping']['value']
+        );
     }
     return $total_rows;
 }, 10, 2 );
