@@ -1430,6 +1430,50 @@ textarea::placeholder {
   border-radius: var(--feedus-border-radius-pill);
 }
 
+/* --------------------------------------------------------------------------
+   19-1. 주문 완료(Thank You) 페이지 - 배송주소만 표시, 청구주소 숨김
+   -------------------------------------------------------------------------- */
+
+/* 청구 주소 숨김 */
+.woocommerce-customer-details .woocommerce-column--billing-address {
+  display: none !important;
+}
+
+/* 청구 주소 제목이 직접 나올 경우 숨김 (Bricks 구조) */
+.woocommerce-customer-details .woocommerce-column__title {
+  display: none !important;
+}
+
+/* 배송 주소 컬럼만 표시 */
+.woocommerce-customer-details .woocommerce-column--shipping-address {
+  display: block !important;
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+/* 배송 주소 제목 표시 */
+.woocommerce-customer-details .woocommerce-column--shipping-address .woocommerce-column__title {
+  display: block !important;
+}
+
+/* 청구 주소만 단독으로 있을 때 (배송 주소 없는 경우) 전체 섹션 숨김 */
+.woocommerce-customer-details:not(:has(.woocommerce-column--shipping-address)) {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   19-2. 총계 행 & 주의메세지 스타일
+   -------------------------------------------------------------------------- */
+
+/* 총계 행 강조 */
+.feedus-total-row th,
+.feedus-total-row td {
+  font-weight: var(--fw-bold) !important;
+  font-size: 1.1rem;
+  color: var(--feedus-primary);
+}
+
 /* ==========================================================================
    20. PRINT STYLES
    ========================================================================== */
