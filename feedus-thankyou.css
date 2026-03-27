@@ -15,6 +15,12 @@
   display: none !important;
 }
 
+/* 결제 방법 행 강제 숨김 */
+.woocommerce-table--order-details tfoot tr:has(th[scope="row"]:empty),
+.woocommerce-table--order-details tfoot tr:last-child:not(:has(.woocommerce-Price-amount)) {
+  display: none !important;
+}
+
 
 /* --------------------------------------------------------------------------
    2. 주문 상품 정보 테이블 - border 제거
