@@ -1477,14 +1477,3 @@ textarea::placeholder {
     grid-template-columns: 1fr !important;
   }
 }
-
-/* ==========================================================================
-   16. CHECKOUT - 체크아웃 스타일
-   ========================================================================== */
-
-.feedus-address-search-btn,
-.feedus-address-search-btn span,
-.feedus-address-search-btn svg {
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-}
