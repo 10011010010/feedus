@@ -6,6 +6,7 @@
  * 1. 대시보드 메뉴 삭제
  * 2. 다운로드 메뉴 삭제
  * 3. My Account 첫 화면에 주문 목록 표시 (대시보드 → 주문)
+ * 4. 대시보드 환영 메시지 삭제
  */
 
 // 대시보드, 다운로드 메뉴 삭제
@@ -17,8 +18,13 @@ function feedus_remove_my_account_links( $menu_links ) {
 	return $menu_links;
 }
 
-// My Account 첫 화면(대시보드)을 주문 목록으로 대체
-add_action( 'woocommerce_account_dashboard', 'feedus_show_orders_on_dashboard' );
+// 대시보드 환영 메시지("안녕하세요, OOO 님" + 안내 문구) 삭제 + 주문 목록으로 대체
+add_action( 'init', 'feedus_replace_dashboard_with_orders' );
+
+function feedus_replace_dashboard_with_orders() {
+	remove_action( 'woocommerce_account_dashboard', 'woocommerce_account_dashboard_output', 10 );
+	add_action( 'woocommerce_account_dashboard', 'feedus_show_orders_on_dashboard' );
+}
 
 function feedus_show_orders_on_dashboard() {
 	wc_get_template(
