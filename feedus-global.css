@@ -1477,3 +1477,10 @@ textarea::placeholder {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Thank You 페이지: 은행 세부 사항(BACS) 섹션 완전 제거
+   -------------------------------------------------------------------------- */
+section.woocommerce-bacs-bank-details {
+  display: none !important;
+}
