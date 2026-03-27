@@ -149,6 +149,8 @@
   font-weight: 600;
   color: var(--feedus-primary);
   margin-bottom: 16px !important;
+  padding-top: 10px;
+  border-top: 1px solid var(--feedus-primary);
 }
 
 @media screen and (max-width: 767px) {
@@ -162,6 +164,7 @@
    6. 전체 감사 페이지 섹션 간격
    -------------------------------------------------------------------------- */
 .woocommerce-order-details {
+  margin-top: 10px;
   margin-bottom: 30px;
 }
 
