@@ -94,17 +94,17 @@
 
 /* --------------------------------------------------------------------------
    2-1. 총계 행 강조 (34px 가격)
-   결제 방법 행(마지막)이 숨겨져 있으므로 총계 = nth-last-child(2)
+   tfoot 마지막 행 = 총계
    -------------------------------------------------------------------------- */
-.woocommerce-order-details .woocommerce-table--order-details tfoot tr:nth-last-child(2) th,
-.woocommerce-order-details .woocommerce-table--order-details tfoot tr:nth-last-child(2) td {
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child th,
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child td {
   font-weight: 600 !important;
   font-size: 18px !important;
   padding-top: 20px !important;
 }
 
-.woocommerce-order-details .woocommerce-table--order-details tfoot tr:nth-last-child(2) td .woocommerce-Price-amount,
-.woocommerce-order-details .woocommerce-table--order-details tfoot tr:nth-last-child(2) td .woocommerce-Price-amount span {
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount,
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount span {
   font-size: 34px !important;
   font-weight: 600 !important;
   line-height: 1.2 !important;
