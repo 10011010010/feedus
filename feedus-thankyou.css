@@ -140,14 +140,22 @@
 }
 
 /* --------------------------------------------------------------------------
-   5. 주문 상품 정보 제목 스타일
+   5. 주문 상품 정보 / 배송지 정보 제목 스타일
    -------------------------------------------------------------------------- */
-.woocommerce-order-details__title {
+.woocommerce-order-details__title,
+.woocommerce-column--shipping-address .woocommerce-column__title {
   font-family: var(--feedus-font-heading);
-  font-size: 20px;
+  font-size: 34px;
   font-weight: 600;
   color: var(--feedus-primary);
   margin-bottom: 16px !important;
+}
+
+@media screen and (max-width: 767px) {
+  .woocommerce-order-details__title,
+  .woocommerce-column--shipping-address .woocommerce-column__title {
+    font-size: 28px;
+  }
 }
 
 /* --------------------------------------------------------------------------
