@@ -1430,6 +1430,22 @@ textarea::placeholder {
   border-radius: var(--feedus-border-radius-pill);
 }
 
+/* Order Received (Thank You) - 총계 가격 34px */
+.woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount,
+.woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount *,
+.woocommerce-table--order-details tfoot tr:last-child td bdi,
+.woocommerce-table--order-details tfoot tr:last-child td span {
+  font-size: 34px !important;
+  font-weight: 600 !important;
+}
+
+.woocommerce-table--order-details tfoot tr:last-child th,
+.woocommerce-table--order-details tfoot tr:last-child td {
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  padding-top: 20px !important;
+}
+
 /* ==========================================================================
    20. PRINT STYLES
    ========================================================================== */
