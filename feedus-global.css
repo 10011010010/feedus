@@ -1430,20 +1430,25 @@ textarea::placeholder {
   border-radius: var(--feedus-border-radius-pill);
 }
 
-/* Order Received (Thank You) - 총계 가격 34px */
-.woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount,
-.woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount *,
-.woocommerce-table--order-details tfoot tr:last-child td bdi,
-.woocommerce-table--order-details tfoot tr:last-child td span {
+/* Order Received (Thank You) - 총계 행 가격 34px
+   결제 방법 행(마지막)이 숨겨져 있으므로 총계 = nth-last-child(2) */
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:nth-last-child(2) td .woocommerce-Price-amount,
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:nth-last-child(2) td .woocommerce-Price-amount span {
   font-size: 34px !important;
   font-weight: 600 !important;
+  line-height: 1.2 !important;
 }
 
-.woocommerce-table--order-details tfoot tr:last-child th,
-.woocommerce-table--order-details tfoot tr:last-child td {
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:nth-last-child(2) th,
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:nth-last-child(2) td {
   font-weight: 600 !important;
   font-size: 18px !important;
   padding-top: 20px !important;
+}
+
+/* 결제 방법 행 숨김 */
+.woocommerce-table--order-details tfoot tr.feedus-hide {
+  display: none !important;
 }
 
 /* ==========================================================================
