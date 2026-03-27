@@ -141,8 +141,8 @@ function feedus_thankyou_page_customizations() {
             var label = th.textContent.trim().replace(':', '');
 
             if (label === '결제 방법') {
-                row.style.display = 'none';
-                row.remove();
+                row.classList.add('feedus-hide');
+                row.style.cssText = 'display:none!important';
             }
 
             if (label === '배송') {
