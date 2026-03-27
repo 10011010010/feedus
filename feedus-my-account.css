@@ -19,3 +19,8 @@
 .woocommerce-MyAccount-orders td {
   padding: 4px;
 }
+
+/* 네비게이션 li 하단 마진 제거 */
+.woocommerce-MyAccount-navigation-link {
+  margin-bottom: 0;
+}
