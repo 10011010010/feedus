@@ -312,7 +312,10 @@
   text-decoration: underline;
 }
 
-/* ── Shipping row hide (배송 영역 WPCode에서 이미 숨김 처리) ── */
+/* ── Shipping: 무료배송 존재 시 유료배송 옵션 숨김 ── */
+#shipping_method:has(.shipping_method[value^="free_shipping"]) li:not(:has(.shipping_method[value^="free_shipping"])) {
+  display: none !important;
+}
 
 /* ── Responsive: Mobile ── */
 @media screen and (max-width: 767px) {
