@@ -326,6 +326,10 @@ label[for="shipping_method_0_free_shipping1"] {
   margin: 0 !important;
 }
 
+#shipping_method li:has(#shipping_method_0_free_shipping1) {
+  margin-bottom: 0 !important;
+}
+
 /* ── Responsive: Mobile ── */
 @media screen and (max-width: 767px) {
   .woocommerce-checkout h3 {
