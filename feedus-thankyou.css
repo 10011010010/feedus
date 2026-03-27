@@ -97,9 +97,10 @@
 }
 
 /* 총계 가격 폰트 사이즈 */
-.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount {
-  font-size: 34px;
-  font-weight: 600;
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount,
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child td .woocommerce-Price-amount * {
+  font-size: 34px !important;
+  font-weight: 600 !important;
 }
 
 /* --------------------------------------------------------------------------
