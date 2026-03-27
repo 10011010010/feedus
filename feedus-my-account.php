@@ -74,6 +74,9 @@ function feedus_myaccount_kakao_address_script() {
 		.woocommerce-EditAccountForm fieldset legend {
 			display: none !important;
 		}
+		#account_display_name_description {
+			display: none !important;
+		}
 	</style>
 	<script>
 	(function($) {
