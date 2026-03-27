@@ -49,6 +49,11 @@
   border-bottom: 1px solid var(--feedus-primary, #007D51) !important;
 }
 
+/* 요일 셀 하단 라인 흰색 */
+#footable_329 th.feedus-schedule-day {
+  border-bottom: 1px solid #ffffff !important;
+}
+
 #footable_329.feedus-transposed tbody tr:last-child {
   border-bottom: none !important;
 }
