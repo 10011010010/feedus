@@ -157,7 +157,7 @@
 .woocommerce-order-details__title,
 .woocommerce-column--shipping-address .woocommerce-column__title {
   font-family: var(--feedus-font-heading);
-  font-size: 34px;
+  font-size: 28px !important;
   font-weight: 600;
   color: var(--feedus-primary);
   margin-bottom: 16px !important;
@@ -168,7 +168,7 @@
 @media screen and (max-width: 767px) {
   .woocommerce-order-details__title,
   .woocommerce-column--shipping-address .woocommerce-column__title {
-    font-size: 28px;
+    font-size: 24px !important;
   }
 }
 
