@@ -113,6 +113,15 @@ function feedus_thankyou_page_customizations() {
         // 5. "배송 주소" → "배송지 정보"
         var shippingTitle = document.querySelector('.woocommerce-column--shipping-address .woocommerce-column__title');
         if (shippingTitle) shippingTitle.textContent = '배송지 정보';
+
+        // 7. tfoot 결제 방법 행 삭제
+        var tfootRows = document.querySelectorAll('.woocommerce-table--order-details tfoot tr');
+        tfootRows.forEach(function(row) {
+            var th = row.querySelector('th');
+            if (th && th.textContent.trim().replace(':', '') === '결제 방법') {
+                row.remove();
+            }
+        });
     })();
     </script>
     <?php
