@@ -18,6 +18,19 @@
 add_filter( 'woocommerce_thankyou_order_received_text', '__return_empty_string' );
 
 // ──────────────────────────────────────────────
+// 7. 결제 방법 행 서버 사이드 제거 + 배송 라벨 변경
+// ──────────────────────────────────────────────
+add_filter( 'woocommerce_get_order_item_totals', function( $total_rows, $order ) {
+    if ( isset( $total_rows['payment_method'] ) ) {
+        unset( $total_rows['payment_method'] );
+    }
+    if ( isset( $total_rows['shipping'] ) ) {
+        $total_rows['shipping']['label'] = '배송비:';
+    }
+    return $total_rows;
+}, 10, 2 );
+
+// ──────────────────────────────────────────────
 // 6. 배송 주소 포맷에 전화번호 필드 추가 (서버 사이드)
 //    <address> 태그 안에 직접 출력됨
 // ──────────────────────────────────────────────
