@@ -12,7 +12,8 @@
   font-family: var(--feedus-font-body);
   font-size: 18px;
   font-weight: 600;
-  color: var(--feedus-primary);
+  color: var(--feedus-white, #ffffff);
+  background-color: var(--feedus-primary);
   padding: 14px 16px;
   text-align: left;
   white-space: nowrap;
