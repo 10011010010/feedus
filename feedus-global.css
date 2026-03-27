@@ -1463,15 +1463,34 @@ textarea::placeholder {
 }
 
 /* --------------------------------------------------------------------------
-   19-2. 총계 행 & 주의메세지 스타일
+   19-2. 주문 완료 테이블 tfoot - 총계 & 주의메세지
+   마지막 행이 총계 또는 주의메세지일 수 있음
    -------------------------------------------------------------------------- */
 
-/* 총계 행 강조 */
+/* 총계 행 강조 (클래스 기반) */
 .feedus-total-row th,
 .feedus-total-row td {
   font-weight: var(--fw-bold) !important;
   font-size: 1.1rem;
   color: var(--feedus-primary);
+}
+
+/* WooCommerce 기본 order-total 클래스 대응 */
+.woocommerce-table--order-details tfoot .order-total th,
+.woocommerce-table--order-details tfoot .order-total td {
+  font-weight: var(--fw-bold) !important;
+  font-size: 1.1rem;
+  color: var(--feedus-primary);
+}
+
+/* 주의메세지 행 - 총계와 구분되는 스타일 */
+.feedus-notice-row th,
+.feedus-notice-row td {
+  font-weight: var(--fw-regular) !important;
+  font-size: 0.9rem;
+  color: var(--feedus-gray);
+  padding-top: 12px;
+  border-top: 1px dashed #ddd;
 }
 
 /* ==========================================================================
