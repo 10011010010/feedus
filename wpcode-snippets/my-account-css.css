@@ -1,0 +1,108 @@
+/* ==========================================================================
+   FEEDUS - My Account 페이지 스타일
+   WPCode snippet #363 (CSS 스니펫 - 사이트 전체 헤더)
+   ========================================================================== */
+
+/* 대시보드 인사말 & 안내 문구 숨김 */
+.woocommerce-MyAccount-content > p:first-of-type,
+.woocommerce-MyAccount-content > p:nth-of-type(2) {
+  display: none;
+}
+
+/* 주문 보기/결제 버튼 패딩 제거 */
+.woocommerce-MyAccount-orders .woocommerce-button.button {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* 주문 테이블 셀 패딩 */
+.woocommerce-MyAccount-orders th,
+.woocommerce-MyAccount-orders td {
+  padding: 4px;
+}
+
+/* 네비게이션 li 하단 마진 제거 및 좌우 패딩 */
+.woocommerce-MyAccount-navigation-link {
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* 주소 표시 페이지: "배송 시 사용될 기본 주소입니다" 숨김 */
+.woocommerce-Addresses ~ p,
+.woocommerce-MyAccount-content > p {
+  display: none;
+}
+
+/* 주소 편집 링크 스타일 */
+.woocommerce-Address-title .edit {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* 우편번호 검색 버튼 */
+.feedus-postcode-search {
+  margin-left: 8px;
+  padding: 8px 16px;
+  background: var(--feedus-primary, #333);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.feedus-postcode-search:hover {
+  opacity: 0.85;
+}
+
+/* 읽기전용 필드 스타일 */
+.woocommerce-address-fields input[readonly] {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+/* 주소 인라인 편집 모달 */
+.feedus-address-inline-edit {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.feedus-address-inline-edit .form-row {
+  margin-bottom: 12px;
+}
+
+.feedus-address-inline-edit label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.feedus-address-inline-edit input,
+.feedus-address-inline-edit select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.feedus-address-inline-edit .feedus-address-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.feedus-address-inline-edit .feedus-address-actions button {
+  padding: 10px 24px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
