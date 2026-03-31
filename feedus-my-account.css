@@ -1,0 +1,158 @@
+/* ==========================================================================
+   FEEDUS - My Account 페이지 스타일
+   WPCode snippet #363 (CSS 스니펫 - 사이트 전체 헤더)
+   ========================================================================== */
+
+/* 대시보드 인사말 & 안내 문구 숨김 */
+.woocommerce-MyAccount-content > p:first-of-type,
+.woocommerce-MyAccount-content > p:nth-of-type(2) {
+  display: none;
+}
+
+/* 주문 보기/결제 버튼 패딩 제거 */
+.woocommerce-MyAccount-orders .woocommerce-button.button {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* 주문 테이블 셀 패딩 */
+.woocommerce-MyAccount-orders th,
+.woocommerce-MyAccount-orders td {
+  padding: 4px;
+}
+
+/* 네비게이션 li 하단 마진 제거 및 좌우 패딩 */
+.woocommerce-MyAccount-navigation-link {
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* 주소 표시 페이지: "배송 시 사용될 기본 주소입니다" 숨김 */
+.woocommerce-Addresses ~ p,
+.woocommerce-MyAccount-content > p {
+  display: none;
+}
+
+/* 주소 편집 링크 스타일 */
+.woocommerce-Address-title .edit {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* 우편번호 검색 버튼 */
+.feedus-postcode-search {
+  margin-left: 8px;
+  padding: 8px 16px;
+  background: var(--feedus-primary, #007D51);
+  color: #fff !important;
+  border: 1px solid var(--feedus-primary, #007D51) !important;
+  border-radius: var(--feedus-border-radius-pill, 50px) !important;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: all var(--feedus-duration-default, 0.2s) ease;
+}
+
+.feedus-postcode-search:hover {
+  background: transparent;
+  color: var(--feedus-primary, #007D51) !important;
+}
+
+/* 읽기전용 필드 스타일 */
+.woocommerce-address-fields input[readonly] {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   주소 인라인 편집 폼 (계정 정보 페이지 스타일과 통일)
+   -------------------------------------------------------------------------- */
+.feedus-address-inline-edit {
+  margin-top: 10px;
+}
+
+.feedus-address-inline-edit .form-row {
+  margin-bottom: 16px !important;
+}
+
+.feedus-address-inline-edit label {
+  display: block;
+  font-family: var(--feedus-font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--feedus-primary, #007D51);
+  margin-bottom: 6px !important;
+}
+
+.feedus-address-inline-edit input,
+.feedus-address-inline-edit select {
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--feedus-black, #1a1a1a);
+  padding: 12px 20px;
+  border: 1px solid var(--feedus-primary, #007D51);
+  border-radius: var(--feedus-border-radius-pill, 50px);
+  background-color: transparent;
+  width: 100%;
+  transition: border-color var(--feedus-duration-default, 0.2s) ease,
+    box-shadow var(--feedus-duration-default, 0.2s) ease;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 30px !important;
+}
+
+.feedus-address-inline-edit input:focus,
+.feedus-address-inline-edit select:focus {
+  outline: none;
+  border-color: var(--feedus-primary, #007D51);
+  box-shadow: 0 0 0 2px rgba(0, 125, 81, 0.15);
+}
+
+.feedus-address-inline-edit input::placeholder {
+  color: rgba(0, 125, 81, 0.4);
+  font-weight: 300;
+}
+
+.feedus-address-inline-edit input[readonly] {
+  background-color: var(--feedus-gray-light, #f2f2f2);
+  cursor: pointer;
+}
+
+/* 저장 버튼 */
+.feedus-address-inline-edit .feedus-address-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.feedus-address-inline-edit .feedus-address-save {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 14px 40px !important;
+  font-family: var(--feedus-font-body);
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary, #007D51) !important;
+  border: 1px solid var(--feedus-primary, #007D51) !important;
+  border-radius: var(--feedus-border-radius-pill, 50px) !important;
+  cursor: pointer;
+  transition: all var(--feedus-duration-medium, 0.3s) ease;
+}
+
+.feedus-address-inline-edit .feedus-address-save:hover {
+  color: var(--feedus-primary, #007D51) !important;
+  background-color: #ffffff !important;
+}
+
+/* 우편번호 행: 검색 버튼과 입력 필드 정렬 */
+.feedus-address-inline-edit .form-row[style*="display:flex"] .feedus-postcode-search {
+  height: 54px;
+  margin-left: 8px;
+  padding: 0 20px;
+}
