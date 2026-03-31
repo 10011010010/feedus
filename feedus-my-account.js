@@ -336,27 +336,34 @@
 
     if (!postcodeField || !address1Field) return;
 
-    // 우편번호 검색 버튼 생성
+    // 주소1 필드를 읽기전용으로 설정
+    address1Field.readOnly = true;
+
+    // 주소 검색 버튼 생성 (체크아웃 페이지와 동일한 스타일)
     var searchBtn = document.createElement('button');
     searchBtn.type = 'button';
-    searchBtn.className = 'button feedus-postcode-search';
-    searchBtn.textContent = '우편번호 검색';
+    searchBtn.className = 'feedus-address-search-btn';
+    searchBtn.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+        '<circle cx="11" cy="11" r="8"></circle>' +
+        '<path d="m21 21-4.3-4.3"></path>' +
+      '</svg>' +
+      '<span>주소 검색</span>';
 
-    var postcodeWrapper = postcodeField.closest('.form-row') || postcodeField.parentElement;
-    postcodeWrapper.style.display = 'flex';
-    postcodeWrapper.style.alignItems = 'center';
-    postcodeWrapper.style.flexWrap = 'wrap';
-    postcodeField.insertAdjacentElement('afterend', searchBtn);
+    // 주소1 필드의 label 뒤에 검색 버튼 삽입
+    var address1Row = address1Field.closest('.form-row') || address1Field.parentElement;
+    var address1Label = address1Row.querySelector('label');
+    if (address1Label) {
+      address1Label.insertAdjacentElement('afterend', searchBtn);
+    }
 
-    postcodeField.readOnly = true;
-    address1Field.readOnly = true;
-    postcodeField.style.backgroundColor = '#f5f5f5';
-    address1Field.style.backgroundColor = '#f5f5f5';
-
-    searchBtn.addEventListener('click', function () {
+    // 주소1 클릭 시에도 검색 열기
+    address1Field.style.cursor = 'pointer';
+    address1Field.addEventListener('click', function () {
       openDaumPostcodeForForm(prefix, postcodeField, address1Field, address2Field, stateField, cityField);
     });
-    postcodeField.addEventListener('click', function () {
+
+    searchBtn.addEventListener('click', function () {
       openDaumPostcodeForForm(prefix, postcodeField, address1Field, address2Field, stateField, cityField);
     });
 
@@ -398,8 +405,10 @@
           stateField.dispatchEvent(new Event('change', { bubbles: true }));
         }
 
+        // 시/도 필드에 sido 값 입력 (CSS로 숨겨져 있지만 저장에 필요)
         if (cityField) {
-          cityField.value = data.sigungu;
+          cityField.value = data.sido;
+          cityField.dispatchEvent(new Event('change', { bubbles: true }));
         }
 
         if (address2Field) {

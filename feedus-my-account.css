@@ -242,3 +242,71 @@
   flex: 0 0 100% !important;
   max-width: 100% !important;
 }
+
+/* --------------------------------------------------------------------------
+   주소 편집 폼 페이지 (/edit-address/shipping/)
+   -------------------------------------------------------------------------- */
+
+/* 배송 주소 편집 제목 */
+.woocommerce-address-fields ~ h2,
+.woocommerce-MyAccount-content > form > h2 {
+  font-size: 28px !important;
+  color: var(--feedus-primary, #007D51) !important;
+  margin-bottom: 20px !important;
+}
+
+/* 성(last_name) 필드 숨김 */
+#shipping_last_name_field {
+  display: none !important;
+}
+
+/* 이름 필드를 전체 너비로 (성 필드 숨겼으므로) */
+#shipping_first_name_field {
+  width: 100% !important;
+  float: none !important;
+}
+
+/* 국가 필드 숨김 (한국 고정) */
+#shipping_country_field {
+  display: none !important;
+}
+
+/* 시/도 필드 숨김 (카카오 API가 자동 입력) */
+#shipping_city_field {
+  display: none !important;
+}
+
+/* 우편번호 필드 숨김 (카카오 API가 자동 입력) */
+#shipping_postcode_field {
+  display: none !important;
+}
+
+/* 주소 검색 버튼 (체크아웃 페이지와 동일) */
+.woocommerce-address-fields .feedus-address-search-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--feedus-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary, #007D51);
+  border: 1px solid var(--feedus-primary, #007D51);
+  border-radius: var(--feedus-border-radius-pill, 50px);
+  padding: 8px 18px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all var(--feedus-duration-default, 0.2s) ease;
+  line-height: 1;
+}
+
+.woocommerce-address-fields .feedus-address-search-btn:hover {
+  background-color: transparent;
+  color: var(--feedus-primary, #007D51) !important;
+}
+
+/* 주소1 입력 읽기전용 */
+.woocommerce-address-fields #shipping_address_1[readonly] {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
