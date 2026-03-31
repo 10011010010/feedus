@@ -23,7 +23,26 @@
   // WooCommerce 주소 표시 페이지 (/edit-address/)
   var addressDisplay = document.querySelector('.woocommerce-Addresses');
   if (addressDisplay) {
+    // 먼저 편집 링크를 header에서 빼서 address 아래로 이동 (항상 실행)
+    moveEditLinks();
+    // 인라인 편집 폼으로 교체
     initInlineAddressForm();
+  }
+
+  /* --------------------------------------------------------------------------
+     편집 링크를 <header> 안에서 <address> 아래로 이동
+     -------------------------------------------------------------------------- */
+  function moveEditLinks() {
+    var cols = addressDisplay.querySelectorAll('.woocommerce-Address');
+    cols.forEach(function (col) {
+      var editLink = col.querySelector('a.edit');
+      var addressEl = col.querySelector('address');
+      if (!editLink || !addressEl) return;
+
+      // header에서 빼서 address 뒤에 삽입
+      editLink.className = 'feedus-edit-address-link';
+      addressEl.insertAdjacentElement('afterend', editLink);
+    });
   }
 
   /* --------------------------------------------------------------------------
@@ -53,13 +72,6 @@
       // 인라인 편집 폼 생성
       var form = createAddressForm(type, parsed);
       col.appendChild(form);
-
-      // 편집 링크를 header에서 빼서 폼 아래에 배치
-      if (editLink) {
-        editLink.className = 'feedus-edit-address-link';
-        editLink.textContent = '기본 편집 페이지로 이동';
-        col.appendChild(editLink);
-      }
     });
   }
 

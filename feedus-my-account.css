@@ -34,11 +34,23 @@
   display: none;
 }
 
-/* 주소 편집 링크 스타일 */
+/* 편집 링크: JS가 header에서 빼서 address 아래로 이동시킴 */
 .woocommerce-Address-title .edit {
-  display: inline-block;
-  margin-left: 10px;
+  display: none !important;
+}
+
+/* JS로 이동된 편집 링크 스타일 */
+.feedus-edit-address-link {
+  display: inline-block !important;
+  margin-top: 10px;
   font-size: 14px;
+  font-weight: 400;
+  color: var(--feedus-gray, #6c757d) !important;
+  text-decoration: underline;
+}
+
+.feedus-edit-address-link:hover {
+  color: var(--feedus-primary, #007D51) !important;
 }
 
 /* 우편번호 검색 버튼 */
@@ -155,21 +167,6 @@
   height: 54px;
   margin-left: 8px;
   padding: 0 20px;
-}
-
-/* 편집 링크: header에서 빼서 폼 아래에 배치 */
-.feedus-edit-address-link {
-  display: block;
-  margin-top: 12px;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--feedus-gray, #6c757d) !important;
-  text-align: right;
-  text-decoration: underline;
-}
-
-.feedus-edit-address-link:hover {
-  color: var(--feedus-primary, #007D51) !important;
 }
 
 /* --------------------------------------------------------------------------
