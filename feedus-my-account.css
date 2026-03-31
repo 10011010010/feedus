@@ -156,3 +156,28 @@
   margin-left: 8px;
   padding: 0 20px;
 }
+
+/* 편집 링크: header에서 빼서 폼 아래에 배치 */
+.feedus-edit-address-link {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--feedus-gray, #6c757d) !important;
+  text-align: right;
+  text-decoration: underline;
+}
+
+.feedus-edit-address-link:hover {
+  color: var(--feedus-primary, #007D51) !important;
+}
+
+/* --------------------------------------------------------------------------
+   내 계정 네비게이션: 불필요한 메뉴 숨김
+   (대시보드, 다운로드, 계정 정보)
+   -------------------------------------------------------------------------- */
+.woocommerce-MyAccount-navigation-link--dashboard,
+.woocommerce-MyAccount-navigation-link--downloads,
+.woocommerce-MyAccount-navigation-link--edit-account {
+  display: none !important;
+}

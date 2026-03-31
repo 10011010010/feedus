@@ -49,11 +49,17 @@
 
       // 기존 주소 표시 숨기기
       addressEl.style.display = 'none';
-      if (editLink) editLink.style.display = 'none';
 
       // 인라인 편집 폼 생성
       var form = createAddressForm(type, parsed);
       col.appendChild(form);
+
+      // 편집 링크를 header에서 빼서 폼 아래에 배치
+      if (editLink) {
+        editLink.className = 'feedus-edit-address-link';
+        editLink.textContent = '기본 편집 페이지로 이동';
+        col.appendChild(editLink);
+      }
     });
   }
 
