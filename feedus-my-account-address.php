@@ -57,10 +57,21 @@ add_filter('woocommerce_formatted_address_replacements', function ($replacements
     return $replacements;
 }, 10, 2);
 
-// 4. 배송 주소 편집 폼에서 성(last_name) 필드를 필수 해제
+// 4. 배송 주소 편집 폼에서 성(last_name) 필드를 필수 해제 + 전화번호 필드 추가
 add_filter('woocommerce_shipping_fields', function ($fields) {
     if (isset($fields['shipping_last_name'])) {
         $fields['shipping_last_name']['required'] = false;
     }
+
+    // 배송 주소에 전화번호 필드 추가
+    $fields['shipping_phone'] = array(
+        'label'       => '전화번호',
+        'required'    => false,
+        'type'        => 'tel',
+        'class'       => array('form-row-wide'),
+        'priority'    => 100,
+        'placeholder' => '010-0000-0000',
+    );
+
     return $fields;
 });

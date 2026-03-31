@@ -322,7 +322,7 @@
   }
 
   /* --------------------------------------------------------------------------
-     주소 편집 페이지 - 카카오 우편번호 API 연동 (기존 WooCommerce 폼)
+     주소 편집 페이지 - 카카오 우편번호 API 연동 (체크아웃 페이지와 동일)
      -------------------------------------------------------------------------- */
   function initAddressEdit() {
     var prefix = getAddressPrefix();
@@ -331,41 +331,52 @@
     var postcodeField = document.getElementById(prefix + '_postcode');
     var address1Field = document.getElementById(prefix + '_address_1');
     var address2Field = document.getElementById(prefix + '_address_2');
-    var stateField = document.getElementById(prefix + '_state');
     var cityField = document.getElementById(prefix + '_city');
 
-    if (!postcodeField || !address1Field) return;
+    if (!address1Field) return;
 
-    // 주소1 필드를 읽기전용으로 설정
+    // 주소1, 우편번호, 시/도 읽기전용
     address1Field.readOnly = true;
+    if (postcodeField) postcodeField.readOnly = true;
+    if (cityField) cityField.readOnly = true;
 
     // 주소 검색 버튼 생성 (체크아웃 페이지와 동일한 스타일)
-    var searchBtn = document.createElement('button');
-    searchBtn.type = 'button';
-    searchBtn.className = 'feedus-address-search-btn';
-    searchBtn.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
-        '<circle cx="11" cy="11" r="8"></circle>' +
-        '<path d="m21 21-4.3-4.3"></path>' +
-      '</svg>' +
-      '<span>주소 검색</span>';
-
-    // 주소1 필드의 label 뒤에 검색 버튼 삽입
     var address1Row = address1Field.closest('.form-row') || address1Field.parentElement;
-    var address1Label = address1Row.querySelector('label');
-    if (address1Label) {
-      address1Label.insertAdjacentElement('afterend', searchBtn);
+    if (!address1Row.querySelector('.feedus-address-search-btn')) {
+      var searchBtn = document.createElement('button');
+      searchBtn.type = 'button';
+      searchBtn.className = 'feedus-address-search-btn';
+      searchBtn.innerHTML =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+          '<circle cx="11" cy="11" r="8"></circle>' +
+          '<path d="m21 21-4.3-4.3"></path>' +
+        '</svg>' +
+        '<span>주소 검색</span>';
+
+      var address1Label = address1Row.querySelector('label');
+      if (address1Label) {
+        address1Label.insertAdjacentElement('afterend', searchBtn);
+      }
+
+      searchBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openPostcodePopup(prefix);
+      });
     }
 
     // 주소1 클릭 시에도 검색 열기
     address1Field.style.cursor = 'pointer';
     address1Field.addEventListener('click', function () {
-      openDaumPostcodeForForm(prefix, postcodeField, address1Field, address2Field, stateField, cityField);
+      openPostcodePopup(prefix);
     });
 
-    searchBtn.addEventListener('click', function () {
-      openDaumPostcodeForForm(prefix, postcodeField, address1Field, address2Field, stateField, cityField);
-    });
+    // 우편번호 클릭 시에도 검색 열기
+    if (postcodeField) {
+      postcodeField.style.cursor = 'pointer';
+      postcodeField.addEventListener('click', function () {
+        openPostcodePopup(prefix);
+      });
+    }
 
     if (address2Field) {
       address2Field.placeholder = '상세주소를 입력하세요';
@@ -375,37 +386,56 @@
     var phoneField = document.getElementById(prefix + '_phone');
     if (phoneField) {
       autoFormatPhoneInput(phoneField);
+      // 기존 값이 있으면 포맷 적용
+      if (phoneField.value) {
+        phoneField.value = formatKoreanPhone(phoneField.value);
+      }
     }
   }
 
-  function openDaumPostcodeForForm(prefix, postcodeField, address1Field, address2Field, stateField, cityField) {
-    if (typeof daum === 'undefined' || !daum.Postcode) {
-      alert('카카오 우편번호 API가 로드되지 않았습니다.');
+  /* --------------------------------------------------------------------------
+     카카오 우편번호 팝업 (체크아웃 페이지와 동일한 방식)
+     -------------------------------------------------------------------------- */
+  function openPostcodePopup(prefix) {
+    if (typeof daum === 'undefined' || typeof daum.Postcode === 'undefined') {
+      alert('주소 검색 서비스를 불러오는 중입니다. 잠시 후 다시 시도해 주세요.');
       return;
     }
 
     new daum.Postcode({
       oncomplete: function (data) {
-        postcodeField.value = data.zonecode;
+        var roadAddr = data.roadAddress;
+        var jibunAddr = data.jibunAddress;
+        var addr = roadAddr || jibunAddr;
 
-        var fullAddress = data.roadAddress || data.jibunAddress;
-        if (data.buildingName) {
-          fullAddress += ' (' + data.buildingName + ')';
-        }
-        address1Field.value = fullAddress;
-
-        if (stateField) {
-          var sido = convertSido(data.sido);
-          if (stateField.tagName === 'SELECT') {
-            var option = stateField.querySelector('option[value="' + sido + '"]');
-            stateField.value = option ? sido : data.sido;
-          } else {
-            stateField.value = data.sido;
+        var extraAddr = '';
+        if (data.addressType === 'R') {
+          if (data.bname && /[동|로|가]$/g.test(data.bname)) {
+            extraAddr += data.bname;
           }
-          stateField.dispatchEvent(new Event('change', { bubbles: true }));
+          if (data.buildingName) {
+            extraAddr += (extraAddr ? ', ' : '') + data.buildingName;
+          }
+          if (extraAddr) {
+            extraAddr = ' (' + extraAddr + ')';
+          }
         }
 
-        // 시/도 필드에 sido 값 입력 (CSS로 숨겨져 있지만 저장에 필요)
+        var postcodeField = document.getElementById(prefix + '_postcode');
+        var address1Field = document.getElementById(prefix + '_address_1');
+        var address2Field = document.getElementById(prefix + '_address_2');
+        var cityField = document.getElementById(prefix + '_city');
+
+        if (postcodeField) {
+          postcodeField.value = data.zonecode;
+          postcodeField.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+
+        if (address1Field) {
+          address1Field.value = addr + extraAddr;
+          address1Field.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+
         if (cityField) {
           cityField.value = data.sido;
           cityField.dispatchEvent(new Event('change', { bubbles: true }));
@@ -415,10 +445,9 @@
           address2Field.value = '';
           address2Field.focus();
         }
-
-        postcodeField.dispatchEvent(new Event('change', { bubbles: true }));
-        address1Field.dispatchEvent(new Event('change', { bubbles: true }));
-      }
+      },
+      width: '100%',
+      height: '100%'
     }).open();
   }
 

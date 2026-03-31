@@ -305,8 +305,13 @@
   color: var(--feedus-primary, #007D51) !important;
 }
 
-/* 주소1 입력 읽기전용 */
-.woocommerce-address-fields #shipping_address_1[readonly] {
-  background-color: #f5f5f5;
+/* 읽기전용 필드 배경 */
+.woocommerce-address-fields input[readonly] {
+  background-color: #f5f5f5 !important;
   cursor: pointer;
+}
+
+/* 전화번호 필드: 전체 너비 */
+#shipping_phone_field {
+  width: 100% !important;
 }
