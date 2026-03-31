@@ -10,8 +10,12 @@
  */
 
 // 1. 배송 주소 표시 시 전화번호를 formatted address 데이터에 포함
+//    shipping_phone이 없으면 billing_phone을 fallback으로 사용
 add_filter('woocommerce_my_account_my_address_formatted_address', function ($address, $customer_id, $address_type) {
     $phone = get_user_meta($customer_id, $address_type . '_phone', true);
+    if (!$phone && $address_type === 'shipping') {
+        $phone = get_user_meta($customer_id, 'billing_phone', true);
+    }
     if ($phone) {
         $address['phone'] = $phone;
     }
