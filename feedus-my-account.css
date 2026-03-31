@@ -45,12 +45,12 @@
   margin-top: 10px;
   font-size: 14px;
   font-weight: 400;
-  color: var(--feedus-gray, #6c757d) !important;
+  color: var(--feedus-primary, #007D51) !important;
   text-decoration: underline;
 }
 
 .feedus-edit-address-link:hover {
-  color: var(--feedus-primary, #007D51) !important;
+  opacity: 0.7;
 }
 
 /* 우편번호 검색 버튼 */
@@ -198,6 +198,24 @@
   box-shadow: none !important;
   padding: 0 !important;
   transition: none !important;
+}
+
+/* 주소 제목 h2 스타일 */
+.woocommerce-Address-title h2 {
+  font-size: 18px !important;
+  color: var(--feedus-primary, #007D51) !important;
+}
+
+/* 주소 컨테이너 overflow 리셋 (편집 링크가 잘리지 않도록) */
+.woocommerce-Addresses,
+.woocommerce-Addresses .woocommerce-Address {
+  overflow: visible !important;
+}
+
+/* 주소 텍스트 프라이머리 색상 */
+.woocommerce-Address address,
+.woocommerce-Address .feedus-edit-address-link {
+  color: var(--feedus-primary, #007D51) !important;
 }
 
 /* --------------------------------------------------------------------------
