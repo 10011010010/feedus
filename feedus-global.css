@@ -1431,7 +1431,37 @@ textarea::placeholder {
 }
 
 /* ==========================================================================
-   20. PRINT STYLES
+   20. ADDRESS SEARCH BUTTON - 카카오 주소 검색 버튼
+   ========================================================================== */
+.feedus-address-search-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--feedus-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary);
+  border: 1px solid var(--feedus-primary);
+  border-radius: var(--feedus-border-radius-pill);
+  padding: 8px 18px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all var(--feedus-duration-default) ease;
+  line-height: 1;
+}
+
+.feedus-address-search-btn:hover {
+  background-color: transparent;
+  color: var(--feedus-primary) !important;
+}
+
+.feedus-address-search-btn svg {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   21. PRINT STYLES
    ========================================================================== */
 @media print {
   *,
