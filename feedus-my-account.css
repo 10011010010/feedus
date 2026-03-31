@@ -178,3 +178,38 @@
 .woocommerce-MyAccount-navigation-link--edit-account {
   display: none !important;
 }
+
+/* --------------------------------------------------------------------------
+   글로벌 header 셀렉터 리셋
+   feedus-global.css의 `header` 셀렉터가 WooCommerce <header> 태그에
+   position:fixed 등을 적용하여 레이아웃이 깨지는 문제 수정
+   -------------------------------------------------------------------------- */
+.woocommerce-Address-title,
+.woocommerce-MyAccount-content header {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  width: auto !important;
+  height: auto !important;
+  z-index: auto !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  transition: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   청구 주소 숨김 (배송 주소만 표시)
+   -------------------------------------------------------------------------- */
+.woocommerce-Addresses .woocommerce-Address:first-child {
+  display: none !important;
+}
+
+/* 배송 주소를 전체 너비로 */
+.woocommerce-Addresses .woocommerce-Address:last-child {
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
