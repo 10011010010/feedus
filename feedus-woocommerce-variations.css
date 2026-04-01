@@ -94,11 +94,12 @@
   background-color: #ffffff;
 }
 
-/* 7) Button padding */
+/* 7) Button padding & font size */
 .variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart,
 .variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
   padding: 14px 40px;
   width: 100% !important;
+  font-size: 20px !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
@@ -124,6 +125,11 @@
 .wc-locked-variation-qty::-webkit-outer-spin-button {
   opacity: 1 !important;
   -webkit-appearance: auto !important;
+}
+
+/* 9) Simple product "장바구니" button font size */
+.brxe-product-add-to-cart > form.cart .single_add_to_cart_button {
+  font-size: 20px !important;
 }
 
 /* Fix: Mobile button visibility */
