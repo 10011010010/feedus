@@ -198,14 +198,34 @@ h6, .brxe-heading[data-tag="h6"] {
 
 /* --- p : 본문 텍스트 (디자인 시안: 18pt / 27pt / tracking -30) --- */
 p, .brxe-text-basic,
-li, span, label, select, option, textarea {
+li, select, option, textarea {
   font-family: var(--feedus-font-body);
   font-size: 18px;
-  color: var(--feedus-primary);
+  color: var(--feedus-primary) !important;
   font-weight: 400;
   line-height: 150%;
   letter-spacing: -0.03em;
   margin: 0 0 20px 0 !important;
+}
+
+label {
+  font-family: var(--feedus-font-body);
+  font-size: 18px;
+  color: var(--feedus-primary) !important;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  margin: 0 0 10px 0 !important;
+}
+
+span {
+  font-family: var(--feedus-font-body);
+  font-size: 18px;
+  color: var(--feedus-primary) !important;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  margin: 0;
 }
 
 a {
