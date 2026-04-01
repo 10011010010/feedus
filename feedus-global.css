@@ -218,6 +218,16 @@ label {
   margin: 0 0 10px 0 !important;
 }
 
+span {
+  font-family: var(--feedus-font-body);
+  font-size: 18px;
+  color: var(--feedus-primary);
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
 a {
   color: var(--feedus-primary);
   text-decoration: none;
