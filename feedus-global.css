@@ -1431,8 +1431,22 @@ textarea::placeholder {
 }
 
 /* ==========================================================================
-   20. ADDRESS SEARCH BUTTON - 카카오 주소 검색 버튼
+   20. WOOCOMMERCE ADDRESS FIELDS - 주소 편집 페이지
    ========================================================================== */
+.woocommerce-address-fields h2 {
+  font-size: 24px;
+}
+
+.woocommerce-address-fields label,
+.woocommerce-address-fields input,
+.woocommerce-address-fields select,
+.woocommerce-address-fields .button {
+  font-size: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   ADDRESS SEARCH BUTTON - 카카오 주소 검색 버튼
+   -------------------------------------------------------------------------- */
 .feedus-address-search-btn {
   display: inline-flex;
   align-items: center;
