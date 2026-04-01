@@ -198,7 +198,7 @@ h6, .brxe-heading[data-tag="h6"] {
 
 /* --- p : 본문 텍스트 (디자인 시안: 18pt / 27pt / tracking -30) --- */
 p, .brxe-text-basic,
-li, span, select, option, textarea {
+li, select, option, textarea {
   font-family: var(--feedus-font-body);
   font-size: 18px;
   color: var(--feedus-primary);
