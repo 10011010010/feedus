@@ -7,42 +7,55 @@
    주소 편집 페이지 폰트 크기
    -------------------------------------------------------------------------- */
 .woocommerce-address-fields h2 {
-  font-size: 24px;
+  font-size: 24px !important;
 }
 
 .woocommerce-address-fields label,
 .woocommerce-address-fields input,
 .woocommerce-address-fields select,
 .woocommerce-address-fields .button {
-  font-size: 15px;
+  font-size: 15px !important;
 }
 
 /* --------------------------------------------------------------------------
-   카카오 주소 검색 버튼
+   카카오 주소 검색 버튼 (체크아웃 + 주소 편집 공통)
    -------------------------------------------------------------------------- */
-.feedus-address-search-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--feedus-font-body);
-  font-size: 15px;
-  font-weight: 500;
+button.feedus-address-search-btn,
+.woocommerce-address-fields button.feedus-address-search-btn,
+.woocommerce-checkout button.feedus-address-search-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--feedus-font-body) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
   color: #ffffff !important;
-  background-color: var(--feedus-primary);
-  border: 1px solid var(--feedus-primary);
-  border-radius: var(--feedus-border-radius-pill);
-  padding: 8px 18px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: all var(--feedus-duration-default) ease;
-  line-height: 1;
+  background-color: var(--feedus-primary) !important;
+  border: 1px solid var(--feedus-primary) !important;
+  border-radius: var(--feedus-border-radius-pill) !important;
+  padding: 8px 18px !important;
+  margin-bottom: 10px !important;
+  cursor: pointer !important;
+  transition: all var(--feedus-duration-default) ease !important;
+  line-height: 1 !important;
 }
 
-.feedus-address-search-btn:hover {
-  background-color: transparent;
+button.feedus-address-search-btn:hover,
+.woocommerce-address-fields button.feedus-address-search-btn:hover,
+.woocommerce-checkout button.feedus-address-search-btn:hover {
+  background-color: transparent !important;
   color: var(--feedus-primary) !important;
 }
 
-.feedus-address-search-btn svg {
-  flex-shrink: 0;
+button.feedus-address-search-btn span,
+button.feedus-address-search-btn svg {
+  font-size: 15px !important;
+  line-height: 1 !important;
+  margin-bottom: 0 !important;
+}
+
+button.feedus-address-search-btn svg {
+  flex-shrink: 0 !important;
+  width: 18px !important;
+  height: 18px !important;
 }
