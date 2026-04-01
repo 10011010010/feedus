@@ -1,0 +1,23 @@
+/* ==========================================================================
+   FEEDUS - 로그아웃 상태 로그인 폼 스타일
+   WooCommerce My Account 로그인 페이지
+   ========================================================================== */
+
+/* 로그인 폼 가운데 정렬 */
+.woocommerce-account .woocommerce-form-login {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 로그인 제목(h2) 가운데 정렬 */
+.woocommerce-account #brxe-trvuhl > h2 {
+  text-align: center;
+}
+
+/* 로그인 폼 테두리 제거 */
+.woocommerce-account .woocommerce-form-login {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
