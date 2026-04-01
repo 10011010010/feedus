@@ -12,6 +12,11 @@
 
 /* 로그인 제목(h2) 가운데 정렬 */
 .woocommerce-account #brxe-trvuhl > h2 {
+  text-align: center !important;
+}
+
+/* 비밀번호 분실 링크 가운데 정렬 */
+.woocommerce-account .woocommerce-LostPassword {
   text-align: center;
 }
 
