@@ -1,0 +1,58 @@
+/* ==========================================================================
+   FEEDUS - Checkout 2컬럼 레이아웃 개선
+   ========================================================================== */
+
+/* 1. 배송 필드 영역 숨김 (다른 주소로 배송할까요?) */
+.woocommerce-checkout .woocommerce-shipping-fields {
+  display: none !important;
+}
+
+/* 2. 2컬럼 레이아웃: 좌측(청구+주문메모) / 우측(주문요약+결제)
+   form.checkout 자식 구조:
+   - div.col2-set > div.col-1 (billing)
+   - div.col-2 (shipping[숨김] + additional fields[주문메모])
+   - div (order review heading + order review + payment)
+*/
+.woocommerce-checkout form.checkout {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+/* 모바일: 1컬럼 */
+.woocommerce-checkout form.checkout > * {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  /* 좌측: 청구 필드 */
+  .woocommerce-checkout form.checkout > #customer_details {
+    width: calc(50% - 20px);
+    margin-right: 40px;
+  }
+
+  /* 좌측: 주문 메모 (col-2 = shipping + additional) */
+  .woocommerce-checkout form.checkout > .col-2 {
+    width: calc(50% - 20px);
+    margin-right: 40px;
+  }
+
+  /* 우측: 주문 요약 + 결제 */
+  .woocommerce-checkout form.checkout > div:last-child {
+    width: calc(50% - 20px);
+    position: sticky;
+    top: calc(var(--feedus-header-height, 90px) + 20px);
+    align-self: flex-start;
+  }
+}
+
+/* col2-set 내부는 1컬럼으로 */
+.woocommerce-checkout .col2-set {
+  display: block !important;
+}
+
+.woocommerce-checkout .col2-set .col-1,
+.woocommerce-checkout .col2-set .col-2 {
+  width: 100% !important;
+  float: none !important;
+}
