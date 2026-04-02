@@ -11,30 +11,30 @@
 
 .tablepress th,
 .tablepress td {
-  border: 1px solid var(--feedus-primary);
+  border: 1px solid var(--feedus-primary) !important;
   padding: 10px 14px;
   font-size: 16px !important;
   font-weight: 500 !important;
-  color: var(--feedus-primary);
+  color: var(--feedus-primary) !important;
   text-align: left;
 }
 
 /* 헤더: 프라이머리 배경 + 흰색 글자 */
 .tablepress thead th {
-  background-color: var(--feedus-primary);
-  color: #ffffff;
+  background-color: var(--feedus-primary) !important;
+  color: #ffffff !important;
 }
 
 /* 교차 행 */
-.tablepress tbody tr:nth-child(even) {
-  background-color: #F2F8F6;
+.tablepress tbody tr:nth-child(even) td {
+  background-color: #F2F8F6 !important;
 }
 
-.tablepress tbody tr:nth-child(odd) {
-  background-color: #ffffff;
+.tablepress tbody tr:nth-child(odd) td {
+  background-color: #ffffff !important;
 }
 
 /* Hover */
-.tablepress tbody tr:hover {
-  background-color: #E5F2EE;
+.tablepress tbody tr:hover td {
+  background-color: #E5F2EE !important;
 }
