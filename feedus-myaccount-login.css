@@ -23,7 +23,6 @@ body:not(.logged-in) .feedus-header__account::after {
   font-size: 1rem;
 }
 
-/* 비로그인 상태: 모바일 메뉴에서도 동일하게 적용 */
 body:not(.logged-in) .feedus-mobile-menu a[href="/my-account"],
 body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"] {
   visibility: hidden !important;
@@ -39,7 +38,127 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
 }
 
 /* --------------------------------------------------------------------------
-   회원가입 폼 스타일 (WooCommerce 회원가입 활성화 시)
+   카카오 섹션 + 로그인 섹션 간격 통합
+   -------------------------------------------------------------------------- */
+#brxe-ciuadn {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#brxe-rbvekl {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 카카오 컨테이너: 로그인 폼과 동일한 너비 */
+#brxe-cinlzc {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------------------------------------
+   카카오 로그인 버튼 커스텀 디자인
+   -------------------------------------------------------------------------- */
+.kakaoLogin {
+  text-align: center !important;
+}
+
+/* 플러그인 기본 이미지 숨김 */
+.kakaoLogin a img {
+  display: none !important;
+}
+
+/* 커스텀 버튼 */
+.kakaoLogin a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #FEE500;
+  color: #191919 !important;
+  border: none;
+  border-radius: var(--feedus-border-radius-pill, 50px);
+  font-family: var(--feedus-font-body);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none !important;
+  line-height: 1.4;
+}
+
+.kakaoLogin a:hover {
+  background-color: #F0D900;
+  color: #191919 !important;
+}
+
+/* 카카오 말풍선 아이콘 */
+.kakaoLogin a::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23191919' d='M12 3C6.48 3 2 6.36 2 10.44c0 2.62 1.74 4.93 4.38 6.24l-1.12 4.16c-.1.36.3.65.62.45l4.96-3.28c.38.04.76.06 1.16.06 5.52 0 10-3.36 10-7.63C22 6.36 17.52 3 12 3z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* 버튼 텍스트 */
+.kakaoLogin a::after {
+  content: "카카오 로그인";
+}
+
+/* --------------------------------------------------------------------------
+   "또는" 구분선 (카카오 버튼과 로그인 폼 사이)
+   -------------------------------------------------------------------------- */
+#brxe-qymofg {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+#brxe-qymofg::after {
+  content: "또는";
+  display: block;
+  text-align: center;
+  position: relative;
+  margin-top: 28px;
+  font-family: var(--feedus-font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: #999;
+  line-height: 1;
+}
+
+/* 구분선 좌우 라인 */
+#brxe-qymofg::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ddd;
+}
+
+#brxe-qymofg::after {
+  position: relative;
+  z-index: 1;
+  background-color: var(--feedus-bg, #fff);
+  display: inline-block;
+  padding: 0 12px;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* --------------------------------------------------------------------------
+   로그인/회원가입 폼 레이아웃
    -------------------------------------------------------------------------- */
 .woocommerce-account .u-columns {
   display: flex;
@@ -59,79 +178,15 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   margin: 0 !important;
 }
 
+/* 로그인/회원가입 제목 가운데 정렬 */
+.woocommerce-account .u-column1 > h2,
+.woocommerce-account .u-column2 > h2 {
+  text-align: center;
+}
+
 .woocommerce-account .woocommerce-form-register {
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
   margin: 0 !important;
-}
-
-.woocommerce-account .woocommerce-form-register h2,
-.woocommerce-account .u-column2 > h2 {
-  text-align: center;
-}
-
-/* --------------------------------------------------------------------------
-   카카오 로그인 버튼 스타일
-   -------------------------------------------------------------------------- */
-.feedus-kakao-login {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.feedus-kakao-login__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  max-width: 400px;
-  padding: 12px 20px;
-  background-color: #FEE500;
-  color: #191919;
-  border: none;
-  border-radius: var(--feedus-border-radius-pill, 50px);
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  line-height: 1.4;
-}
-
-.feedus-kakao-login__btn:hover {
-  background-color: #F0D900;
-  color: #191919;
-  text-decoration: none;
-}
-
-.feedus-kakao-login__btn img,
-.feedus-kakao-login__btn svg {
-  width: 20px;
-  height: 20px;
-}
-
-/* 로그인/회원가입 폼 사이 "또는" 구분선 */
-.feedus-divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 24px 0;
-  color: #999;
-  font-size: 14px;
-}
-
-.feedus-divider::before,
-.feedus-divider::after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid #ddd;
-}
-
-.feedus-divider::before {
-  margin-right: 12px;
-}
-
-.feedus-divider::after {
-  margin-left: 12px;
 }
