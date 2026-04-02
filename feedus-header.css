@@ -68,8 +68,14 @@ main {
   }
 }
 
+/* 장바구니 아이콘 */
+#brx-header .cart-icon {
+  margin-bottom: 0;
+}
+
 /* 장바구니 아이콘 뱃지 */
-.feedus-cart-count {
+.feedus-cart-count,
+#brx-header .cart-count {
   position: absolute;
   top: -5px;
   right: -5px;
