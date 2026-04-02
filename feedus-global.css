@@ -1488,4 +1488,24 @@ textarea::placeholder {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 15px !important;
   }
+  /* 썸네일 100% 채우기 */
+  body.post-type-archive-product .brx-grid img,
+  body.tax-product_cat .brx-grid img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  /* 모바일 상품명/가격 텍스트 크기 조정 */
+  body.post-type-archive-product .brx-grid .product-title,
+  body.post-type-archive-product .brx-grid .woocommerce-loop-product__title,
+  body.tax-product_cat .brx-grid .product-title,
+  body.tax-product_cat .brx-grid .woocommerce-loop-product__title {
+    font-size: 14px !important;
+    word-break: keep-all !important;
+  }
+  body.post-type-archive-product .brx-grid .price,
+  body.tax-product_cat .brx-grid .price {
+    font-size: 13px !important;
+  }
 }
