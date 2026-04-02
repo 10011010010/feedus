@@ -541,6 +541,12 @@ main {
   padding-top: var(--feedus-header-height);
 }
 
+/* 홈(메인) 페이지는 상단 패딩 제거 */
+body.home #brx-content,
+body.home main {
+  padding-top: 0;
+}
+
 /* 헤더 네비게이션 링크 */
 #brx-header a,
 .feedus-header a {
