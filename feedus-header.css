@@ -217,7 +217,12 @@
 
 /* 자식 span 숨김 (SVG로 대체) */
 .feedus-header__toggle-icon span {
-  display: none;
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
 }
 
 /* 활성 상태: X 아이콘 */
