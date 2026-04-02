@@ -8,7 +8,7 @@
    -------------------------------------------------------------------------- */
 #brxe-neasfq {
   font-weight: 500;
-  font-size: clamp(38px, 10vw, 74px);
+  font-size: clamp(38px, 6vw, 74px);
   line-height: 126%;
   letter-spacing: -0.05em;
 }
