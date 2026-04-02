@@ -15,35 +15,46 @@ add_filter('gettext', function ($translated, $text, $domain) {
     return $translated;
 }, 10, 3);
 
-// 주소 포맷에서 전화번호 제거 (중복 방지)
-// WooCommerce가 {phone}을 주소 문자열에 포함시키는 것을 막음
+// 주소 포맷에서 전화번호 플레이스홀더 제거
 add_filter('woocommerce_localisation_address_formats', function ($formats) {
     foreach ($formats as $country => &$format) {
-        $format = str_replace('{phone}', '', $format);
-        $format = preg_replace('/\n{2,}/', "\n", $format);
+        $format = str_replace(array('{phone}', '{billing_phone}', '{shipping_phone}'), '', $format);
+        $format = preg_replace('/\n{2,}/', "\n", trim($format));
     }
     return $formats;
-});
+}, 999);
 
-// 주문 상세의 formatted billing address에서도 phone 제거
-add_filter('woocommerce_order_formatted_billing_address', function ($address) {
-    if (isset($address['phone'])) {
-        unset($address['phone']);
+// 주소 치환값에서 전화번호 값을 빈 문자열로 강제 설정
+add_filter('woocommerce_formatted_address_replacements', function ($replacements) {
+    $phone_keys = array('{phone}', '{billing_phone}', '{shipping_phone}', '{phone_1}', '{phone_2}');
+    foreach ($phone_keys as $key) {
+        if (isset($replacements[$key])) {
+            $replacements[$key] = '';
+        }
     }
+    return $replacements;
+}, 999);
+
+// 주문 상세의 formatted billing/shipping address에서 phone 제거
+add_filter('woocommerce_order_formatted_billing_address', function ($address) {
+    unset($address['phone'], $address['billing_phone']);
     return $address;
-});
+}, 999);
+
+add_filter('woocommerce_order_formatted_shipping_address', function ($address) {
+    unset($address['phone'], $address['shipping_phone']);
+    return $address;
+}, 999);
 
 // 고객 계정 페이지 주소에서도 phone 제거
 add_filter('woocommerce_my_account_my_address_formatted_address', function ($address, $customer_id, $address_type) {
-    if (isset($address['phone'])) {
-        unset($address['phone']);
-    }
+    unset($address['phone'], $address['billing_phone'], $address['shipping_phone']);
     return $address;
-}, 10, 3);
+}, 999, 3);
 
 // 체크아웃 페이지에서 전화번호 한국식 포맷으로 변환
 add_action('wp_footer', function () {
-    if (!is_checkout()) return;
+    if (!is_checkout() && !is_wc_endpoint_url('order-received') && !is_account_page()) return;
     ?>
     <script>
     (function() {
@@ -96,9 +107,40 @@ add_action('wp_footer', function () {
             initPhoneFormat();
         }
 
+        // 주소 블록에서 중복 전화번호 제거 (PHP 필터 fallback)
+        function removeDuplicatePhones() {
+            var addresses = document.querySelectorAll('.woocommerce-column--shipping-address address, .woocommerce-column--billing-address address');
+            addresses.forEach(function(addr) {
+                var html = addr.innerHTML;
+                // 전화번호 패턴 (010-XXXX-XXXX 등)
+                var phoneRegex = /(<br\s*\/?>)\s*0\d{1,2}[-.\s]?\d{3,4}[-.\s]?\d{4}/g;
+                var matches = html.match(phoneRegex);
+                if (matches && matches.length > 0) {
+                    // 주소 안의 모든 전화번호 라인 제거
+                    matches.forEach(function(m) {
+                        html = html.replace(m, '');
+                    });
+                    addr.innerHTML = html;
+                }
+            });
+
+            // woocommerce-customer-details--phone 중복 제거 (하나만 남기기)
+            var phonePs = document.querySelectorAll('.woocommerce-customer-details--phone');
+            for (var i = 1; i < phonePs.length; i++) {
+                phonePs[i].remove();
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', removeDuplicatePhones);
+        } else {
+            removeDuplicatePhones();
+        }
+
         // WooCommerce AJAX 업데이트 후에도 재적용
         if (typeof jQuery !== 'undefined') {
             jQuery(document.body).on('updated_checkout', initPhoneFormat);
+            jQuery(document.body).on('updated_checkout', removeDuplicatePhones);
         }
     })();
     </script>
