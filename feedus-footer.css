@@ -37,7 +37,7 @@
 #brx-footer .brxe-text-basic,
 #brx-footer a,
 #brx-footer li {
-  font-size: 0.875rem;
+  font-size: 16px !important;
   line-height: 1.8;
   color: var(--feedus-white);
   margin: 0 !important;
