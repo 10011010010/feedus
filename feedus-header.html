@@ -1,36 +1,39 @@
-<!-- FEEDUS 커스텀 헤더 - Bricks 코드 엘리먼트에 붙여넣기 -->
+<!-- FEEDUS 커스텀 헤더 — Bricks 코드 엘리먼트에 붙여넣기 -->
 <link rel="stylesheet" href="/wp-content/uploads/feedus-header.css">
 
 <div class="feedus-header">
-  <div class="feedus-header-inner">
+  <div class="feedus-header__row">
 
-    <!-- 로고 -->
-    <div class="feedus-header-logo">
-      <a href="https://feedus.kr">
+    <!-- 컬럼 1: 로고 -->
+    <div class="feedus-header__logo">
+      <a href="/">
         <img src="https://feedus.kr/wp-content/imgs/feedus-logo-green.svg" alt="피더스" loading="eager" decoding="async">
       </a>
     </div>
 
-    <!-- 데스크톱 네비게이션 -->
-    <nav class="feedus-header-nav">
-      <ul>
-        <li><a href="/shop">제품</a></li>
-        <li><a href="#">직배송</a></li>
-        <li><a href="#">피더스 소개</a></li>
+    <!-- 컬럼 2: 데스크톱 네비게이션 -->
+    <nav class="feedus-header__menu">
+      <ul role="list">
+        <li><a href="/shop"><span>제품</span></a></li>
+        <li><a href="#"><span>직배송</span></a></li>
+        <li><a href="#"><span>피더스 소개</span></a></li>
       </ul>
     </nav>
 
-    <!-- 우측: 내 계정 + 장바구니 + 햄버거 -->
-    <div class="feedus-header-actions">
-      <a href="/my-account">내 계정</a>
-      <a href="/cart" class="feedus-header-cart" aria-label="장바구니 보기">
+    <!-- 컬럼 3: 내 계정 + 카트 + 메뉴 토글 -->
+    <div class="feedus-header__actions">
+      <a href="/my-account" class="feedus-header__account">내 계정</a>
+      <a href="/cart" class="feedus-header__cart" aria-label="장바구니 보기">
         <i class="ti-shopping-cart"></i>
-        <span class="feedus-header-cart-count js-cart-count"></span>
+        <span class="feedus-header__cart-count js-cart-count"></span>
       </a>
-      <button class="feedus-header-toggle" aria-label="메뉴 열기/닫기" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="feedus-header__toggle" aria-label="메뉴 열기/닫기" aria-expanded="false">
+        <span class="feedus-header__toggle-label">메뉴</span>
+        <span class="feedus-header__toggle-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </button>
     </div>
 
@@ -45,56 +48,61 @@
     <li><a href="#">피더스 소개</a></li>
   </ul>
 </nav>
+<div class="feedus-mobile-overlay"></div>
 
 <script>
 (function() {
-  var toggle = document.querySelector('.feedus-header-toggle');
+  var toggle = document.querySelector('.feedus-header__toggle');
   var mobileMenu = document.querySelector('.feedus-mobile-menu');
+  var overlay = document.querySelector('.feedus-mobile-overlay');
 
   if (!toggle || !mobileMenu) return;
 
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    if (overlay) overlay.classList.add('open');
+    toggle.classList.add('active');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    if (overlay) overlay.classList.remove('open');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
   toggle.addEventListener('click', function() {
-    var isOpen = mobileMenu.classList.toggle('open');
-    toggle.classList.toggle('active');
-    toggle.setAttribute('aria-expanded', isOpen);
+    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
   });
 
-  // 모바일 메뉴 링크 클릭 시 닫기
+  if (overlay) {
+    overlay.addEventListener('click', closeMenu);
+  }
+
   mobileMenu.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      mobileMenu.classList.remove('open');
-      toggle.classList.remove('active');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', closeMenu);
   });
 
   // WooCommerce 장바구니 카운트 동기화
   var countEl = document.querySelector('.js-cart-count');
-  if (countEl) {
+  if (!countEl) return;
+
+  function syncCartCount() {
     var wooCount = document.querySelector('.brxe-woocommerce-mini-cart .cart-count');
-    if (wooCount && wooCount.textContent.trim() !== '0') {
-      countEl.textContent = wooCount.textContent.trim();
-      countEl.style.display = 'flex';
+    var num = wooCount ? wooCount.textContent.trim() : '0';
+    if (num && num !== '0') {
+      countEl.textContent = num;
+      countEl.classList.add('show');
     } else {
-      countEl.style.display = 'none';
+      countEl.classList.remove('show');
     }
+  }
 
-    // WooCommerce AJAX 카트 업데이트 감지
-    document.addEventListener('DOMSubtreeModified', function() {
-      // deprecated지만 Bricks 환경에서 가장 호환성 높음
-    });
+  syncCartCount();
 
-    if (typeof jQuery !== 'undefined') {
-      jQuery(document.body).on('added_to_cart removed_from_cart updated_cart_totals', function() {
-        var wc = document.querySelector('.brxe-woocommerce-mini-cart .cart-count');
-        if (wc && wc.textContent.trim() !== '0') {
-          countEl.textContent = wc.textContent.trim();
-          countEl.style.display = 'flex';
-        } else {
-          countEl.style.display = 'none';
-        }
-      });
-    }
+  if (typeof jQuery !== 'undefined') {
+    jQuery(document.body).on('added_to_cart removed_from_cart updated_cart_totals', syncCartCount);
   }
 })();
 </script>
