@@ -1352,12 +1352,13 @@ textarea::placeholder {
 
 /* ==========================================================================
    헤더 내부 레이아웃 - 3컬럼 + 모바일 메뉴 브레이크포인트
+   최대 specificity: html body #brx-header 체인으로 Bricks 오버라이드
    ========================================================================== */
 
-/* 헤더 컨테이너: 3컬럼 가로 레이아웃 */
-#brx-header .brxe-container,
-#brx-header section > .brxe-container,
-#brxe-anucby {
+/* 헤더 컨테이너: 강제 가로 레이아웃 */
+html body #brx-header #brxe-anucby,
+html body #brx-header .brxe-container,
+html body #brx-header section > .brxe-container {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
@@ -1366,18 +1367,25 @@ textarea::placeholder {
   height: 100% !important;
   padding: 0 var(--feedus-container-padding) !important;
   gap: 0 !important;
+  max-width: 100% !important;
+}
+
+/* 각 블록: width:100% 리셋 (Bricks가 블록에 width:100% 넣는 것 방지) */
+html body #brx-header #brxe-anucby > .brxe-block,
+html body #brx-header .brxe-container > .brxe-block {
+  width: auto !important;
+  max-width: none !important;
+  flex-shrink: 0 !important;
 }
 
 /* 로고 영역 (왼쪽) */
-#brx-header .brxe-container > .brxe-block:first-child,
-#brxe-zxfmwd {
+html body #brx-header #brxe-zxfmwd {
   flex: 0 0 auto !important;
   width: auto !important;
 }
 
 /* 네비게이션 영역 (가운데) */
-#brx-header .brxe-container > .brxe-block:nth-child(2),
-#brxe-nzjuxp {
+html body #brx-header #brxe-nzjuxp {
   flex: 1 1 auto !important;
   width: auto !important;
   display: flex !important;
@@ -1385,11 +1393,11 @@ textarea::placeholder {
 }
 
 /* 계정/장바구니 영역 (오른쪽) */
-#brx-header .brxe-container > .brxe-block:last-child,
-#brxe-ojhhbi {
+html body #brx-header #brxe-ojhhbi {
   flex: 0 0 auto !important;
   width: auto !important;
   display: flex !important;
+  flex-direction: row !important;
   align-items: center !important;
   gap: 15px !important;
 }
@@ -1397,47 +1405,40 @@ textarea::placeholder {
 /* 태블릿 세로 이하(~767px): 햄버거 메뉴 활성화, 네비 숨김 */
 @media screen and (max-width: 767px) {
   /* 데스크톱 네비게이션 숨기기 */
-  #brx-header .bricks-nav-menu-wrapper,
-  .brxe-nav-menu .bricks-nav-menu-wrapper {
+  html body #brx-header .bricks-nav-menu-wrapper {
     display: none !important;
   }
 
-  /* 햄버거 버튼 표시 + 맨 우측 */
-  #brx-header .bricks-mobile-menu-toggle,
-  .brxe-nav-menu .bricks-mobile-menu-toggle {
+  /* 햄버거 버튼 표시 */
+  html body #brx-header .bricks-mobile-menu-toggle {
     display: flex !important;
   }
 
-  /* 네비 영역: 햄버거만 보이므로 우측 정렬 */
-  #brx-header .brxe-container > .brxe-block:nth-child(2),
-  #brxe-nzjuxp {
+  /* 네비 영역(햄버거 포함): 맨 우측으로 */
+  html body #brx-header #brxe-nzjuxp {
     flex: 0 0 auto !important;
     justify-content: flex-end !important;
     order: 99 !important;
   }
 
-  /* 계정/장바구니: 가운데 유지 */
-  #brx-header .brxe-container > .brxe-block:last-child,
-  #brxe-ojhhbi {
+  /* 계정/장바구니: 로고 다음 */
+  html body #brx-header #brxe-ojhhbi {
     order: 2 !important;
     margin-left: auto !important;
   }
 }
 
-/* 태블릿 가로 이상(768px~): 네비 메뉴 표시, 햄버거 숨김 */
+/* 태블릿 가로 이상(768px~): 데스크톱 네비 표시, 햄버거 숨김 */
 @media screen and (min-width: 768px) {
-  #brx-header .bricks-mobile-menu-toggle,
-  .brxe-nav-menu .bricks-mobile-menu-toggle {
+  html body #brx-header .bricks-mobile-menu-toggle {
     display: none !important;
   }
 
-  #brx-header .bricks-nav-menu-wrapper,
-  .brxe-nav-menu .bricks-nav-menu-wrapper {
+  html body #brx-header .bricks-nav-menu-wrapper {
     display: flex !important;
   }
 
-  #brx-header .bricks-mobile-menu-wrapper,
-  .brxe-nav-menu .bricks-mobile-menu-wrapper {
+  html body #brx-header .bricks-mobile-menu-wrapper {
     display: none !important;
   }
 }
