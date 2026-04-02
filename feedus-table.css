@@ -18,6 +18,7 @@ table td {
   padding: 10px 14px;
   font-size: 16px !important;
   font-weight: 500 !important;
+  color: var(--feedus-primary);
   text-align: left;
 }
 
@@ -28,10 +29,10 @@ table thead th {
   color: #ffffff;
 }
 
-/* 교차 행: 프라이머리 5% */
+/* 교차 행 */
 .tablepress tbody tr:nth-child(even),
 table tbody tr:nth-child(even) {
-  background-color: rgba(var(--feedus-primary-rgb), 0.05);
+  background-color: #F2F8F6;
 }
 
 .tablepress tbody tr:nth-child(odd),
@@ -39,8 +40,8 @@ table tbody tr:nth-child(odd) {
   background-color: #ffffff;
 }
 
-/* Hover: 프라이머리 10% */
+/* Hover */
 .tablepress tbody tr:hover,
 table tbody tr:hover {
-  background-color: rgba(var(--feedus-primary-rgb), 0.1);
+  background-color: #E5F2EE;
 }
