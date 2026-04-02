@@ -1,17 +1,19 @@
-<!-- FEEDUS 커스텀 헤더 — Bricks 코드 엘리먼트에 붙여넣기 -->
-<link rel="stylesheet" href="/wp-content/uploads/feedus-header.css">
+<!-- =====================================================
+   FEEDUS 커스텀 헤더
+   Bricks 코드 엘리먼트 > PHP & HTML 섹션에 붙여넣기
+   ===================================================== -->
 
 <div class="feedus-header">
   <div class="feedus-header__row">
 
-    <!-- 컬럼 1: 로고 -->
+    <!-- 로고 -->
     <div class="feedus-header__logo">
       <a href="/">
         <img src="https://feedus.kr/wp-content/imgs/feedus-logo-green.svg" alt="피더스" loading="eager" decoding="async">
       </a>
     </div>
 
-    <!-- 컬럼 2: 데스크톱 네비게이션 -->
+    <!-- 데스크톱 네비게이션 -->
     <nav class="feedus-header__menu">
       <ul role="list">
         <li><a href="/shop"><span>제품</span></a></li>
@@ -20,7 +22,7 @@
       </ul>
     </nav>
 
-    <!-- 컬럼 3: 내 계정 + 카트 + 메뉴 토글 -->
+    <!-- 내 계정 + 카트 + 메뉴 토글 -->
     <div class="feedus-header__actions">
       <a href="/my-account" class="feedus-header__account">내 계정</a>
       <a href="/cart" class="feedus-header__cart" aria-label="장바구니 보기">
@@ -55,7 +57,6 @@
   var toggle = document.querySelector('.feedus-header__toggle');
   var mobileMenu = document.querySelector('.feedus-mobile-menu');
   var overlay = document.querySelector('.feedus-mobile-overlay');
-
   if (!toggle || !mobileMenu) return;
 
   function openMenu() {
@@ -64,7 +65,6 @@
     toggle.classList.add('active');
     toggle.setAttribute('aria-expanded', 'true');
   }
-
   function closeMenu() {
     mobileMenu.classList.remove('open');
     if (overlay) overlay.classList.remove('open');
@@ -75,22 +75,17 @@
   toggle.addEventListener('click', function() {
     mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
   });
-
-  if (overlay) {
-    overlay.addEventListener('click', closeMenu);
-  }
-
+  if (overlay) overlay.addEventListener('click', closeMenu);
   mobileMenu.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', closeMenu);
   });
 
-  // WooCommerce 장바구니 카운트 동기화
+  // WooCommerce 장바구니 카운트
   var countEl = document.querySelector('.js-cart-count');
   if (!countEl) return;
-
   function syncCartCount() {
-    var wooCount = document.querySelector('.brxe-woocommerce-mini-cart .cart-count');
-    var num = wooCount ? wooCount.textContent.trim() : '0';
+    var wc = document.querySelector('.brxe-woocommerce-mini-cart .cart-count');
+    var num = wc ? wc.textContent.trim() : '0';
     if (num && num !== '0') {
       countEl.textContent = num;
       countEl.classList.add('show');
@@ -98,9 +93,7 @@
       countEl.classList.remove('show');
     }
   }
-
   syncCartCount();
-
   if (typeof jQuery !== 'undefined') {
     jQuery(document.body).on('added_to_cart removed_from_cart updated_cart_totals', syncCartCount);
   }

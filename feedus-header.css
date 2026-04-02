@@ -1,13 +1,7 @@
 /* ==========================================================================
-   FEEDUS HEADER - 커스텀 코드 헤더
-   Bricks 코드 엘리먼트에서 로드
-   참고: redbrick.coffee 헤더 구조
+   FEEDUS HEADER
+   Bricks 코드 엘리먼트 > CSS 섹션에 붙여넣기
    ========================================================================== */
-
-/* 기존 Bricks 헤더 요소 숨김 */
-#brx-header .brxe-section {
-  display: none !important;
-}
 
 /* --------------------------------------------------------------------------
    헤더 바
@@ -23,7 +17,6 @@
   transform: translate(0);
 }
 
-/* 헤더 하단 라인 */
 .feedus-header::after {
   content: "";
   position: absolute;
@@ -36,7 +29,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   헤더 row: 3컬럼 flex 레이아웃
+   3컬럼 row
    -------------------------------------------------------------------------- */
 .feedus-header__row {
   display: flex;
@@ -48,7 +41,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   컬럼 1: 로고 (왼쪽)
+   로고
    -------------------------------------------------------------------------- */
 .feedus-header__logo {
   flex: 0 0 auto;
@@ -73,8 +66,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   컬럼 2: 데스크톱 네비게이션 (가운데)
-   모바일에서 숨김, 태블릿 가로(768px)부터 표시
+   데스크톱 네비 (768px+ 표시)
    -------------------------------------------------------------------------- */
 .feedus-header__menu {
   display: none;
@@ -98,7 +90,7 @@
   font-size: 1rem;
   text-decoration: none;
   white-space: nowrap;
-  transition: color var(--feedus-duration-default, 0.2s) ease;
+  transition: color 0.2s ease;
 }
 
 .feedus-header__menu li a:hover {
@@ -112,7 +104,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   컬럼 3: 우측 액션 (내 계정 + 카트 + 메뉴 토글)
+   우측 액션
    -------------------------------------------------------------------------- */
 .feedus-header__actions {
   flex: 0 0 auto;
@@ -122,14 +114,13 @@
   margin-left: auto;
 }
 
-/* 내 계정 링크 */
 .feedus-header__account {
   color: var(--feedus-primary, #2d6b2d);
   font-family: var(--feedus-font-body, sans-serif);
   font-size: 1rem;
   text-decoration: none;
   white-space: nowrap;
-  transition: color var(--feedus-duration-default, 0.2s) ease;
+  transition: color 0.2s ease;
 }
 
 .feedus-header__account:hover {
@@ -140,11 +131,10 @@
 .feedus-header__cart {
   display: flex;
   align-items: center;
-  gap: 4px;
   color: var(--feedus-primary, #2d6b2d);
   text-decoration: none;
   position: relative;
-  transition: color var(--feedus-duration-default, 0.2s) ease;
+  transition: color 0.2s ease;
 }
 
 .feedus-header__cart:hover {
@@ -156,7 +146,6 @@
   line-height: 1;
 }
 
-/* 카트 카운트 버블 (레드브릭 스타일) */
 .feedus-header__cart-count {
   display: none;
   align-items: center;
@@ -180,8 +169,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   메뉴 토글 (햄버거 + "메뉴" 텍스트)
-   레드브릭 패턴: <span>Menu</span> + 햄버거 아이콘
+   메뉴 토글 (모바일만)
    -------------------------------------------------------------------------- */
 .feedus-header__toggle {
   display: none;
@@ -217,7 +205,6 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* 열림 상태: X 모양 */
 .feedus-header__toggle.active .feedus-header__toggle-icon span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -230,7 +217,6 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* 모바일에서만 토글 표시 */
 @media screen and (max-width: 767px) {
   .feedus-header__toggle {
     display: flex;
@@ -238,7 +224,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   모바일 메뉴 드롭다운
+   모바일 메뉴
    -------------------------------------------------------------------------- */
 .feedus-mobile-menu {
   display: none;
@@ -278,7 +264,6 @@
   font-family: var(--feedus-font-body, sans-serif);
   font-size: 1rem;
   text-decoration: none;
-  transition: color var(--feedus-duration-default, 0.2s) ease;
 }
 
 .feedus-mobile-menu a:hover {
@@ -291,9 +276,7 @@
   }
 }
 
-/* --------------------------------------------------------------------------
-   모바일 오버레이
-   -------------------------------------------------------------------------- */
+/* 오버레이 */
 .feedus-mobile-overlay {
   display: none;
   position: fixed;
