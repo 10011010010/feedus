@@ -6,12 +6,15 @@
 .tablepress {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid var(--feedus-primary);
+  border: none;
+  border-top: 1px solid var(--feedus-primary);
+  border-bottom: 1px solid var(--feedus-primary);
 }
 
 .tablepress th,
 .tablepress td {
-  border: 1px solid var(--feedus-primary) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--feedus-primary) !important;
   padding: 10px 14px;
   font-size: 16px !important;
   font-weight: 500 !important;
