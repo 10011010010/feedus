@@ -92,8 +92,9 @@
 #brxe-qytliq,
 #brxe-nhjovq {
   margin: 0;
-  padding-right: var(--feedus-container-padding);
-  padding-left: var(--feedus-container-padding);
+  padding-right: var(--feedus-container-padding) !important;
+  padding-left: var(--feedus-container-padding) !important;
+  width: auto !important;
 }
 
 #brxe-vqojzv.horizontal .line,
