@@ -193,36 +193,47 @@
    -------------------------------------------------------------------------- */
 .feedus-header__toggle {
   display: none;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+  align-items: center !important;
+  justify-content: center !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
   margin-left: 5px !important;
-  color: var(--feedus-primary, #2d6b2d);
-  width: 32px;
-  height: 32px;
+  color: var(--feedus-primary, #2d6b2d) !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* 토글 아이콘: 인라인 SVG 햄버거 */
 .feedus-header__toggle-icon {
-  width: 26px;
-  height: 26px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none' stroke='%23007D51' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='3' y1='6' x2='23' y2='6'/%3E%3Cline x1='3' y1='13' x2='23' y2='13'/%3E%3Cline x1='3' y1='20' x2='23' y2='20'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  width: 26px !important;
+  height: 26px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none' stroke='%23007D51' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='3' y1='6' x2='23' y2='6'/%3E%3Cline x1='3' y1='13' x2='23' y2='13'/%3E%3Cline x1='3' y1='20' x2='23' y2='20'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
 }
 
 /* 자식 span 숨김 (SVG로 대체) */
-.feedus-header__toggle-icon span {
+.feedus-header__toggle-icon span,
+.feedus-header__toggle-icon > * {
   display: none !important;
   margin: 0 !important;
   padding: 0 !important;
   height: 0 !important;
+  width: 0 !important;
   line-height: 0 !important;
   font-size: 0 !important;
+  border: none !important;
 }
 
 /* 활성 상태: X 아이콘 */
