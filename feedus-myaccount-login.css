@@ -169,7 +169,11 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   background-color: #FAFCFC;
   border: 1px solid #F5FAF8;
   border-radius: 40px;
-  padding: 30px 15px !important;
+  padding: 30px 20px !important;
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+  width: calc(100% + 40px) !important;
+  max-width: calc(100% + 40px) !important;
 }
 
 .woocommerce-account .u-column2 > h2 {
