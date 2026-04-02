@@ -506,88 +506,8 @@ a:hover {
 }
 
 /* ==========================================================================
-   5. HEADER - 고정 헤더 (Bricks Builder)
+   5. HEADER - feedus-header.css 로 분리됨
    ========================================================================== */
-header,
-.brxe-section.feedus-header,
-#brx-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--feedus-header-height);
-  z-index: var(--feedus-z-header);
-  background-color: var(--feedus-white);
-  transition: transform var(--feedus-duration-medium) ease,
-              background-color var(--feedus-duration-medium) ease;
-}
-
-/* 헤더 하단 라인은 항상 표시 (고정 헤더 구분) */
-#brx-header::after,
-header.feedus-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: var(--feedus-container-padding);
-  width: calc(100% - var(--feedus-container-padding) * 2);
-  height: 1px;
-  background-color: var(--feedus-primary);
-  pointer-events: none;
-}
-
-/* Header 높이만큼 본문 패딩 */
-#brx-content,
-main {
-  padding-top: var(--feedus-header-height);
-}
-
-/* 헤더 네비게이션 링크 */
-#brx-header a,
-.feedus-header a {
-  color: var(--feedus-primary);
-  font-family: var(--feedus-font-body);
-  font-size: 1rem;
-  text-decoration: none;
-  transition: color var(--feedus-duration-default) ease;
-}
-
-#brx-header a:hover,
-.feedus-header a:hover {
-  color: var(--feedus-primary-hover);
-}
-
-/* 로고 */
-.feedus-logo img,
-#brx-header .brxe-image img {
-  height: auto;
-  max-height: 40px;
-  width: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .feedus-logo img,
-  #brx-header .brxe-image img {
-    max-height: 50px;
-  }
-}
-
-/* 장바구니 아이콘 뱃지 */
-.feedus-cart-count {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: var(--feedus-primary);
-  color: var(--feedus-white);
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.7rem;
-  font-weight: 600;
-  line-height: 1;
-}
 
 /* ==========================================================================
    6. HERO / BANNER SECTION - 풀페이지 히어로
