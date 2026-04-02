@@ -139,6 +139,10 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   text-align: center;
 }
 
+.woocommerce-account .u-column1 > h2 {
+  padding-bottom: 10px;
+}
+
 /* 라벨 하단 마진 축소 */
 .woocommerce-account .u-columns label {
   margin-bottom: 5px !important;
