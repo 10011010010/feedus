@@ -206,6 +206,7 @@
 
 .feedus-header__toggle-label {
   white-space: nowrap;
+  margin: 0 !important;
 }
 
 .feedus-header__toggle-icon {
