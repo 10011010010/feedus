@@ -167,7 +167,7 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
 /* 회원가입 섹션 */
 .woocommerce-account .u-column2 > h2 {
   font-size: 32px !important;
-  padding-top: 20px;
+  padding-top: 40px;
   border-top: 1px solid var(--feedus-primary);
 }
 
