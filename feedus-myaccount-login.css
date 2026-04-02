@@ -71,14 +71,67 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   text-align: center;
 }
 
-/* 회원가입 링크 (로그인 폼 하단) */
-.woocommerce-account .woocommerce-form-login ~ .feedus-register-link {
+/* --------------------------------------------------------------------------
+   카카오 로그인 버튼 스타일
+   -------------------------------------------------------------------------- */
+.feedus-kakao-login {
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 24px;
 }
 
-.woocommerce-account .woocommerce-form-login ~ .feedus-register-link a {
-  color: var(--feedus-primary);
-  text-decoration: underline;
-  font-size: 15px;
+.feedus-kakao-login__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  background-color: #FEE500;
+  color: #191919;
+  border: none;
+  border-radius: var(--feedus-border-radius-pill, 50px);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.feedus-kakao-login__btn:hover {
+  background-color: #F0D900;
+  color: #191919;
+  text-decoration: none;
+}
+
+.feedus-kakao-login__btn img,
+.feedus-kakao-login__btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* 로그인/회원가입 폼 사이 "또는" 구분선 */
+.feedus-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 24px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.feedus-divider::before,
+.feedus-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.feedus-divider::before {
+  margin-right: 12px;
+}
+
+.feedus-divider::after {
+  margin-left: 12px;
 }
