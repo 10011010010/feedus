@@ -1431,6 +1431,73 @@ textarea::placeholder {
 }
 
 /* ==========================================================================
+   19-1. WOOCOMMERCE CART PAGE - 장바구니 페이지
+   Bricks 조건부 렌더링과 WooCommerce 기본 출력 충돌 방지
+   ========================================================================== */
+
+/* 장바구니 비어있음 메시지 - Bricks 숏코드 안에서 기본 숨김 처리
+   Bricks 조건({woo_cart_quantity})으로 섹션 단위 표시/숨김을 제어하므로
+   WooCommerce 숏코드의 기본 빈 장바구니 메시지는 숨김 */
+.brxe-shortcode .cart-empty,
+.brxe-shortcode .return-to-shop {
+  display: none;
+}
+
+/* 장바구니에 상품이 있을 때 카트 폼 정상 표시 */
+.brxe-shortcode .woocommerce-cart-form {
+  display: block;
+}
+
+/* 장바구니 테이블 스타일 */
+.woocommerce table.shop_table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--feedus-border-color, #e0e0e0);
+}
+
+.woocommerce table.shop_table th,
+.woocommerce table.shop_table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--feedus-border-color, #e0e0e0);
+}
+
+.woocommerce table.shop_table .product-remove a {
+  color: var(--feedus-text-secondary, #999);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.woocommerce table.shop_table .product-thumbnail img {
+  width: 80px;
+  height: auto;
+  border-radius: var(--feedus-border-radius-sm, 4px);
+}
+
+.woocommerce .cart-collaterals .cart_totals {
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+}
+
+/* 장바구니 업데이트 버튼 */
+.woocommerce button[name="update_cart"] {
+  font-family: var(--feedus-font-body);
+  background-color: var(--feedus-primary);
+  color: var(--feedus-white);
+  border: 1px solid var(--feedus-primary);
+  border-radius: var(--feedus-border-radius-pill);
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: all var(--feedus-duration-medium) ease;
+}
+
+.woocommerce button[name="update_cart"]:hover {
+  background-color: transparent;
+  color: var(--feedus-primary);
+}
+
+/* ==========================================================================
    20. PRINT STYLES
    ========================================================================== */
 @media print {
