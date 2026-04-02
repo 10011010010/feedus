@@ -45,7 +45,7 @@
   body.post-type-archive-product .brx-grid,
   body.tax-product_cat .brx-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
+    gap: 0 !important;
   }
   /* 상품 카드 overflow 방지 */
   body.post-type-archive-product .brx-grid > *,
