@@ -37,6 +37,11 @@
   background-color: #ffffff !important;
 }
 
+/* 마지막 행: 하단 라인 3px */
+.tablepress tbody tr:last-child td {
+  border-bottom-width: 3px !important;
+}
+
 /* Hover */
 .tablepress tbody tr:hover td {
   background-color: #EDF6F3 !important;
