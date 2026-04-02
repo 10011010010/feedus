@@ -571,7 +571,151 @@ main {
   }
 }
 
-/* 장바구니 아이콘 뱃지 */
+/* 헤더 내부 레이아웃 */
+.feedus-header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--feedus-header-height);
+  padding: 0 var(--feedus-container-padding);
+  max-width: var(--feedus-max-width, 1400px);
+  margin: 0 auto;
+}
+
+/* 로고 (BEM) */
+.feedus-header__logo a {
+  display: flex;
+  align-items: center;
+}
+
+.feedus-header__logo img {
+  height: auto;
+  max-height: 40px;
+  width: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .feedus-header__logo img {
+    max-height: 50px;
+  }
+}
+
+/* 데스크톱 네비게이션 */
+.feedus-header__menu ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feedus-header__menu a {
+  color: var(--feedus-primary);
+  font-family: var(--feedus-font-body);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color var(--feedus-duration-default) ease;
+}
+
+.feedus-header__menu a:hover {
+  color: var(--feedus-primary-hover);
+}
+
+/* 모바일에서 데스크톱 메뉴 숨김 */
+@media screen and (max-width: 767px) {
+  .feedus-header__menu {
+    display: none;
+  }
+}
+
+/* 액션 영역 (계정 + 카트 + 햄버거) */
+.feedus-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feedus-header__account {
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 767px) {
+  .feedus-header__account {
+    display: none;
+  }
+}
+
+/* 카트 아이콘 */
+.feedus-header__cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.feedus-header__cart svg {
+  display: block;
+}
+
+.feedus-header__cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--feedus-primary);
+  color: var(--feedus-white);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.feedus-header__cart-count:empty {
+  display: none;
+}
+
+/* 햄버거 토글 버튼 */
+.feedus-header__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.feedus-header__toggle-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 24px;
+  height: 24px;
+}
+
+.feedus-header__toggle-icon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--feedus-primary);
+  border-radius: 1px;
+  transition: transform var(--feedus-duration-default) ease,
+              opacity var(--feedus-duration-default) ease;
+}
+
+/* 데스크톱에서 햄버거 숨김 */
+@media screen and (min-width: 768px) {
+  .feedus-header__toggle {
+    display: none;
+  }
+}
+
+/* 장바구니 아이콘 뱃지 (레거시) */
 .feedus-cart-count {
   position: absolute;
   top: -5px;
