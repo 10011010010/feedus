@@ -543,7 +543,7 @@ header.feedus-header::after {
 /* Header 높이만큼 본문 패딩 */
 #brx-content,
 main {
-  padding-top: 60px !important;
+  padding-top: 50px !important;
 }
 
 /* 헤더 네비게이션 링크 */
