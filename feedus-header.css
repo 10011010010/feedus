@@ -96,6 +96,11 @@
   flex-wrap: nowrap;
 }
 
+.feedus-header__menu li,
+.feedus-mobile-menu li {
+  margin: 0 !important;
+}
+
 .feedus-header__menu li a {
   display: block;
   padding: 10px 15px;
