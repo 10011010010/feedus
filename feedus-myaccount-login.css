@@ -86,7 +86,7 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   display: flex;
   align-items: center;
   text-align: center;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .feedus-divider::before,
@@ -135,6 +135,11 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
 
 /* 라벨 하단 마진 축소 */
 .woocommerce-account .u-columns label {
+  margin-bottom: 10px !important;
+}
+
+/* p 하단 마진 축소 */
+.woocommerce-account .u-columns p {
   margin-bottom: 10px !important;
 }
 
