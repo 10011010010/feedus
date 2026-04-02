@@ -1486,7 +1486,13 @@ textarea::placeholder {
   body.post-type-archive-product .brx-grid,
   body.tax-product_cat .brx-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 15px !important;
+    gap: 10px !important;
+  }
+  /* 상품 카드 overflow 방지 */
+  body.post-type-archive-product .brx-grid > *,
+  body.tax-product_cat .brx-grid > * {
+    min-width: 0 !important;
+    overflow: hidden !important;
   }
   /* 썸네일 100% 채우기 */
   body.post-type-archive-product .brx-grid img,
@@ -1501,11 +1507,12 @@ textarea::placeholder {
   body.post-type-archive-product .brx-grid .woocommerce-loop-product__title,
   body.tax-product_cat .brx-grid .product-title,
   body.tax-product_cat .brx-grid .woocommerce-loop-product__title {
-    font-size: 14px !important;
+    font-size: 13px !important;
     word-break: keep-all !important;
+    line-height: 1.3 !important;
   }
   body.post-type-archive-product .brx-grid .price,
   body.tax-product_cat .brx-grid .price {
-    font-size: 13px !important;
+    font-size: 12px !important;
   }
 }
