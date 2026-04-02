@@ -27,7 +27,7 @@
 
 /* 교차 행 */
 .tablepress tbody tr:nth-child(even) td {
-  background-color: #F2F8F6 !important;
+  background-color: #F7FBFA !important;
 }
 
 .tablepress tbody tr:nth-child(odd) td {
@@ -36,5 +36,5 @@
 
 /* Hover */
 .tablepress tbody tr:hover td {
-  background-color: #E5F2EE !important;
+  background-color: #EDF6F3 !important;
 }
