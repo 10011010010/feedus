@@ -200,7 +200,7 @@ h6, .brxe-heading[data-tag="h6"] {
 p, .brxe-text-basic,
 li, span, label, select, option, textarea {
   font-family: var(--feedus-font-body);
-  font-size: 16px;
+  font-size: 18px;
   color: var(--feedus-primary);
   font-weight: 400;
   line-height: 150%;
