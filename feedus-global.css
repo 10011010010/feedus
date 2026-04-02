@@ -234,6 +234,11 @@ a:hover {
   position: relative;
 }
 
+/* 첫 번째 섹션: 헤더와 40px 간격 (Redbrick 스타일) */
+#brx-content > .brxe-section:first-child {
+  margin-top: -50px;
+}
+
 /* Section 간 간격 제거 (풀페이지 스타일) */
 .brxe-section + .brxe-section {
   margin-top: 20px;
