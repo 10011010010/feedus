@@ -72,6 +72,11 @@
   margin-bottom: 30px;
 }
 
+/* 풋터 카피라이트 */
+#brxe-qntbej {
+  font-size: 14px !important;
+}
+
 /* 풋터 크레딧 */
 .feedus-footer-credits {
   font-size: 0.8rem;
