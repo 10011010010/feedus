@@ -15,6 +15,12 @@
   z-index: var(--feedus-z-header, 1001);
   background-color: var(--feedus-white, #fff);
   transform: translate(0);
+  font-weight: 500;
+}
+
+.feedus-header *,
+.feedus-mobile-menu * {
+  font-weight: 500;
 }
 
 .feedus-header::after {
@@ -55,13 +61,21 @@
 
 .feedus-header__logo img {
   height: auto;
-  max-height: 30px;
+  max-height: 22px;
   width: auto;
+  max-width: calc(100vw / 3 - var(--feedus-container-padding, 20px));
 }
 
 @media screen and (min-width: 768px) {
   .feedus-header__logo img {
-    max-height: 40px;
+    max-height: 28px;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .feedus-header__logo img {
+    max-height: 35px;
   }
 }
 
