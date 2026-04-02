@@ -38,41 +38,14 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
 }
 
 /* --------------------------------------------------------------------------
-   카카오 섹션 + 로그인 섹션 간격 통합
+   카카오 로그인 버튼 (JS로 삽입됨)
    -------------------------------------------------------------------------- */
-#brxe-ciuadn {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+.feedus-kakao-wrap {
+  margin-bottom: 8px;
 }
 
-#brxe-rbvekl {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* 카카오 컨테이너: 로그인 폼과 동일한 너비 */
-#brxe-cinlzc {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* --------------------------------------------------------------------------
-   카카오 로그인 버튼 커스텀 디자인
-   -------------------------------------------------------------------------- */
-.kakaoLogin {
-  text-align: center !important;
-}
-
-/* 플러그인 기본 이미지 숨김 */
-.kakaoLogin a img {
-  display: none !important;
-}
-
-/* 커스텀 버튼 */
-.kakaoLogin a {
-  display: flex;
+.feedus-kakao-btn {
+  display: flex !important;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -91,70 +64,46 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   line-height: 1.4;
 }
 
-.kakaoLogin a:hover {
+.feedus-kakao-btn:hover {
   background-color: #F0D900;
   color: #191919 !important;
+  text-decoration: none !important;
 }
 
-/* 카카오 말풍선 아이콘 */
-.kakaoLogin a::before {
-  content: "";
-  display: inline-block;
+.feedus-kakao-btn svg {
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23191919' d='M12 3C6.48 3 2 6.36 2 10.44c0 2.62 1.74 4.93 4.38 6.24l-1.12 4.16c-.1.36.3.65.62.45l4.96-3.28c.38.04.76.06 1.16.06 5.52 0 10-3.36 10-7.63C22 6.36 17.52 3 12 3z'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
-/* 버튼 텍스트 */
-.kakaoLogin a::after {
-  content: "카카오 로그인";
+.feedus-kakao-btn span {
+  color: #191919 !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
 }
 
-/* --------------------------------------------------------------------------
-   "또는" 구분선 (카카오 버튼과 로그인 폼 사이)
-   -------------------------------------------------------------------------- */
-#brxe-qymofg {
-  position: relative;
-  margin-bottom: 28px;
-}
-
-#brxe-qymofg::after {
-  content: "또는";
-  display: block;
+/* "또는" 구분선 */
+.feedus-divider {
+  display: flex;
+  align-items: center;
   text-align: center;
-  position: relative;
-  margin-top: 28px;
-  font-family: var(--feedus-font-body);
-  font-size: 14px;
-  font-weight: 400;
-  color: #999;
-  line-height: 1;
+  margin: 28px 0;
 }
 
-/* 구분선 좌우 라인 */
-#brxe-qymofg::before {
+.feedus-divider::before,
+.feedus-divider::after {
   content: "";
-  display: block;
-  position: absolute;
-  bottom: -28px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: #ddd;
+  flex: 1;
+  border-bottom: 1px solid #ddd;
 }
 
-#brxe-qymofg::after {
-  position: relative;
-  z-index: 1;
-  background-color: var(--feedus-bg, #fff);
-  display: inline-block;
-  padding: 0 12px;
-  margin-top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+.feedus-divider span {
+  padding: 0 14px;
+  color: #999;
+  font-family: var(--feedus-font-body);
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  line-height: 1;
 }
 
 /* --------------------------------------------------------------------------
