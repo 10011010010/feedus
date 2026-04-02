@@ -13,11 +13,25 @@
 .tablepress td {
   border: none !important;
   border-bottom: 1px solid var(--feedus-primary) !important;
+  border-left: none !important;
+  border-right: none !important;
   padding: 10px 14px;
   font-size: 16px !important;
   font-weight: 500 !important;
   color: var(--feedus-primary) !important;
   text-align: left;
+}
+
+/* 첫 번째 td 왼쪽 라인 유지 */
+.tablepress th:first-child,
+.tablepress td:first-child {
+  border-left: 1px solid var(--feedus-primary) !important;
+}
+
+/* 마지막 td 오른쪽 라인 유지 */
+.tablepress th:last-child,
+.tablepress td:last-child {
+  border-right: 1px solid var(--feedus-primary) !important;
 }
 
 /* 헤더: 프라이머리 배경 + 흰색 글자 */
@@ -28,7 +42,7 @@
 
 /* 교차 행 */
 .tablepress tbody tr:nth-child(even) td {
-  background-color: #F7FBFA !important;
+  background-color: #FAFCFC !important;
 }
 
 .tablepress tbody tr:nth-child(odd) td {
@@ -37,5 +51,5 @@
 
 /* Hover */
 .tablepress tbody tr:hover td {
-  background-color: #EDF6F3 !important;
+  background-color: #F5FAF8 !important;
 }
