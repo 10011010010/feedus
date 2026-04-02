@@ -143,6 +143,14 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   margin-bottom: 0 !important;
 }
 
+/* 비밀번호 분실 링크 + 개인정보 보호정책 텍스트 크기 */
+.woocommerce-account .lost_password,
+.woocommerce-account .lost_password a,
+.woocommerce-account .woocommerce-privacy-policy-text p,
+.woocommerce-account .woocommerce-privacy-policy-text a {
+  font-size: 16px !important;
+}
+
 /* 회원가입 섹션 */
 .woocommerce-account .u-column2 > h2 {
   font-size: 32px !important;
