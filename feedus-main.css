@@ -298,24 +298,6 @@
   }
 }
 
-/* --------------------------------------------------------------------------
-   모바일 (≤768px): Why Feedus / Our Farm 이미지 세로형
-   -------------------------------------------------------------------------- */
-@media (max-width: 767px) {
-  #brxe-uaycif,
-  #brxe-japcqb {
-    overflow: hidden;
-    border-radius: var(--feedus-border-radius, 25px);
-  }
-
-  #brxe-ogxgky,
-  #brxe-sgzvtt {
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-  }
-}
 
 @media (max-width: 478px) {
   #brxe-somkle {
