@@ -1351,6 +1351,86 @@ textarea::placeholder {
 }
 
 /* ==========================================================================
+   헤더 내부 레이아웃 - 3컬럼 + 모바일 메뉴 브레이크포인트
+   ========================================================================== */
+
+/* 헤더 컨테이너: 3컬럼 레이아웃 */
+#brx-header .brxe-container,
+header .brxe-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 var(--feedus-container-padding);
+}
+
+/* 로고 영역 */
+#brx-header .brxe-container > .brxe-block:first-child {
+  flex: 0 0 auto;
+}
+
+/* 네비게이션 영역 */
+#brx-header .brxe-container > .brxe-block:nth-child(2) {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* 계정/장바구니 영역 */
+#brx-header .brxe-container > .brxe-block:last-child {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 태블릿 세로 이하(~767px): 햄버거 메뉴 활성화, 네비 숨김 */
+@media screen and (max-width: 767px) {
+  /* 데스크톱 네비게이션 숨기기 */
+  #brx-header .bricks-nav-menu-wrapper {
+    display: none !important;
+  }
+
+  /* 햄버거 버튼 표시 */
+  #brx-header .bricks-mobile-menu-toggle {
+    display: flex !important;
+    order: 99;
+    margin-left: auto;
+  }
+
+  /* 네비 영역에서 햄버거 버튼을 우측 끝으로 */
+  #brx-header .brxe-container > .brxe-block:nth-child(2) {
+    flex: 0 0 auto;
+    justify-content: flex-end;
+  }
+
+  /* 계정/장바구니 영역 */
+  #brx-header .brxe-container > .brxe-block:last-child {
+    order: 2;
+  }
+
+  /* 햄버거 버튼을 맨 우측으로 배치 */
+  #brx-header .brxe-nav-menu {
+    order: 99;
+  }
+}
+
+/* 태블릿 가로 이상(768px~): 네비 메뉴 표시, 햄버거 숨김 */
+@media screen and (min-width: 768px) {
+  #brx-header .bricks-mobile-menu-toggle {
+    display: none !important;
+  }
+
+  #brx-header .bricks-nav-menu-wrapper {
+    display: flex !important;
+  }
+
+  #brx-header .bricks-mobile-menu-wrapper {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
    17. GREEN SECTION - 녹색 배경 섹션 (피더스 브랜드)
    ========================================================================== */
 .feedus-green-section,
