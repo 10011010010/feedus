@@ -140,6 +140,7 @@
 @media (max-width: 767px) {
   #brxe-cgvxhp {
     grid-template-columns: 1fr 1fr !important;
+    row-gap: 20px;
   }
 
   /* 2열에서는 4개 모두 표시 (2x2) */
