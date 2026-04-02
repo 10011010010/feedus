@@ -1430,6 +1430,12 @@ textarea::placeholder {
   border-radius: var(--feedus-border-radius-pill);
 }
 
+/* +/- 수량 버튼 하단 마진 제거 (글로벌) */
+span.action.plus,
+span.action.minus {
+  margin-bottom: 0 !important;
+}
+
 /* ==========================================================================
    20. PRINT STYLES
    ========================================================================== */
