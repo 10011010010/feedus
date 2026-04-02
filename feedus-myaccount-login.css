@@ -148,6 +148,14 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   margin-bottom: 0 !important;
 }
 
+/* 로그인 버튼 풀너비 */
+.woocommerce-account .woocommerce-form-login__submit {
+  width: 100% !important;
+  padding: 16px 24px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+
 /* 비밀번호 분실 링크 + 개인정보 보호정책 텍스트 크기 */
 .woocommerce-account .lost_password,
 .woocommerce-account .lost_password a,
