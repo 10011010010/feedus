@@ -299,7 +299,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   모바일 (≤768px): Why Feedus / Our Farm 이미지 세로형
+   모바일 (≤768px): Why Feedus / Our Farm 이미지
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   #brxe-uaycif,
@@ -310,10 +310,11 @@
 
   #brxe-ogxgky,
   #brxe-sgzvtt {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     object-position: center;
-    height: 100%;
+    height: auto;
+    width: 100%;
   }
 }
 
