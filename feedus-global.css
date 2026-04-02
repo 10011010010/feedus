@@ -506,87 +506,13 @@ a:hover {
 }
 
 /* ==========================================================================
-   5. HEADER - 고정 헤더 (Bricks Builder)
+   5. HEADER - feedus-header.css로 분리됨 (Bricks 코드 엘리먼트에서 로드)
    ========================================================================== */
-header,
-.brxe-section.feedus-header,
-#brx-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--feedus-header-height);
-  z-index: var(--feedus-z-header);
-  background-color: var(--feedus-white);
-  transition: transform var(--feedus-duration-medium) ease,
-              background-color var(--feedus-duration-medium) ease;
-}
-
-/* 헤더 하단 라인은 항상 표시 (고정 헤더 구분) */
-#brx-header::after,
-header.feedus-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: var(--feedus-container-padding);
-  width: calc(100% - var(--feedus-container-padding) * 2);
-  height: 1px;
-  background-color: var(--feedus-primary);
-  pointer-events: none;
-}
 
 /* Header 높이만큼 본문 패딩 */
 #brx-content,
 main {
   padding-top: var(--feedus-header-height);
-}
-
-/* 헤더 네비게이션 링크 */
-#brx-header a,
-.feedus-header a {
-  color: var(--feedus-primary);
-  font-family: var(--feedus-font-body);
-  font-size: 1rem;
-  text-decoration: none;
-  transition: color var(--feedus-duration-default) ease;
-}
-
-#brx-header a:hover,
-.feedus-header a:hover {
-  color: var(--feedus-primary-hover);
-}
-
-/* 로고 */
-.feedus-logo img,
-#brx-header .brxe-image img {
-  height: auto;
-  max-height: 40px;
-  width: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .feedus-logo img,
-  #brx-header .brxe-image img {
-    max-height: 50px;
-  }
-}
-
-/* 장바구니 아이콘 뱃지 */
-.feedus-cart-count {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: var(--feedus-primary);
-  color: var(--feedus-white);
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.7rem;
-  font-weight: 600;
-  line-height: 1;
 }
 
 /* ==========================================================================
@@ -1339,126 +1265,7 @@ textarea::placeholder {
   background-color: var(--feedus-primary);
 }
 
-/* Bricks Nav Menu 오버라이드 */
-.brxe-nav-menu .bricks-nav-menu > li > a {
-  color: var(--feedus-primary);
-  font-size: 1rem;
-  padding: 10px 15px;
-}
-
-.brxe-nav-menu .bricks-nav-menu > li > a:hover {
-  color: var(--feedus-primary-hover);
-}
-
-/* ==========================================================================
-   헤더 내부 레이아웃 - 3컬럼 + 모바일 메뉴 브레이크포인트
-   최대 specificity: html body #brx-header 체인으로 Bricks 오버라이드
-   ========================================================================== */
-
-/* 헤더 컨테이너: 강제 가로 레이아웃
-   Bricks .brxe-container 기본: flex-direction:column, width:1100px
-   Bricks @media(max-width:767px): flex-wrap:wrap
-   → 전부 오버라이드 필요 */
-#brxe-anucby.brxe-container,
-header#brx-header .brxe-container,
-header .brxe-section > .brxe-container {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: 100% !important;
-  padding: 0 var(--feedus-container-padding) !important;
-  gap: 0 !important;
-}
-
-/* 각 자식 블록: Bricks width:100% 리셋 */
-#brxe-anucby.brxe-container > .brxe-block,
-header#brx-header .brxe-container > .brxe-block {
-  width: auto !important;
-  max-width: none !important;
-  flex-shrink: 0 !important;
-}
-
-/* 로고 영역 (왼쪽) */
-#brxe-anucby #brxe-zxfmwd,
-header#brx-header #brxe-zxfmwd {
-  flex: 0 0 auto !important;
-}
-
-/* 네비게이션 영역 (가운데) */
-#brxe-anucby #brxe-nzjuxp,
-header#brx-header #brxe-nzjuxp {
-  flex: 1 1 auto !important;
-  display: flex !important;
-  justify-content: center !important;
-}
-
-/* 계정/장바구니 영역 (오른쪽) */
-#brxe-anucby #brxe-ojhhbi,
-header#brx-header #brxe-ojhhbi {
-  flex: 0 0 auto !important;
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  gap: 15px !important;
-}
-
-/* 태블릿 세로 이하(~767px): 햄버거 메뉴 활성화, 네비 숨김 */
-@media screen and (max-width: 767px) {
-  /* 컨테이너: flex-wrap:wrap 방지 (Bricks가 여기서 wrap 강제함) */
-  #brxe-anucby.brxe-container,
-  header#brx-header .brxe-container {
-    flex-wrap: nowrap !important;
-  }
-
-  /* 데스크톱 네비게이션 숨기기 */
-  header#brx-header .bricks-nav-menu-wrapper,
-  #brxe-cxddqv .bricks-nav-menu-wrapper {
-    display: none !important;
-  }
-
-  /* 햄버거 버튼 표시 */
-  header#brx-header .bricks-mobile-menu-toggle,
-  #brxe-cxddqv .bricks-mobile-menu-toggle {
-    display: flex !important;
-  }
-
-  /* 네비 영역(햄버거 포함): 맨 우측으로 */
-  #brxe-anucby #brxe-nzjuxp,
-  header#brx-header #brxe-nzjuxp {
-    flex: 0 0 auto !important;
-    justify-content: flex-end !important;
-    order: 99 !important;
-  }
-
-  /* 계정/장바구니: 로고 다음 */
-  #brxe-anucby #brxe-ojhhbi,
-  header#brx-header #brxe-ojhhbi {
-    order: 2 !important;
-    margin-left: auto !important;
-  }
-}
-
-/* 태블릿 가로 이상(768px~): 데스크톱 네비 표시, 햄버거 숨김 */
-@media screen and (min-width: 768px) {
-  header#brx-header .bricks-mobile-menu-toggle,
-  #brxe-cxddqv .bricks-mobile-menu-toggle {
-    display: none !important;
-  }
-
-  header#brx-header .bricks-nav-menu-wrapper,
-  #brxe-cxddqv .bricks-nav-menu-wrapper {
-    display: flex !important;
-  }
-
-  header#brx-header .bricks-mobile-menu-wrapper,
-  #brxe-cxddqv .bricks-mobile-menu-wrapper {
-    display: none !important;
-  }
-}
+/* Bricks Nav Menu - 헤더 CSS는 feedus-header.css로 분리됨 */
 
 /* ==========================================================================
    17. GREEN SECTION - 녹색 배경 섹션 (피더스 브랜드)

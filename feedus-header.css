@@ -1,0 +1,246 @@
+/* ==========================================================================
+   FEEDUS HEADER - 커스텀 코드 헤더
+   Bricks 코드 엘리먼트에서 로드
+   ========================================================================== */
+
+/* 기존 Bricks 헤더 숨김 */
+#brx-header .brxe-section {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   헤더 바
+   -------------------------------------------------------------------------- */
+.feedus-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--feedus-header-height, 70px);
+  z-index: var(--feedus-z-header, 1001);
+  background-color: var(--feedus-white, #fff);
+}
+
+/* 헤더 하단 라인 */
+.feedus-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: var(--feedus-container-padding, 20px);
+  width: calc(100% - var(--feedus-container-padding, 20px) * 2);
+  height: 1px;
+  background-color: var(--feedus-primary, #2d6b2d);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   헤더 내부 컨테이너: 3컬럼 레이아웃
+   -------------------------------------------------------------------------- */
+.feedus-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 var(--feedus-container-padding, 20px);
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   로고 (왼쪽)
+   -------------------------------------------------------------------------- */
+.feedus-header-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.feedus-header-logo img {
+  height: auto;
+  max-height: 35px;
+  width: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .feedus-header-logo img {
+    max-height: 45px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   데스크톱 네비게이션 (가운데)
+   -------------------------------------------------------------------------- */
+.feedus-header-nav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.feedus-header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 5px;
+}
+
+.feedus-header-nav a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--feedus-primary, #2d6b2d);
+  font-family: var(--feedus-font-body, sans-serif);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color var(--feedus-duration-default, 0.2s) ease;
+}
+
+.feedus-header-nav a:hover {
+  color: var(--feedus-primary-hover, #1a4a1a);
+}
+
+/* --------------------------------------------------------------------------
+   우측 영역 (내 계정 + 장바구니)
+   -------------------------------------------------------------------------- */
+.feedus-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.feedus-header-actions a {
+  color: var(--feedus-primary, #2d6b2d);
+  font-family: var(--feedus-font-body, sans-serif);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color var(--feedus-duration-default, 0.2s) ease;
+}
+
+.feedus-header-actions a:hover {
+  color: var(--feedus-primary-hover, #1a4a1a);
+}
+
+/* 장바구니 아이콘 */
+.feedus-header-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.feedus-header-cart .ti-shopping-cart {
+  font-size: 24px;
+}
+
+.feedus-header-cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: var(--feedus-primary, #2d6b2d);
+  color: var(--feedus-white, #fff);
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   햄버거 버튼
+   -------------------------------------------------------------------------- */
+.feedus-header-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.feedus-header-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--feedus-primary, #2d6b2d);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 열림 상태 */
+.feedus-header-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.feedus-header-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.feedus-header-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   모바일 메뉴 (슬라이드)
+   -------------------------------------------------------------------------- */
+.feedus-mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--feedus-header-height, 70px);
+  left: 0;
+  width: 100%;
+  background-color: var(--feedus-white, #fff);
+  z-index: var(--feedus-z-header, 1001);
+  border-bottom: 1px solid var(--feedus-primary, #2d6b2d);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.feedus-mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.feedus-mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 15px var(--feedus-container-padding, 20px);
+}
+
+.feedus-mobile-menu li + li {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.feedus-mobile-menu a {
+  display: block;
+  padding: 12px 0;
+  color: var(--feedus-primary, #2d6b2d);
+  font-family: var(--feedus-font-body, sans-serif);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   반응형: 태블릿 세로 이하(~767px)에서 햄버거 전환
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 767px) {
+  .feedus-header-nav {
+    display: none;
+  }
+
+  .feedus-header-toggle {
+    display: flex;
+  }
+
+  .feedus-mobile-menu {
+    display: block;
+  }
+}

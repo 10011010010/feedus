@@ -1,0 +1,100 @@
+<!-- FEEDUS 커스텀 헤더 - Bricks 코드 엘리먼트에 붙여넣기 -->
+<link rel="stylesheet" href="/wp-content/uploads/feedus-header.css">
+
+<div class="feedus-header">
+  <div class="feedus-header-inner">
+
+    <!-- 로고 -->
+    <div class="feedus-header-logo">
+      <a href="https://feedus.kr">
+        <img src="https://feedus.kr/wp-content/imgs/feedus-logo-green.svg" alt="피더스" loading="eager" decoding="async">
+      </a>
+    </div>
+
+    <!-- 데스크톱 네비게이션 -->
+    <nav class="feedus-header-nav">
+      <ul>
+        <li><a href="/shop">제품</a></li>
+        <li><a href="#">직배송</a></li>
+        <li><a href="#">피더스 소개</a></li>
+      </ul>
+    </nav>
+
+    <!-- 우측: 내 계정 + 장바구니 + 햄버거 -->
+    <div class="feedus-header-actions">
+      <a href="/my-account">내 계정</a>
+      <a href="/cart" class="feedus-header-cart" aria-label="장바구니 보기">
+        <i class="ti-shopping-cart"></i>
+        <span class="feedus-header-cart-count js-cart-count"></span>
+      </a>
+      <button class="feedus-header-toggle" aria-label="메뉴 열기/닫기" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- 모바일 메뉴 -->
+<nav class="feedus-mobile-menu">
+  <ul>
+    <li><a href="/shop">제품</a></li>
+    <li><a href="#">직배송</a></li>
+    <li><a href="#">피더스 소개</a></li>
+  </ul>
+</nav>
+
+<script>
+(function() {
+  var toggle = document.querySelector('.feedus-header-toggle');
+  var mobileMenu = document.querySelector('.feedus-mobile-menu');
+
+  if (!toggle || !mobileMenu) return;
+
+  toggle.addEventListener('click', function() {
+    var isOpen = mobileMenu.classList.toggle('open');
+    toggle.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // 모바일 메뉴 링크 클릭 시 닫기
+  mobileMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // WooCommerce 장바구니 카운트 동기화
+  var countEl = document.querySelector('.js-cart-count');
+  if (countEl) {
+    var wooCount = document.querySelector('.brxe-woocommerce-mini-cart .cart-count');
+    if (wooCount && wooCount.textContent.trim() !== '0') {
+      countEl.textContent = wooCount.textContent.trim();
+      countEl.style.display = 'flex';
+    } else {
+      countEl.style.display = 'none';
+    }
+
+    // WooCommerce AJAX 카트 업데이트 감지
+    document.addEventListener('DOMSubtreeModified', function() {
+      // deprecated지만 Bricks 환경에서 가장 호환성 높음
+    });
+
+    if (typeof jQuery !== 'undefined') {
+      jQuery(document.body).on('added_to_cart removed_from_cart updated_cart_totals', function() {
+        var wc = document.querySelector('.brxe-woocommerce-mini-cart .cart-count');
+        if (wc && wc.textContent.trim() !== '0') {
+          countEl.textContent = wc.textContent.trim();
+          countEl.style.display = 'flex';
+        } else {
+          countEl.style.display = 'none';
+        }
+      });
+    }
+  }
+})();
+</script>
