@@ -194,19 +194,12 @@
 .feedus-header__toggle {
   display: none;
   align-items: center;
-  gap: 8px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
+  margin-left: 5px !important;
   color: var(--feedus-primary, #2d6b2d);
-  font-family: var(--feedus-font-body, sans-serif);
-  font-size: 1rem;
-}
-
-.feedus-header__toggle-label {
-  white-space: nowrap;
-  margin: 0 !important;
 }
 
 .feedus-header__toggle-icon {
