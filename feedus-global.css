@@ -1474,6 +1474,18 @@ textarea::placeholder {
    -------------------------------------------------------------------------- */
 @media screen and (max-width: 767px) {
   .brx-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   샵 페이지 모바일: 상품 그리드 2열 유지
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 767px) {
+  .woocommerce ul.products,
+  body.post-type-archive-product .brx-grid,
+  body.tax-product_cat .brx-grid {
     grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
   }
 }
