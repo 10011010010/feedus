@@ -1477,3 +1477,49 @@ textarea::placeholder {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* ==========================================================================
+   TABLE - 글로벌 테이블 스타일 (TablePress 포함 모든 표)
+   ========================================================================== */
+.tablepress,
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--feedus-primary);
+}
+
+.tablepress th,
+.tablepress td,
+table th,
+table td {
+  border: 1px solid var(--feedus-primary);
+  padding: 10px 14px;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  text-align: left;
+}
+
+/* 헤더: 프라이머리 배경 + 흰색 글자 */
+.tablepress thead th,
+table thead th {
+  background-color: var(--feedus-primary);
+  color: #ffffff;
+}
+
+/* 교차 행: 프라이머리 5% */
+.tablepress tbody tr:nth-child(even),
+table tbody tr:nth-child(even) {
+  background-color: rgba(var(--feedus-primary-rgb), 0.05);
+}
+
+.tablepress tbody tr:nth-child(odd),
+table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Hover: 프라이머리 10% */
+.tablepress tbody tr:hover,
+table tbody tr:hover {
+  background-color: rgba(var(--feedus-primary-rgb), 0.1);
+}
