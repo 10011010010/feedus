@@ -12,28 +12,30 @@
    비로그인 상태: 헤더 "내 계정" → "로그인" 텍스트 변경
    -------------------------------------------------------------------------- */
 body:not(.logged-in) .feedus-header__account {
-  font-size: 0;
-  line-height: 0;
+  visibility: hidden !important;
+  position: relative;
+  font-size: 0 !important;
 }
 
 body:not(.logged-in) .feedus-header__account::after {
   content: "로그인";
+  visibility: visible;
   font-size: 1rem;
-  line-height: normal;
 }
 
 /* 비로그인 상태: 모바일 메뉴에서도 동일하게 적용 */
 body:not(.logged-in) .feedus-mobile-menu a[href="/my-account"],
 body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"] {
-  font-size: 0;
-  line-height: 0;
+  visibility: hidden !important;
+  position: relative;
+  font-size: 0 !important;
 }
 
 body:not(.logged-in) .feedus-mobile-menu a[href="/my-account"]::after,
 body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   content: "로그인";
+  visibility: visible;
   font-size: 1rem;
-  line-height: normal;
 }
 
 /* --------------------------------------------------------------------------
