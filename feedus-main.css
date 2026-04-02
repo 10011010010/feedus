@@ -200,6 +200,7 @@
    4. Why Feedus 섹션
    -------------------------------------------------------------------------- */
 #brxe-ycsqzb {
+  font-size: clamp(32px, 5vw, 66px);
   padding-bottom: 6px;
 }
 
@@ -255,6 +256,7 @@
 }
 
 #brxe-rvmtuf {
+  font-size: clamp(32px, 5vw, 66px);
   padding-bottom: 6px;
 }
 
