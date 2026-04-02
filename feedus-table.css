@@ -1,19 +1,16 @@
 /* ==========================================================================
-   FEEDUS - 글로벌 테이블 스타일 (TablePress 포함 모든 표)
+   FEEDUS - TablePress 전용 테이블 스타일
    프라이머리 컬러 기반 테이블 디자인
    ========================================================================== */
 
-.tablepress,
-table {
+.tablepress {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid var(--feedus-primary);
 }
 
 .tablepress th,
-.tablepress td,
-table th,
-table td {
+.tablepress td {
   border: 1px solid var(--feedus-primary);
   padding: 10px 14px;
   font-size: 16px !important;
@@ -23,25 +20,21 @@ table td {
 }
 
 /* 헤더: 프라이머리 배경 + 흰색 글자 */
-.tablepress thead th,
-table thead th {
+.tablepress thead th {
   background-color: var(--feedus-primary);
   color: #ffffff;
 }
 
 /* 교차 행 */
-.tablepress tbody tr:nth-child(even),
-table tbody tr:nth-child(even) {
+.tablepress tbody tr:nth-child(even) {
   background-color: #F2F8F6;
 }
 
-.tablepress tbody tr:nth-child(odd),
-table tbody tr:nth-child(odd) {
+.tablepress tbody tr:nth-child(odd) {
   background-color: #ffffff;
 }
 
 /* Hover */
-.tablepress tbody tr:hover,
-table tbody tr:hover {
+.tablepress tbody tr:hover {
   background-color: #E5F2EE;
 }
