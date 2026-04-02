@@ -1474,6 +1474,6 @@ textarea::placeholder {
    -------------------------------------------------------------------------- */
 @media screen and (max-width: 767px) {
   .brx-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
