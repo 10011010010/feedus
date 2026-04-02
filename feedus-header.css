@@ -68,9 +68,10 @@ main {
   }
 }
 
-/* 장바구니 아이콘 */
-#brx-header .cart-icon {
-  margin-bottom: 0;
+/* 장바구니 아이콘 - 헤더 내 마진 초기화 */
+#brx-header .cart-icon,
+#brx-header .cart-icon * {
+  margin: 0 !important;
 }
 
 /* 장바구니 아이콘 뱃지 */
