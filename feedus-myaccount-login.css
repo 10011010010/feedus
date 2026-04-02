@@ -141,7 +141,8 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
 
 /* 라벨 하단 마진 축소 */
 .woocommerce-account .u-columns label {
-  margin-bottom: 10px !important;
+  margin-bottom: 5px !important;
+  margin-top: 0 !important;
 }
 
 /* p 하단 마진 축소 */
