@@ -118,13 +118,19 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   margin-right: auto;
 }
 
-.woocommerce-account .u-columns .u-column1,
-.woocommerce-account .u-columns .u-column2 {
+.woocommerce-account .u-columns .u-column1 {
   width: 100% !important;
   max-width: 100% !important;
   flex: none;
   padding: 0 !important;
   margin: 0 !important;
+}
+
+.woocommerce-account .u-columns .u-column2 {
+  width: calc(100% + 40px) !important;
+  max-width: calc(100% + 40px) !important;
+  flex: none;
+  margin: 0 -20px !important;
 }
 
 /* 로그인/회원가입 제목 가운데 정렬 */
@@ -165,15 +171,11 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
 }
 
 /* 회원가입 섹션 */
-.woocommerce-account .u-column2 {
-  background-color: #FAFCFC;
-  border: 1px solid #F5FAF8;
-  border-radius: 40px;
+.woocommerce-account .u-columns .u-column2 {
+  background-color: #FAFCFC !important;
+  border: 1px solid #F5FAF8 !important;
+  border-radius: 40px !important;
   padding: 30px 20px !important;
-  margin-left: -20px !important;
-  margin-right: -20px !important;
-  width: calc(100% + 40px) !important;
-  max-width: calc(100% + 40px) !important;
 }
 
 .woocommerce-account .u-column2 > h2 {
