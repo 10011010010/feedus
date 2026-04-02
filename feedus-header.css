@@ -160,9 +160,10 @@
   color: var(--feedus-primary-hover, #1a4a1a);
 }
 
-.feedus-header__cart i {
-  font-size: 22px;
-  line-height: 1;
+.feedus-header__cart svg {
+  display: block;
+  width: 22px;
+  height: 22px;
 }
 
 .feedus-header__cart-count {
