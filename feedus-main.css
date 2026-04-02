@@ -87,56 +87,29 @@
 /* --------------------------------------------------------------------------
    2. 구분선 (divider)
    -------------------------------------------------------------------------- */
-#brxe-vqojzv {
-  margin: 0;
-  padding-right: 40px;
-  padding-left: 40px;
-}
-
-#brxe-vqojzv.horizontal .line {
-  border-top-color: var(--primary-color-green);
-}
-
-#brxe-vqojzv.vertical .line {
-  border-right-color: var(--primary-color-green);
-}
-
-#brxe-vqojzv .icon {
-  color: var(--primary-color-green);
-}
-
-#brxe-qytliq {
-  margin: 0;
-  padding-right: 40px;
-  padding-left: 40px;
-}
-
-#brxe-qytliq.horizontal .line {
-  border-top-color: var(--primary-color-green);
-}
-
-#brxe-qytliq.vertical .line {
-  border-right-color: var(--primary-color-green);
-}
-
-#brxe-qytliq .icon {
-  color: var(--primary-color-green);
-}
-
+/* 구분선 공통: 헤더 하단 라인과 동일한 좌우 여백 */
+#brxe-vqojzv,
+#brxe-qytliq,
 #brxe-nhjovq {
   margin: 0;
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: var(--feedus-container-padding);
+  padding-left: var(--feedus-container-padding);
 }
 
+#brxe-vqojzv.horizontal .line,
+#brxe-qytliq.horizontal .line,
 #brxe-nhjovq.horizontal .line {
   border-top-color: var(--primary-color-green);
 }
 
+#brxe-vqojzv.vertical .line,
+#brxe-qytliq.vertical .line,
 #brxe-nhjovq.vertical .line {
   border-right-color: var(--primary-color-green);
 }
 
+#brxe-vqojzv .icon,
+#brxe-qytliq .icon,
 #brxe-nhjovq .icon {
   color: var(--primary-color-green);
 }
