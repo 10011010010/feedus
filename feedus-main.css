@@ -239,12 +239,7 @@
 @media (max-width: 767px) {
   #brxe-fpwmea {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 478px) {
-  #brxe-fpwmea {
-    grid-template-columns: 1fr;
+    grid-gap: 40px;
   }
 }
 
@@ -290,6 +285,7 @@
 @media (max-width: 767px) {
   #brxe-somkle {
     grid-template-columns: 1fr;
+    grid-gap: 40px;
   }
 }
 
