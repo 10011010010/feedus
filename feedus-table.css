@@ -6,9 +6,7 @@
 .tablepress {
   width: 100%;
   border-collapse: collapse;
-  border: none;
-  border-top: 1px solid var(--feedus-primary);
-  border-bottom: 1px solid var(--feedus-primary);
+  border: 1px solid var(--feedus-primary);
 }
 
 .tablepress th,
@@ -35,11 +33,6 @@
 
 .tablepress tbody tr:nth-child(odd) td {
   background-color: #ffffff !important;
-}
-
-/* 마지막 행: 하단 라인 3px */
-.tablepress tbody tr:last-child td {
-  border-bottom-width: 3px !important;
 }
 
 /* Hover */
