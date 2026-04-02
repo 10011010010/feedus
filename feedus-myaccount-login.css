@@ -138,6 +138,11 @@ body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
   margin-bottom: 10px !important;
 }
 
+/* 비밀번호 필드 하단 마진 제거 */
+.woocommerce-account .u-columns .form-row-wide:has(#password) {
+  margin-bottom: 0 !important;
+}
+
 /* 회원가입 섹션 */
 .woocommerce-account .u-column2 > h2 {
   font-size: 32px !important;
