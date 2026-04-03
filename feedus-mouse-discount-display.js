@@ -90,12 +90,6 @@ jQuery(function ($) {
     // 2) 상품 페이지 - 할인 정보 표시
     // =============================================
     function updateProductDiscount() {
-        var $summary = $(".wc-summary-table, .wc-locked-variation-summary");
-        if (!$summary.length) return;
-
-        // 기존 할인 표시 제거
-        $(".feedus-product-discount").remove();
-
         // 현재 상품이 마우스인지 확인
         var isMouseProduct = false;
         var bodyClass = $("body").attr("class") || "";
@@ -107,79 +101,110 @@ jQuery(function ($) {
         }
         if (!isMouseProduct) return;
 
-        // 총 수량 계산
+        // 플러그인 요약 영역 찾기
+        var $container = $(".wc-locked-variations-container");
+        var $summaryDiv = $(".wc-locked-variations-summary");
+        var $summaryTable = $(".wc-summary-table");
+        if (!$summaryTable.length) return;
+
+        // 기존 할인 표시 제거
+        $(".feedus-product-discount").remove();
+
+        // 총 수량: wc-locked-variation-qty 인풋들 합산
         var totalQty = 0;
-        $summary.find("input[type='number'], .wc-locked-qty input").each(function () {
+        $container.find("input.wc-locked-variation-qty").each(function () {
             totalQty += parseInt($(this).val(), 10) || 0;
         });
 
-        // 총 금액 행 찾기
-        var $totalRow = $summary.find("tr:last, .wc-summary-total");
-        var $totalCell = $summary.find("td:contains('₩')").last();
+        // 총 금액 파싱 (마지막 행의 td)
+        var $totalCell = $summaryTable.find("tr:last td");
+        var totalText = $totalCell.text().replace(/[^\d]/g, "");
+        var originalTotal = parseInt(totalText, 10) || 0;
 
         if (totalQty >= MIN_QTY) {
             var totalDiscount = totalQty * DISCOUNT_PER;
-
-            // 원래 금액 파싱
-            var totalText = $totalCell.text().replace(/[^\d]/g, "");
-            var originalTotal = parseInt(totalText, 10) || 0;
             var discountedTotal = originalTotal - totalDiscount;
 
-            var html =
-                '<div class="feedus-product-discount" style="' +
-                "margin-top:12px;padding:12px 16px;border-radius:8px;" +
-                "background:#f0fdf4;border:1px solid #86efac;" +
-                "font-size:14px;line-height:1.6;" +
-                '">' +
-                '<div style="color:#16a34a;font-weight:700;margin-bottom:4px;">' +
-                "🎉 대량 할인 적용!" +
-                "</div>" +
-                "<div>총 수량: " + totalQty + "마리 (50마리 이상)</div>" +
-                "<div>마리당 할인: -₩" + DISCOUNT_PER.toLocaleString("ko-KR") + "</div>" +
-                '<div style="font-weight:700;color:#dc2626;font-size:16px;margin-top:4px;">' +
-                "할인 금액: -₩" + totalDiscount.toLocaleString("ko-KR") +
-                "</div>" +
-                '<div style="font-weight:700;font-size:18px;margin-top:4px;">' +
-                "할인 적용가: ₩" + discountedTotal.toLocaleString("ko-KR") +
-                "</div>" +
-                "</div>";
+            // 테이블에 할인 행 추가
+            var discountRow =
+                '<tr class="feedus-product-discount">' +
+                '<th style="text-align:left;padding:6px;border-bottom:1px solid #ddd;color:#dc2626;">할인 금액</th>' +
+                '<td style="text-align:right;padding:6px;border-bottom:1px solid #ddd;color:#dc2626;font-weight:bold;">' +
+                "-₩" + totalDiscount.toLocaleString("ko-KR") +
+                "</td></tr>";
+            var finalRow =
+                '<tr class="feedus-product-discount">' +
+                '<th style="text-align:left;padding:6px;font-weight:bold;color:#16a34a;">할인 적용가</th>' +
+                '<td style="text-align:right;padding:6px;font-weight:bold;font-size:1.1em;color:#16a34a;">' +
+                "₩" + discountedTotal.toLocaleString("ko-KR") +
+                "</td></tr>";
 
-            // 총 금액 아래 또는 요약 테이블 아래에 삽입
-            $summary.after(html);
+            $summaryTable.find("tr:last").after(discountRow + finalRow);
+
+            // 테이블 아래에 안내 배너
+            var banner =
+                '<div class="feedus-product-discount" style="' +
+                "margin-top:10px;padding:10px 14px;border-radius:6px;" +
+                "background:#f0fdf4;border:1px solid #86efac;" +
+                "font-size:13px;line-height:1.5;color:#16a34a;" +
+                '">' +
+                "대량 할인 적용 중! (" + totalQty + "마리 × -₩" + DISCOUNT_PER.toLocaleString("ko-KR") + ")" +
+                "</div>";
+            $summaryDiv.after(banner);
+
         } else if (totalQty > 0) {
             var remaining = MIN_QTY - totalQty;
-            var html =
+            var hint =
                 '<div class="feedus-product-discount" style="' +
-                "margin-top:12px;padding:12px 16px;border-radius:8px;" +
+                "margin-top:10px;padding:10px 14px;border-radius:6px;" +
                 "background:#fefce8;border:1px solid #fde047;" +
-                "font-size:14px;line-height:1.6;" +
+                "font-size:13px;line-height:1.5;color:#ca8a04;" +
                 '">' +
-                '<div style="color:#ca8a04;font-weight:600;">' +
-                "💡 " + remaining + "마리 더 담으면 마리당 ₩" + DISCOUNT_PER.toLocaleString("ko-KR") + " 할인!" +
-                "</div>" +
+                remaining + "마리 더 담으면 마리당 ₩" + DISCOUNT_PER.toLocaleString("ko-KR") + " 할인!" +
                 "</div>";
-            $summary.after(html);
+            $summaryDiv.after(hint);
         }
     }
 
     // 상품 페이지에서 실행
     if ($("body").hasClass("single-product")) {
-        // 초기 실행 + 수량 변경 시 + MutationObserver
+        var _discountTimer;
         var runProductDiscount = function () {
-            setTimeout(updateProductDiscount, 300);
+            clearTimeout(_discountTimer);
+            _discountTimer = setTimeout(updateProductDiscount, 200);
         };
 
-        runProductDiscount();
-        $(document).on("change", "input[type='number']", runProductDiscount);
-        $(document).on("click", ".wc-locked-qty button, .quantity button, .plus, .minus", runProductDiscount);
+        // 이벤트 바인딩
+        $(document).on("change", "input.wc-locked-variation-qty", runProductDiscount);
+        $(document).on("click", ".wc-locked-variation-actions button, .quantity button, .plus, .minus", runProductDiscount);
+        $(document).on("input", "input.wc-locked-variation-qty", runProductDiscount);
 
-        // DOM 변경 감지
-        var observer = new MutationObserver(function () {
-            runProductDiscount();
+        // body에 MutationObserver (플러그인이 동적으로 DOM을 생성하므로)
+        var observer = new MutationObserver(function (mutations) {
+            for (var j = 0; j < mutations.length; j++) {
+                var t = mutations[j].target;
+                if (t && (
+                    (t.className && t.className.toString().indexOf("wc-") > -1) ||
+                    (t.nodeName === "INPUT") ||
+                    (t.nodeName === "TD") ||
+                    (t.nodeName === "TABLE")
+                )) {
+                    runProductDiscount();
+                    return;
+                }
+            }
+            // addedNodes 체크
+            for (var k = 0; k < mutations.length; k++) {
+                if (mutations[k].addedNodes.length) {
+                    runProductDiscount();
+                    return;
+                }
+            }
         });
-        var target = document.querySelector(".wc-summary-table, .wc-locked-variation-summary, .summary");
-        if (target) {
-            observer.observe(target, { childList: true, subtree: true, characterData: true });
-        }
+        observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+
+        // 초기 실행 (약간 딜레이)
+        setTimeout(runProductDiscount, 500);
+        setTimeout(runProductDiscount, 1500);
     }
 });
