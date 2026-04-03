@@ -4,6 +4,9 @@
    Reference: Redbrick Coffee (redbrick.coffee) 구조 기반
    ========================================================================== */
 
+/* Pretendard 웹폰트 CDN */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
 /* ==========================================================================
    1. ROOT VARIABLES - 피더스 브랜드 컬러 & 글로벌 설정
    ========================================================================== */
@@ -18,18 +21,18 @@
   --feedus-gray: #6c757d;
   --feedus-bg: #ffffff;
 
-  /* Typography (Font Family) - Adobe Fonts: omnigothic */
-  --font-primary: "omnigothic", -apple-system, "Malgun Gothic", sans-serif;
+  /* Typography (Font Family) - Pretendard Variable */
+  --font-primary: "Pretendard Variable", Pretendard, -apple-system, "Malgun Gothic", sans-serif;
   --font-fallback: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
   --feedus-font-body: var(--font-primary);
   --feedus-font-heading: var(--font-primary);
 
   /* Font Weights */
-  --fw-light: 200;
-  --fw-regular: 300;
-  --fw-medium: 400;
-  --fw-semibold: 500;
-  --fw-bold: 600;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
   --feedus-font-body-weight: var(--fw-regular);
   --feedus-font-heading-weight: var(--fw-bold);
   --feedus-font-body-size: 16px;
