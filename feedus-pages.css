@@ -1,0 +1,630 @@
+/* ==========================================================================
+   FEEDUS - Page-Specific Styles (Consolidated from WPCode)
+
+   이 파일은 WPCode에 흩어져 있던 CSS 스니펫을 하나로 통합한 것입니다.
+   feedus-global.css의 CSS 변수를 사용합니다.
+
+   색상을 바꾸려면 feedus-global.css의 :root 변수만 수정하세요:
+   --feedus-primary: #007D51;
+
+   목차:
+   1. FONT LOADING
+   2. HEADER
+   3. MAIN PAGE (HOME)
+   4. SHOP PAGE
+   5. SINGLE PRODUCT - Gallery
+   6. SINGLE PRODUCT - Variations & Add to Cart
+   7. CART PAGE
+   8. CHECKOUT PAGE
+   9. CHECKOUT - Invoice/Receipt
+   10. THANK YOU PAGE
+   11. MY ACCOUNT - Navigation & Layout
+   12. MY ACCOUNT - Address Edit
+   13. MY ACCOUNT - Login/Register
+   14. SCHEDULE TABLE (직배송)
+   15. TABLEPRESS
+   16. FOOTER
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. FONT LOADING (WPCode id:16)
+   ========================================================================== */
+
+.wf-loading * {
+  opacity: 0;
+}
+
+.wf-active *,
+.wf-inactive * {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+/* ==========================================================================
+   2. HEADER (WPCode id:390)
+   ========================================================================== */
+
+.feedus-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--feedus-header-height, 70px);
+  z-index: var(--feedus-z-header, 1001);
+  background-color: var(--feedus-white, #fff);
+  transform: translate(0);
+  font-weight: 500;
+}
+
+.feedus-header *,
+.feedus-mobile-menu * {
+  font-weight: 500;
+}
+
+.feedus-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: var(--feedus-container-padding, 20px);
+  width: calc(100% - var(--feedus-container-padding, 20px) * 2);
+  height: 1px;
+  background-color: var(--feedus-primary, #2d6b2d);
+  pointer-events: none;
+}
+
+.feedus-header__row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--feedus-container-padding, 20px);
+  width: 100%;
+}
+
+.feedus-header__logo {
+  flex: 0 0 auto;
+}
+
+.feedus-header__logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.feedus-header__logo img {
+  height: auto;
+  max-height: 22px;
+  width: auto;
+  max-width: calc(100vw / 3 - var(--feedus-container-padding, 20px));
+}
+
+@media screen and (min-width: 768px) {
+  .feedus-header__logo img {
+    max-height: 28px;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .feedus-header__logo img {
+    max-height: 35px;
+  }
+}
+
+.feedus-header__menu {
+  display: none;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.feedus-header__menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+
+.feedus-header__menu li,
+.feedus-mobile-menu li {
+  margin: 0 !important;
+}
+
+.feedus-header__menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--feedus-primary);
+  font-family: var(--feedus-font-body, sans-serif);
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.feedus-header__menu li a:hover {
+  color: var(--feedus-primary-hover);
+}
+
+@media screen and (min-width: 768px) {
+  .feedus-header__menu {
+    display: flex;
+  }
+}
+
+.feedus-header__actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.feedus-header__account {
+  color: var(--feedus-primary);
+  font-family: var(--feedus-font-body, sans-serif);
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.feedus-header__account:hover {
+  color: var(--feedus-primary-hover);
+}
+
+.feedus-header__cart {
+  display: flex;
+  align-items: center;
+  color: var(--feedus-primary);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.feedus-header__cart:hover {
+  color: var(--feedus-primary-hover);
+}
+
+.feedus-header__cart svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.feedus-header__cart-count {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 50%;
+  background-color: var(--feedus-primary);
+  color: var(--feedus-white, #fff);
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1;
+  position: absolute;
+  top: -5px;
+  right: -8px;
+}
+
+.feedus-header__cart-count.show {
+  display: flex;
+}
+
+.feedus-header__toggle {
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-left: 5px !important;
+  color: var(--feedus-primary) !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* NOTE: SVG data URIs cannot use CSS variables - hardcoded %23007D51 is intentional */
+.feedus-header__toggle-icon {
+  width: 26px !important;
+  height: 26px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none' stroke='%23007D51' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='3' y1='6' x2='23' y2='6'/%3E%3Cline x1='3' y1='13' x2='23' y2='13'/%3E%3Cline x1='3' y1='20' x2='23' y2='20'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+}
+
+.feedus-header__toggle-icon span,
+.feedus-header__toggle-icon > * {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  border: none !important;
+}
+
+/* NOTE: SVG data URI - hardcoded %23007D51 is intentional */
+.feedus-header__toggle.active .feedus-header__toggle-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none' stroke='%23007D51' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='5' y1='5' x2='21' y2='21'/%3E%3Cline x1='21' y1='5' x2='5' y2='21'/%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 767px) {
+  .feedus-header__toggle {
+    display: flex;
+  }
+}
+
+.feedus-mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--feedus-header-height, 70px);
+  left: 0;
+  width: 100%;
+  background-color: var(--feedus-white, #fff);
+  z-index: calc(var(--feedus-z-header, 1001) - 1);
+  border-bottom: 1px solid var(--feedus-primary);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.feedus-mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.feedus-mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px var(--feedus-container-padding, 20px);
+}
+
+.feedus-mobile-menu li + li {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.feedus-mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  color: var(--feedus-primary);
+  font-family: var(--feedus-font-body, sans-serif);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.feedus-mobile-menu a:hover {
+  color: var(--feedus-primary-hover);
+}
+
+@media screen and (max-width: 767px) {
+  .feedus-mobile-menu {
+    display: block;
+  }
+}
+
+.feedus-mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: calc(var(--feedus-z-header, 1001) - 2);
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.feedus-mobile-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .feedus-mobile-overlay {
+    display: block;
+  }
+}
+
+
+/* ==========================================================================
+   3. MAIN PAGE - HOME (WPCode id:496)
+
+   TODO: WPCode id:496의 CSS 내용을 여기에 붙여넣으세요.
+   이 스니펫은 WordPress WPCode 플러그인에만 존재하며,
+   이 저장소에는 포함되어 있지 않습니다.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   4. SHOP PAGE (WPCode id:389)
+
+   TODO: WPCode id:389의 CSS 내용을 여기에 붙여넣으세요.
+   #007D51 → var(--feedus-primary) 로 치환 필요.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   5. SINGLE PRODUCT - Gallery (WPCode id:172)
+
+   TODO: WPCode id:172의 CSS 내용을 여기에 붙여넣으세요.
+   (상품 갤러리 썸네일 스타일)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   6. SINGLE PRODUCT - Variations & Add to Cart (WPCode id:256)
+   NOTE: This is the MORE COMPLETE version. id:381 (feedus-woocommerce-variations.css)
+   is an older subset and is superseded by this section.
+   ========================================================================== */
+
+/* Size label + dropdown: vertical stack */
+.variations_form table.variations tr {
+  display: flex;
+  flex-direction: column;
+}
+
+.variations_form table.variations th.label,
+.variations_form table.variations td.value {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.variations_form table.variations th.label label {
+  font-weight: 500 !important;
+  margin-bottom: 6px !important;
+  display: block;
+}
+
+.variations_form table.variations select,
+.variations_form table.variations select option {
+  color: var(--feedus-primary) !important;
+}
+
+/* Quantity input */
+.variations_form .quantity input.qty {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--feedus-primary) !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+}
+
+/* +/- buttons */
+.variations_form .quantity .action.minus,
+.variations_form .quantity .action.plus {
+  margin-bottom: 0 !important;
+  border-color: var(--feedus-primary) !important;
+  border-radius: 100% !important;
+  width: 46px !important;
+  height: 46px !important;
+}
+
+.variations_form .quantity {
+  margin-bottom: 14px;
+}
+
+/* Reorder elements */
+.variations_form .woocommerce-variation-add-to-cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.variations_form .wc-variation-mode-selector { order: 1; }
+.variations_form .woocommerce-variation-add-to-cart > .quantity { order: 2; }
+.variations_form .wc-locked-variations-container { order: 3; }
+.variations_form .single_add_to_cart_button { order: 4; }
+.variations_form .wc-multiple-variation-buttons { order: 5; }
+
+/* Buttons: "Add to List" top, "Add All to Cart" bottom */
+.variations_form .wc-multiple-variation-buttons {
+  display: flex !important;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
+  order: 1;
+  margin: 0 !important;
+}
+
+.variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart {
+  order: 2;
+}
+
+/* "Add All to Cart" styling */
+.variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart {
+  display: inline-flex !important;
+  color: var(--feedus-primary);
+  background-color: #ffffff;
+  border-color: var(--feedus-primary);
+}
+
+.variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart:hover {
+  color: #ffffff;
+  background-color: var(--feedus-primary);
+}
+
+/* "Add to List" styling */
+.variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
+  display: inline-flex !important;
+  color: #ffffff;
+  background-color: var(--feedus-primary);
+  border-color: var(--feedus-primary);
+}
+
+.variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn:hover {
+  color: var(--feedus-primary);
+  background-color: #ffffff;
+}
+
+/* Button padding */
+.variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart,
+.variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
+  padding: 14px 40px;
+  width: 100% !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Locked variations container */
+.wc-locked-variations-container b {
+  color: var(--feedus-primary) !important;
+}
+
+.wc-locked-variations-container,
+.wc-locked-variations-container * {
+  color: var(--feedus-primary) !important;
+  border-color: var(--feedus-primary) !important;
+}
+
+.wc-locked-variations-container .wc-remove-locked-variation {
+  color: red !important;
+}
+
+.wc-locked-variation-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wc-locked-variation-attributes,
+.wc-locked-variation-price {
+  margin: 0 !important;
+}
+
+.woocommerce-variation-price {
+  margin-bottom: 16px !important;
+}
+
+.wc-locked-variation-qty {
+  padding: 8px 10px !important;
+  color: var(--feedus-primary) !important;
+  font-weight: 500 !important;
+}
+
+.wc-locked-variation-qty::-webkit-inner-spin-button,
+.wc-locked-variation-qty::-webkit-outer-spin-button {
+  opacity: 1 !important;
+  -webkit-appearance: auto !important;
+}
+
+/* Fix: Mobile button visibility */
+.brxe-product-add-to-cart,
+.brxe-product-add-to-cart .variations_form,
+.brxe-product-add-to-cart .single_variation_wrap,
+.brxe-product-add-to-cart .woocommerce-variation-add-to-cart {
+  overflow: visible !important;
+}
+
+.woocommerce-variation-add-to-cart .wc-multiple-variation-buttons {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+/* ==========================================================================
+   7. CART PAGE (WPCode id:264, id:293, id:297)
+
+   TODO: WPCode에서 아래 스니펫의 CSS 내용을 여기에 붙여넣으세요:
+   - id:264 = 장바구니 수량 입력 스타일
+   - id:293 = 장바구니 페이지 레이아웃 (grid, totals, checkout button)
+   - id:297 = 배송 행 숨기기
+   #007D51 → var(--feedus-primary) 로 치환 필요.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   8. CHECKOUT PAGE (WPCode id:310, id:383)
+
+   TODO: WPCode에서 아래 스니펫의 CSS 내용을 여기에 붙여넣으세요:
+   - id:310 = 결제 폼 필드, 결제 수단, 주문 버튼
+   - id:383 = 결제 2단 레이아웃
+   #007D51 → var(--feedus-primary) 로 치환 필요.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   9. CHECKOUT - Invoice/Receipt (WPCode id:312)
+
+   TODO: WPCode id:312의 CSS 내용을 여기에 붙여넣으세요.
+   (이미 CSS 변수를 대부분 사용하고 있을 것입니다)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   10. THANK YOU PAGE (WPCode id:327)
+
+   TODO: WPCode id:327의 CSS 내용을 여기에 붙여넣으세요.
+   #007D51 → var(--feedus-primary) 로 치환 필요.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   11. MY ACCOUNT - Navigation & Layout (WPCode id:363, id:372)
+
+   TODO: WPCode에서 아래 스니펫의 CSS 내용을 여기에 붙여넣으세요:
+   - id:363 = 마이 어카운트 페이지 스타일, 네비게이션, 주소 표시, 인라인 편집 폼
+   - id:372 = 로그인 폼 가운데 정렬 및 테두리 제거
+   #007D51 → var(--feedus-primary) 로 치환 필요.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   12. MY ACCOUNT - Address Edit (WPCode id:371)
+
+   TODO: WPCode id:371의 CSS 내용을 여기에 붙여넣으세요.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   13. MY ACCOUNT - Login/Register (WPCode id:547)
+
+   TODO: WPCode id:547의 CSS 내용을 여기에 붙여넣으세요.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   14. SCHEDULE TABLE - 직배송 (WPCode id:332)
+
+   TODO: WPCode id:332의 CSS 내용을 여기에 붙여넣으세요.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   15. TABLEPRESS (WPCode id:443)
+
+   TODO: WPCode id:443의 CSS 내용을 여기에 붙여넣으세요.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   16. FOOTER (WPCode id:527)
+   ========================================================================== */
+
+footer#brx-footer {
+  margin-top: clamp(3.75rem, 6vw, 7.5rem);
+}
