@@ -136,34 +136,22 @@ h1, h2, h3, h4, h5, h6,
   margin: 0;
 }
 
-/* --- h1 : 히어로 대제목 (디자인 시안: 74pt / 93pt / tracking -50) --- */
+/* --- h1 : 히어로 대제목 --- */
 h1, .brxe-heading[data-tag="h1"] {
   font-weight: 500;
-  font-size: 48px;
+  font-size: clamp(48px, 5vw + 20px, 80px);
   line-height: 126%;
   letter-spacing: -0.05em;
   margin: 0 0 30px 0;
 }
 
-@media only screen and (min-width: 768px) {
-  h1, .brxe-heading[data-tag="h1"] {
-    font-size: 80px;
-  }
-}
-
-/* --- h2 : 섹션 제목 (Redbrick "Make it more chocolatey" 스타일) --- */
+/* --- h2 : 섹션 제목 --- */
 h2, .brxe-heading[data-tag="h2"] {
   font-weight: 500;
-  font-size: 40px;
+  font-size: clamp(40px, 4vw + 16px, 72px);
   line-height: 127%;
   letter-spacing: -0.05em;
   margin: 0 0 30px 0;
-}
-
-@media only screen and (min-width: 768px) {
-  h2, .brxe-heading[data-tag="h2"] {
-    font-size: 72px;
-  }
 }
 
 /* --- h3 : 카테고리 라벨 (Redbrick "Blends", "Singles" 스타일) --- */
