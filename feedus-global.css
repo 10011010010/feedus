@@ -154,21 +154,15 @@ h1, .brxe-heading[data-tag="h1"] {
 /* --- h2 : 섹션 제목 (Redbrick "Make it more chocolatey" 스타일) --- */
 h2, .brxe-heading[data-tag="h2"] {
   font-weight: 500;
-  font-size: 36px;
+  font-size: 40px;
   line-height: 127%;
   letter-spacing: -0.05em;
   margin: 0 0 30px 0;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   h2, .brxe-heading[data-tag="h2"] {
-    font-size: 50px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  h2, .brxe-heading[data-tag="h2"] {
-    font-size: 66px;
+    font-size: 72px;
   }
 }
 
