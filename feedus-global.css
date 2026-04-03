@@ -571,23 +571,6 @@ main {
   }
 }
 
-/* 헤더 메뉴 중앙 정렬 보정 - 좌우 컬럼 너비 차이 무시하고 페이지 기준 중앙 배치 */
-.feedus-header__row {
-  position: relative;
-}
-
-.feedus-header__menu {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.feedus-header__logo,
-.feedus-header__actions {
-  z-index: 1;
-}
-
 /* 장바구니 아이콘 뱃지 */
 .feedus-cart-count {
   position: absolute;
