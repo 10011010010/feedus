@@ -18,7 +18,7 @@
 }
 .variations_form table.variations select,
 .variations_form table.variations select option {
-  color: #007D51 !important;
+  color: var(--feedus-text) !important;
 }
 
 /* 2) Quantity input */
@@ -27,7 +27,7 @@
   outline: none;
   box-shadow: none;
   border-radius: 0;
-  color: #007D51 !important;
+  color: var(--feedus-text) !important;
   font-weight: 500 !important;
   padding: 0 !important;
 }
@@ -104,10 +104,10 @@
 }
 
 /* 8) Locked variations container */
-.wc-locked-variations-container b { color: #007D51 !important; }
+.wc-locked-variations-container b { color: var(--feedus-text) !important; }
 .wc-locked-variations-container,
 .wc-locked-variations-container * {
-  color: #007D51 !important;
+  color: var(--feedus-text) !important;
   border-color: #007D51 !important;
 }
 .wc-locked-variations-container .wc-remove-locked-variation { color: red !important; }
@@ -117,7 +117,7 @@
 .woocommerce-variation-price { margin-bottom: 16px !important; }
 .wc-locked-variation-qty {
   padding: 8px 10px !important;
-  color: #007D51 !important;
+  color: var(--feedus-text) !important;
   font-weight: 500 !important;
 }
 .wc-locked-variation-qty::-webkit-inner-spin-button,
