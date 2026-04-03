@@ -156,7 +156,7 @@ h2, .brxe-heading[data-tag="h2"] {
 
 /* --- h3 : 카테고리 라벨 (Redbrick "Blends", "Singles" 스타일) --- */
 h3, .brxe-heading[data-tag="h3"] {
-  font-size: 22px;
+  font-size: clamp(21px, 1vw + 16px, 24px);
   line-height: 155%;
   letter-spacing: -0.03em;
   font-weight: 500;
