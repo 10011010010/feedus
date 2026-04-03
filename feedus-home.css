@@ -1,0 +1,365 @@
+/* ==========================================================================
+   FEEDUS - 메인 페이지 (HOME) 전용 스타일
+   Bricks Builder 요소별 ID 스타일 + 메인 페이지 레이아웃
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 히어로 섹션 (#brxe-kejsix)
+   -------------------------------------------------------------------------- */
+#brxe-neasfq {
+  font-weight: 500;
+  font-size: clamp(38px, 6vw, 74px);
+  line-height: 126%;
+  letter-spacing: -0.05em;
+}
+
+@media (max-width: 991px) {
+  #brxe-neasfq {
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  #brxe-neasfq {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 478px) {
+  #brxe-neasfq {
+    font-weight: 500;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+#brxe-ewaoqp {
+  justify-content: center;
+  padding-top: 0;
+  padding-right: 135px;
+  padding-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  #brxe-ewaoqp {
+    padding-right: 0;
+  }
+}
+
+#brxe-lamirm {
+  width: 100%;
+}
+
+#brxe-decwhj {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#brxe-mqmpiu {
+  display: grid;
+  align-items: initial;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-gap: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  #brxe-mqmpiu {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 478px) {
+  #brxe-mqmpiu {
+    grid-template-columns: 1fr;
+  }
+}
+
+#brxe-kejsix {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   2. 구분선 (divider)
+   -------------------------------------------------------------------------- */
+/* 구분선 공통: 헤더 하단 라인과 동일한 좌우 여백 */
+#brxe-vqojzv,
+#brxe-qytliq,
+#brxe-nhjovq {
+  margin: 0;
+  padding-right: var(--feedus-container-padding) !important;
+  padding-left: var(--feedus-container-padding) !important;
+  width: auto !important;
+}
+
+#brxe-vqojzv.horizontal .line,
+#brxe-qytliq.horizontal .line,
+#brxe-nhjovq.horizontal .line {
+  border-top-color: var(--feedus-primary);
+}
+
+#brxe-vqojzv.vertical .line,
+#brxe-qytliq.vertical .line,
+#brxe-nhjovq.vertical .line {
+  border-right-color: var(--feedus-primary);
+}
+
+#brxe-vqojzv .icon,
+#brxe-qytliq .icon,
+#brxe-nhjovq .icon {
+  color: var(--feedus-primary);
+}
+
+/* --------------------------------------------------------------------------
+   3. 상품 그리드 섹션 (#brxe-uiibcg)
+   5개 제품 - 데스크톱 5열 / 태블릿 3열 / 모바일 2열
+   -------------------------------------------------------------------------- */
+
+/* 모바일: 2열 강제 고정 (feedus-global.css .brx-grid 1fr 규칙 덮어쓰기) */
+@media screen and (max-width: 767px) {
+  #brxe-uiibcg.brxe-container.brx-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* 상품 카드 (query loop) */
+.brxe-mwshww .brxe-ugrzrp.brxe-block {
+  background-size: cover;
+  background-blend-mode: normal;
+  background-position: center center;
+  border-radius: 25px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  margin: 0;
+  padding: 0;
+}
+
+.brxe-mwshww .brxe-bfaamr.brxe-product-title {
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .brxe-mwshww .brxe-bfaamr.brxe-product-title {
+    font-weight: 600;
+  }
+}
+
+.brxe-mwshww .brxe-kelcgg.brxe-text-basic {
+  font-size: 16px;
+}
+
+.brxe-mwshww .brxe-didsti.brxe-block {
+  display: flex;
+}
+
+.brxe-mwshww .brxe-ywvarv.brxe-block {
+  padding: 0 !important;
+  column-gap: 0px;
+  row-gap: 16px;
+  margin: 0 !important;
+}
+
+.brxe-mwshww.brxe-block {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#brxe-qaiscy {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   4. Why Feedus 섹션
+   -------------------------------------------------------------------------- */
+#brxe-ycsqzb {
+  font-size: clamp(32px, 5vw, 66px);
+  padding-bottom: 6px;
+}
+
+#brxe-jmftnc {
+  padding-right: 210px;
+}
+
+@media (max-width: 991px) {
+  #brxe-jmftnc {
+    padding-right: 0;
+  }
+}
+
+#brxe-ytpsao {
+  justify-content: center;
+  row-gap: 20px;
+}
+
+#brxe-ogxgky {
+  width: 100%;
+}
+
+#brxe-fpwmea {
+  display: grid;
+  align-items: initial;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+  #brxe-fpwmea {
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  #brxe-fpwmea {
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Our Farm 섹션
+   -------------------------------------------------------------------------- */
+#brxe-sgzvtt {
+  width: 100%;
+}
+
+#brxe-rvmtuf {
+  font-size: clamp(32px, 5vw, 66px);
+  padding-bottom: 6px;
+}
+
+#brxe-emqpbt {
+  justify-content: center;
+  row-gap: 20px;
+  padding-right: 70px;
+  padding-left: 70px;
+}
+
+@media (max-width: 991px) {
+  #brxe-emqpbt {
+    padding-right: 0;
+    padding-left: 15px;
+  }
+}
+
+#brxe-somkle {
+  display: grid;
+  align-items: initial;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-gap: var(--space-lg);
+}
+
+@media (max-width: 991px) {
+  #brxe-somkle {
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  #brxe-somkle {
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+
+  /* 모바일: 문구를 이미지 위로 (이미지가 DOM에서 먼저지만 아래로) */
+  #brxe-japcqb {
+    order: 2;
+  }
+
+  #brxe-emqpbt {
+    order: 1;
+  }
+}
+
+@media (max-width: 478px) {
+  #brxe-somkle {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. 서브 헤딩 공통
+   -------------------------------------------------------------------------- */
+.mainh3.brxe-heading {
+  font-weight: 600;
+  font-size: 16px;
+  padding-bottom: 25px;
+}
+
+/* --------------------------------------------------------------------------
+   7. 푸터 요소별 ID
+   -------------------------------------------------------------------------- */
+#brxe-yluuer {
+  font-size: 16px;
+}
+
+#brxe-aaidpv {
+  font-size: 16px;
+}
+
+#brxe-ikrsxm {
+  font-size: 16px;
+}
+
+#brxe-lesdmt {
+  font-size: 16px;
+}
+
+.foottt.brxe-heading {
+  padding-bottom: 6px;
+}
+
+@media (max-width: 767px) {
+  .foottt.brxe-heading {
+    padding-bottom: 0;
+  }
+}
+
+#brxe-rcebel {
+  row-gap: 0 !important;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#brxe-jiqwif {
+  row-gap: 0 !important;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#brxe-ovsczc {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#brxe-iflabo {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#brxe-jtpzrp {
+  display: grid;
+  align-items: initial;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width: 767px) {
+  #brxe-jtpzrp {
+    grid-template-columns: 1fr;
+  }
+}
+
+#brxe-qntbej {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+#brxe-vnqsxt {
+  padding-bottom: 0;
+}
