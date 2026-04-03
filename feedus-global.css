@@ -14,6 +14,7 @@
   --feedus-primary-hover: rgba(0, 125, 81, 0.5);
   --feedus-white: #ffffff;
   --feedus-black: #1a1a1a;
+  --feedus-text: #0E100F;
   --feedus-gray-light: #f2f2f2;
   --feedus-gray: #6c757d;
   --feedus-bg: #ffffff;
@@ -108,7 +109,7 @@ body {
   font-weight: var(--feedus-font-body-weight);
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--feedus-black);
+  color: var(--feedus-text);
   background-color: var(--feedus-bg);
   overflow-x: hidden;
   min-height: 100vh;
@@ -127,7 +128,7 @@ body {
 h1, h2, h3, h4, h5, h6,
 .brxe-heading {
   font-family: var(--feedus-font-heading);
-  color: var(--feedus-primary);
+  color: var(--feedus-text);
   line-height: 1.2;
   word-break: keep-all;
   margin: 0;
@@ -201,7 +202,7 @@ p, .brxe-text-basic,
 li, span, label, select, option, textarea {
   font-family: var(--feedus-font-body);
   font-size: 18px;
-  color: var(--feedus-primary);
+  color: var(--feedus-text);
   font-weight: 400;
   line-height: 150%;
   letter-spacing: -0.03em;
@@ -619,7 +620,7 @@ main {
 .feedus-hero h1 {
   font-size: clamp(3rem, 8vw, 6rem);
   line-height: 1.1;
-  color: var(--feedus-primary);
+  color: var(--feedus-text);
 }
 
 /* 히어로 이미지 */
@@ -709,7 +710,7 @@ main {
   margin-top: 12px;
   font-size: 0.9rem;
   font-weight: 400;
-  color: var(--feedus-primary);
+  color: var(--feedus-text);
 }
 
 /* ==========================================================================
@@ -1324,7 +1325,7 @@ textarea::placeholder {
 
 .brxe-accordion .accordion-title {
   font-family: var(--feedus-font-body);
-  color: var(--feedus-primary);
+  color: var(--feedus-text);
   padding: 15px 20px;
   cursor: pointer;
 }
@@ -1420,7 +1421,7 @@ textarea::placeholder {
 
 .woocommerce .price,
 .woocommerce .amount {
-  color: var(--feedus-primary);
+  color: var(--feedus-text);
   font-weight: 600;
 }
 
