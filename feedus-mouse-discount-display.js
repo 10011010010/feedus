@@ -148,7 +148,7 @@ jQuery(function ($) {
                 "background:#f0fdf4;border:1px solid #86efac;" +
                 "font-size:13px;line-height:1.5;color:#16a34a;" +
                 '">' +
-                "대량 할인 적용 중! (" + totalQty + "마리 × -₩" + DISCOUNT_PER.toLocaleString("ko-KR") + ")" +
+                "대량 할인 적용 중 (" + totalQty + "마리 × -₩" + DISCOUNT_PER.toLocaleString("ko-KR") + ")" +
                 "</div>";
             $summaryDiv.after(banner);
 
@@ -160,7 +160,7 @@ jQuery(function ($) {
                 "background:#fefce8;border:1px solid #fde047;" +
                 "font-size:13px;line-height:1.5;color:#ca8a04;" +
                 '">' +
-                remaining + "마리 더 담으면 마리당 ₩" + DISCOUNT_PER.toLocaleString("ko-KR") + " 할인!" +
+                remaining + "마리 더 담으면 마리당 ₩" + DISCOUNT_PER.toLocaleString("ko-KR") + " 할인" +
                 "</div>";
             $summaryDiv.after(hint);
         }
