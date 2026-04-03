@@ -323,7 +323,7 @@ a:hover {
 /* 태블릿/데스크탑 여백 확대 */
 @media screen and (min-width: 768px) {
   :root {
-    --feedus-container-padding: 30px;
+    --feedus-container-padding: 20px;
     --feedus-inner-padding: 10px;
     --feedus-card-gap: 10px;
   }
