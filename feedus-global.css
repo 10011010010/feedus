@@ -1473,7 +1473,7 @@ textarea::placeholder {
    브릭스가 Grid 설정 시 자동으로 .brx-grid 클래스를 추가함
    -------------------------------------------------------------------------- */
 @media screen and (max-width: 767px) {
-  .brx-grid {
+  .brx-grid:not(#brxe-uiibcg):not(#brxe-cgvxhp) {
     grid-template-columns: 1fr !important;
   }
 }

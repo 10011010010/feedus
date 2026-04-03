@@ -116,45 +116,14 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. 상품 그리드 섹션
+   3. 상품 그리드 섹션 (#brxe-uiibcg)
+   5개 제품 - 데스크톱 5열 / 태블릿 3열 / 모바일 2열
    -------------------------------------------------------------------------- */
 
-/* 이전 버전 (#brxe-cgvxhp) */
-#brxe-cgvxhp {
-  display: grid;
-  align-items: initial;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-@media (max-width: 991px) {
-  #brxe-cgvxhp {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  /* 3열일 때 4번째 상품 숨김 (3+1 방지) */
-  #brxe-cgvxhp > .brxe-mwshww:nth-child(4) {
-    display: none;
-  }
-}
-
-@media (max-width: 767px) {
-  #brxe-cgvxhp {
-    grid-template-columns: 1fr 1fr !important;
-    row-gap: 20px;
-  }
-
-  /* 2열에서는 4개 모두 표시 (2x2) */
-  #brxe-cgvxhp > .brxe-mwshww:nth-child(4) {
-    display: block;
-  }
-}
-
-/* 새 버전 (#brxe-uiibcg) - 모바일에서 2열 강제 고정 */
-@media (max-width: 767px) {
-  #brxe-uiibcg {
-    grid-template-columns: 1fr 1fr !important;
+/* 모바일: 2열 강제 고정 (feedus-global.css .brx-grid 1fr 규칙 덮어쓰기) */
+@media screen and (max-width: 767px) {
+  #brxe-uiibcg.brxe-container.brx-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
