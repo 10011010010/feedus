@@ -4,7 +4,7 @@
    Reference: Redbrick Coffee (redbrick.coffee) 구조 기반
    ========================================================================== */
 
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import url('https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 
 /* ==========================================================================
    1. ROOT VARIABLES - 피더스 브랜드 컬러 & 글로벌 설정
