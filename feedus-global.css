@@ -4,6 +4,8 @@
    Reference: Redbrick Coffee (redbrick.coffee) 구조 기반
    ========================================================================== */
 
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+
 /* ==========================================================================
    1. ROOT VARIABLES - 피더스 브랜드 컬러 & 글로벌 설정
    ========================================================================== */
@@ -18,8 +20,8 @@
   --feedus-gray: #6c757d;
   --feedus-bg: #ffffff;
 
-  /* Typography (Font Family) - Adobe Fonts: omnigothic */
-  --font-primary: "omnigothic", -apple-system, "Malgun Gothic", sans-serif;
+  /* Typography (Font Family) - Pretendard Variable */
+  --font-primary: "Pretendard Variable", "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
   --font-fallback: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
   --feedus-font-body: var(--font-primary);
   --feedus-font-heading: var(--font-primary);
@@ -127,8 +129,9 @@ body {
 h1, h2, h3, h4, h5, h6,
 .brxe-heading {
   font-family: var(--feedus-font-heading);
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   line-height: 1.2;
+  letter-spacing: -1px;
   word-break: keep-all;
   margin: 0;
 }
@@ -138,7 +141,7 @@ h1, .brxe-heading[data-tag="h1"] {
   font-weight: 500;
   font-size: 40px;
   line-height: 126%;
-  letter-spacing: -0.05em;
+  letter-spacing: -3px;
   margin: 0 0 30px 0;
 }
 
@@ -159,7 +162,7 @@ h2, .brxe-heading[data-tag="h2"] {
   font-weight: 500;
   font-size: 36px;
   line-height: 127%;
-  letter-spacing: -0.05em;
+  letter-spacing: -3px;
   margin: 0 0 30px 0;
 }
 
@@ -179,7 +182,7 @@ h2, .brxe-heading[data-tag="h2"] {
 h3, .brxe-heading[data-tag="h3"] {
   font-size: 22px;
   line-height: 155%;
-  letter-spacing: -0.03em;
+  letter-spacing: -3px;
   font-weight: 500;
   margin: 0 0 30px 0;
 }
@@ -201,15 +204,15 @@ p, .brxe-text-basic,
 li, span, label, select, option, textarea {
   font-family: var(--feedus-font-body);
   font-size: 18px;
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: -0.03em;
+  letter-spacing: -1px;
   margin: 0 0 20px 0 !important;
 }
 
 a {
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   text-decoration: none;
   transition: color var(--feedus-duration-default) ease;
 }
@@ -398,7 +401,7 @@ a:hover {
   left: var(--feedus-container-padding);
   width: calc(100% - var(--feedus-container-padding) * 2);
   height: 1px;
-  background-color: var(--feedus-primary);
+  background-color: var(--feedus-black);
   pointer-events: none;
   z-index: 1;
 }
@@ -430,7 +433,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: var(--feedus-primary);
+  background-color: var(--feedus-black);
   pointer-events: none;
   z-index: 1;
 }
@@ -453,7 +456,7 @@ a:hover {
   left: var(--feedus-container-padding);
   width: calc(100% - var(--feedus-container-padding) * 2);
   height: 1px;
-  background-color: var(--feedus-primary);
+  background-color: var(--feedus-black);
   pointer-events: none;
   z-index: 1;
 }
@@ -472,7 +475,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: var(--feedus-primary);
+  background-color: var(--feedus-black);
   pointer-events: none;
 }
 
@@ -531,7 +534,7 @@ header.feedus-header::after {
   left: var(--feedus-container-padding);
   width: calc(100% - var(--feedus-container-padding) * 2);
   height: 1px;
-  background-color: var(--feedus-primary);
+  background-color: var(--feedus-black);
   pointer-events: none;
 }
 
@@ -544,7 +547,7 @@ main {
 /* 헤더 네비게이션 링크 */
 #brx-header a,
 .feedus-header a {
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   font-family: var(--feedus-font-body);
   font-size: 1rem;
   text-decoration: none;
@@ -619,7 +622,7 @@ main {
 .feedus-hero h1 {
   font-size: clamp(3rem, 8vw, 6rem);
   line-height: 1.1;
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
 }
 
 /* 히어로 이미지 */
@@ -709,7 +712,7 @@ main {
   margin-top: 12px;
   font-size: 0.9rem;
   font-weight: 400;
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
 }
 
 /* ==========================================================================
@@ -778,7 +781,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid var(--feedus-primary);
+  border-bottom: 1px solid var(--feedus-black);
   margin-bottom: 20px;
 }
 
@@ -839,7 +842,7 @@ main {
   background-color: transparent;
   border: none;
   font-size: 1rem;
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   line-height: 1.2;
 }
 
@@ -1047,7 +1050,7 @@ img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 1px solid var(--feedus-primary);
+  border: 1px solid var(--feedus-black);
   background-color: var(--feedus-gray-light);
   background-position: center;
   background-repeat: no-repeat;
@@ -1118,7 +1121,7 @@ select {
   font-size: 1rem;
   color: var(--feedus-black);
   padding: 12px 20px;
-  border: 1px solid var(--feedus-primary);
+  border: 1px solid var(--feedus-black);
   border-radius: var(--feedus-border-radius-pill);
   background-color: transparent;
   width: 100%;
@@ -1132,8 +1135,8 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--feedus-primary);
-  box-shadow: 0 0 0 2px rgba(var(--feedus-primary-rgb), 0.2);
+  border-color: var(--feedus-black);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.12);
 }
 
 textarea {
@@ -1144,7 +1147,7 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(var(--feedus-primary-rgb), 0.5);
+  color: var(--feedus-gray);
 }
 
 /* ==========================================================================
@@ -1316,7 +1319,7 @@ textarea::placeholder {
 
 /* Bricks 아코디언 */
 .brxe-accordion .accordion-item {
-  border: 1px solid var(--feedus-primary);
+  border: 1px solid var(--feedus-black);
   border-radius: var(--feedus-border-radius);
   margin-bottom: 10px;
   overflow: hidden;
@@ -1324,7 +1327,7 @@ textarea::placeholder {
 
 .brxe-accordion .accordion-title {
   font-family: var(--feedus-font-body);
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   padding: 15px 20px;
   cursor: pointer;
 }
@@ -1332,7 +1335,7 @@ textarea::placeholder {
 /* Bricks 슬라이더 */
 .brxe-slider .swiper-button-next,
 .brxe-slider .swiper-button-prev {
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
 }
 
 .brxe-slider .swiper-pagination-bullet-active {
@@ -1341,7 +1344,7 @@ textarea::placeholder {
 
 /* Bricks Nav Menu 오버라이드 */
 .brxe-nav-menu .bricks-nav-menu > li > a {
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   font-size: 1rem;
   padding: 10px 15px;
 }
@@ -1420,7 +1423,7 @@ textarea::placeholder {
 
 .woocommerce .price,
 .woocommerce .amount {
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   font-weight: 600;
 }
 

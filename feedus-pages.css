@@ -28,7 +28,9 @@
 
 
 /* ==========================================================================
-   1. FONT LOADING (WPCode id:16)
+   1. FONT LOADING
+   Pretendard Variable - CDN (dynamic subset, 한국어 최적화)
+   @import는 feedus-global.css 상단에서 처리
    ========================================================================== */
 
 .wf-loading * {
@@ -70,7 +72,7 @@
   left: var(--feedus-container-padding, 20px);
   width: calc(100% - var(--feedus-container-padding, 20px) * 2);
   height: 1px;
-  background-color: var(--feedus-primary, #2d6b2d);
+  background-color: var(--feedus-black, #1a1a1a);
   pointer-events: none;
 }
 
@@ -135,7 +137,7 @@
 .feedus-header__menu li a {
   display: block;
   padding: 10px 15px;
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   font-family: var(--feedus-font-body, sans-serif);
   font-size: 1rem;
   text-decoration: none;
@@ -162,7 +164,7 @@
 }
 
 .feedus-header__account {
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   font-family: var(--feedus-font-body, sans-serif);
   font-size: 1rem;
   text-decoration: none;
@@ -177,7 +179,7 @@
 .feedus-header__cart {
   display: flex;
   align-items: center;
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   text-decoration: none;
   position: relative;
   transition: color 0.2s ease;
@@ -225,7 +227,7 @@
   padding: 0 !important;
   margin: 0 !important;
   margin-left: 5px !important;
-  color: var(--feedus-primary) !important;
+  color: var(--feedus-black) !important;
   width: 32px !important;
   height: 32px !important;
   min-width: 32px !important;
@@ -234,14 +236,14 @@
   outline: none !important;
 }
 
-/* NOTE: SVG data URIs cannot use CSS variables - hardcoded %23007D51 is intentional */
+/* NOTE: SVG data URIs cannot use CSS variables - hardcoded %231a1a1a is intentional */
 .feedus-header__toggle-icon {
   width: 26px !important;
   height: 26px !important;
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none' stroke='%23007D51' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='3' y1='6' x2='23' y2='6'/%3E%3Cline x1='3' y1='13' x2='23' y2='13'/%3E%3Cline x1='3' y1='20' x2='23' y2='20'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='3' y1='6' x2='23' y2='6'/%3E%3Cline x1='3' y1='13' x2='23' y2='13'/%3E%3Cline x1='3' y1='20' x2='23' y2='20'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: contain !important;
@@ -259,9 +261,9 @@
   border: none !important;
 }
 
-/* NOTE: SVG data URI - hardcoded %23007D51 is intentional */
+/* NOTE: SVG data URI - hardcoded %231a1a1a is intentional */
 .feedus-header__toggle.active .feedus-header__toggle-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none' stroke='%23007D51' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='5' y1='5' x2='21' y2='21'/%3E%3Cline x1='21' y1='5' x2='5' y2='21'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='5' y1='5' x2='21' y2='21'/%3E%3Cline x1='21' y1='5' x2='5' y2='21'/%3E%3C/svg%3E");
 }
 
 @media screen and (max-width: 767px) {
@@ -278,7 +280,7 @@
   width: 100%;
   background-color: var(--feedus-white, #fff);
   z-index: calc(var(--feedus-z-header, 1001) - 1);
-  border-bottom: 1px solid var(--feedus-primary);
+  border-bottom: 1px solid var(--feedus-black);
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -304,7 +306,7 @@
 .feedus-mobile-menu a {
   display: block;
   padding: 14px 0;
-  color: var(--feedus-primary);
+  color: var(--feedus-black);
   font-family: var(--feedus-font-body, sans-serif);
   font-size: 1rem;
   text-decoration: none;
@@ -398,7 +400,7 @@
 
 .variations_form table.variations select,
 .variations_form table.variations select option {
-  color: var(--feedus-primary) !important;
+  color: var(--feedus-black) !important;
 }
 
 /* Quantity input */
@@ -407,7 +409,7 @@
   outline: none;
   box-shadow: none;
   border-radius: 0;
-  color: var(--feedus-primary) !important;
+  color: var(--feedus-black) !important;
   font-weight: 500 !important;
   padding: 0 !important;
 }
@@ -416,7 +418,7 @@
 .variations_form .quantity .action.minus,
 .variations_form .quantity .action.plus {
   margin-bottom: 0 !important;
-  border-color: var(--feedus-primary) !important;
+  border-color: var(--feedus-black) !important;
   border-radius: 100% !important;
   width: 46px !important;
   height: 46px !important;
@@ -491,13 +493,13 @@
 
 /* Locked variations container */
 .wc-locked-variations-container b {
-  color: var(--feedus-primary) !important;
+  color: var(--feedus-black) !important;
 }
 
 .wc-locked-variations-container,
 .wc-locked-variations-container * {
-  color: var(--feedus-primary) !important;
-  border-color: var(--feedus-primary) !important;
+  color: var(--feedus-black) !important;
+  border-color: var(--feedus-black) !important;
 }
 
 .wc-locked-variations-container .wc-remove-locked-variation {
@@ -521,7 +523,7 @@
 
 .wc-locked-variation-qty {
   padding: 8px 10px !important;
-  color: var(--feedus-primary) !important;
+  color: var(--feedus-black) !important;
   font-weight: 500 !important;
 }
 

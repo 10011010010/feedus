@@ -18,7 +18,7 @@
 }
 .variations_form table.variations select,
 .variations_form table.variations select option {
-  color: #007D51 !important;
+  color: var(--feedus-black, #1a1a1a) !important;
 }
 
 /* 2) Quantity input */
@@ -27,7 +27,7 @@
   outline: none;
   box-shadow: none;
   border-radius: 0;
-  color: #007D51 !important;
+  color: var(--feedus-black, #1a1a1a) !important;
   font-weight: 500 !important;
   padding: 0 !important;
 }
@@ -36,7 +36,7 @@
 .variations_form .quantity .action.minus,
 .variations_form .quantity .action.plus {
   margin-bottom: 0 !important;
-  border-color: #007D51 !important;
+  border-color: var(--feedus-black, #1a1a1a) !important;
   border-radius: 100% !important;
   width: 46px !important;
   height: 46px !important;
@@ -73,24 +73,24 @@
 /* 5) "Add All to Cart" styling */
 .variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart {
   display: inline-flex !important;
-  color: #007D51;
+  color: var(--feedus-black, #1a1a1a);
   background-color: #ffffff;
-  border-color: #007D51;
+  border-color: var(--feedus-black, #1a1a1a);
 }
 .variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart:hover {
   color: #ffffff;
-  background-color: #007D51;
+  background-color: var(--feedus-black, #1a1a1a);
 }
 
 /* 6) "Add to List" styling */
 .variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
   display: inline-flex !important;
   color: #ffffff;
-  background-color: #007D51;
-  border-color: #007D51;
+  background-color: var(--feedus-black, #1a1a1a);
+  border-color: var(--feedus-black, #1a1a1a);
 }
 .variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn:hover {
-  color: #007D51;
+  color: var(--feedus-black, #1a1a1a);
   background-color: #ffffff;
 }
 
@@ -104,11 +104,11 @@
 }
 
 /* 8) Locked variations container */
-.wc-locked-variations-container b { color: #007D51 !important; }
+.wc-locked-variations-container b { color: var(--feedus-black, #1a1a1a) !important; }
 .wc-locked-variations-container,
 .wc-locked-variations-container * {
-  color: #007D51 !important;
-  border-color: #007D51 !important;
+  color: var(--feedus-black, #1a1a1a) !important;
+  border-color: var(--feedus-black, #1a1a1a) !important;
 }
 .wc-locked-variations-container .wc-remove-locked-variation { color: red !important; }
 .wc-locked-variation-details { display: flex; flex-direction: column; gap: 2px; }
@@ -117,7 +117,7 @@
 .woocommerce-variation-price { margin-bottom: 16px !important; }
 .wc-locked-variation-qty {
   padding: 8px 10px !important;
-  color: #007D51 !important;
+  color: var(--feedus-black, #1a1a1a) !important;
   font-weight: 500 !important;
 }
 .wc-locked-variation-qty::-webkit-inner-spin-button,
