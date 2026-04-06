@@ -77,8 +77,8 @@ add_filter( 'woocommerce_currency_symbol', function( $symbol, $currency ) {
 
 // "원" 기호를 가격 뒤에 표시 (예: 22,000원)
 add_filter( 'woocommerce_price_format', function( $format, $currency_pos ) {
-    // 항상 숫자 뒤에 통화 기호
-    return '%1$s%2$s';
+    // 항상 숫자 뒤에 통화 기호 (%1$s=기호, %2$s=숫자)
+    return '%2$s%1$s';
 }, 10, 2 );
 
 // 소수점 제거 (원화는 소수점 불필요)

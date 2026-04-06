@@ -70,8 +70,8 @@ jQuery(function ($) {
                 "<th>" + discountLabel + "</th>" +
                 '<td data-title="' + discountLabel + '">' +
                 '<span class="woocommerce-Price-amount amount"><bdi>' +
-                '<span class="woocommerce-Price-currencySymbol">₩</span>' +
                 "-" + diff.toLocaleString("ko-KR") +
+                '<span class="woocommerce-Price-currencySymbol">원</span>' +
                 "</bdi></span></td></tr>";
 
             $table.find(".cart-subtotal").after(discountHtml);
@@ -125,13 +125,13 @@ jQuery(function ($) {
                 '<tr class="feedus-product-discount">' +
                 '<th style="text-align:left;padding:6px;border-bottom:1px solid #ddd;color:#dc2626;">할인 금액</th>' +
                 '<td style="text-align:right;padding:6px;border-bottom:1px solid #ddd;color:#dc2626;font-weight:bold;">' +
-                "-₩" + totalDiscount.toLocaleString("ko-KR") +
+                "-" + totalDiscount.toLocaleString("ko-KR") + "원" +
                 "</td></tr>";
             var finalRow =
                 '<tr class="feedus-product-discount">' +
                 '<th style="text-align:left;padding:6px;font-weight:bold;color:#16a34a;">할인 적용가</th>' +
                 '<td style="text-align:right;padding:6px;font-weight:bold;font-size:1.1em;color:#16a34a;">' +
-                "₩" + discountedTotal.toLocaleString("ko-KR") +
+                discountedTotal.toLocaleString("ko-KR") + "원" +
                 "</td></tr>";
 
             $summaryTable.find("tr:last").after(discountRow + finalRow);
@@ -142,7 +142,7 @@ jQuery(function ($) {
                 "background:#f0fdf4;border:1px solid #86efac;" +
                 "font-size:13px;line-height:1.5;color:#16a34a;" +
                 '">' +
-                "대량 할인 적용 중 (" + totalQty + "마리 × -₩" + DISCOUNT_PER.toLocaleString("ko-KR") + ")" +
+                "대량 할인 적용 중 (" + totalQty + "마리 × -" + DISCOUNT_PER.toLocaleString("ko-KR") + "원)" +
                 "</div>";
             $summaryDiv.after(banner);
 
@@ -154,7 +154,7 @@ jQuery(function ($) {
                 "background:#fefce8;border:1px solid #fde047;" +
                 "font-size:13px;line-height:1.5;color:#ca8a04;" +
                 '">' +
-                remaining + "마리 더 담으면 마리당 ₩" + DISCOUNT_PER.toLocaleString("ko-KR") + " 할인" +
+                remaining + "마리 더 담으면 마리당 " + DISCOUNT_PER.toLocaleString("ko-KR") + "원 할인" +
                 "</div>";
             $summaryDiv.after(hint);
         }
