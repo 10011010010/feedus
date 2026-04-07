@@ -1,0 +1,278 @@
+/* ==========================================================================
+   FEEDUS HEADER
+   Bricks 코드 엘리먼트 > CSS 섹션에 붙여넣기
+   feedus-global.css의 CSS 변수를 사용합니다.
+   ========================================================================== */
+
+.feedus-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--feedus-header-height, 70px);
+  z-index: var(--feedus-z-header, 1001);
+  background-color: var(--feedus-white, #fff);
+  transform: translate(0);
+  font-weight: 500;
+}
+
+.feedus-header *,
+.feedus-mobile-menu * {
+  font-weight: 500;
+}
+
+.feedus-header__row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--feedus-container-padding, 20px);
+  width: 100%;
+}
+
+.feedus-header__logo {
+  flex: 0 0 auto;
+}
+
+.feedus-header__logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.feedus-header__logo img {
+  width: 110px;
+  height: auto;
+}
+
+.feedus-header__menu {
+  display: none;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.feedus-header__menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+
+.feedus-header__menu li,
+.feedus-mobile-menu li {
+  margin: 0 !important;
+}
+
+.feedus-header__menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--feedus-primary);
+  font-family: var(--feedus-font-body, sans-serif);
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.feedus-header__menu li a:hover {
+  color: var(--feedus-primary-hover);
+}
+
+@media screen and (min-width: 768px) {
+  .feedus-header__menu {
+    display: flex;
+  }
+}
+
+.feedus-header__actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.feedus-header__account {
+  color: var(--feedus-primary);
+  font-family: var(--feedus-font-body, sans-serif);
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.feedus-header__account:hover {
+  color: var(--feedus-primary-hover);
+}
+
+.feedus-header__cart {
+  display: flex;
+  align-items: center;
+  color: var(--feedus-primary);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.feedus-header__cart:hover {
+  color: var(--feedus-primary-hover);
+}
+
+.feedus-header__cart svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.feedus-header__cart-count {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 50%;
+  background-color: var(--feedus-primary);
+  color: var(--feedus-white, #fff);
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1;
+  position: absolute;
+  top: -5px;
+  right: -8px;
+}
+
+.feedus-header__cart-count.show {
+  display: flex;
+}
+
+.feedus-header__toggle {
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-left: 5px !important;
+  color: var(--feedus-primary) !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* NOTE: SVG data URIs cannot use CSS variables - hardcoded %23007D51 is intentional */
+.feedus-header__toggle-icon {
+  width: 26px !important;
+  height: 26px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none' stroke='%23007D51' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='3' y1='6' x2='23' y2='6'/%3E%3Cline x1='3' y1='13' x2='23' y2='13'/%3E%3Cline x1='3' y1='20' x2='23' y2='20'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+}
+
+.feedus-header__toggle-icon span,
+.feedus-header__toggle-icon > * {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  border: none !important;
+}
+
+/* NOTE: SVG data URI - hardcoded %23007D51 is intentional */
+.feedus-header__toggle.active .feedus-header__toggle-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none' stroke='%23007D51' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='5' y1='5' x2='21' y2='21'/%3E%3Cline x1='21' y1='5' x2='5' y2='21'/%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 767px) {
+  .feedus-header__toggle {
+    display: flex;
+  }
+}
+
+.feedus-mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--feedus-header-height, 70px);
+  left: 0;
+  width: 100%;
+  background-color: var(--feedus-white, #fff);
+  z-index: calc(var(--feedus-z-header, 1001) - 1);
+  border-bottom: 1px solid var(--feedus-primary);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.feedus-mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.feedus-mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px var(--feedus-container-padding, 20px);
+}
+
+.feedus-mobile-menu li + li {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.feedus-mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  color: var(--feedus-primary);
+  font-family: var(--feedus-font-body, sans-serif);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.feedus-mobile-menu a:hover {
+  color: var(--feedus-primary-hover);
+}
+
+@media screen and (max-width: 767px) {
+  .feedus-mobile-menu {
+    display: block;
+  }
+}
+
+.feedus-mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: calc(var(--feedus-z-header, 1001) - 2);
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.feedus-mobile-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .feedus-mobile-overlay {
+    display: block;
+  }
+}
