@@ -4,7 +4,6 @@
    Reference: Redbrick Coffee (redbrick.coffee) 구조 기반
    ========================================================================== */
 
-@import url('https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 
 /* ==========================================================================
    1. ROOT VARIABLES - 피더스 브랜드 컬러 & 글로벌 설정
@@ -198,8 +197,15 @@ h6, .brxe-heading[data-tag="h6"] {
 }
 
 /* --- p : 본문 텍스트 (디자인 시안: 18pt / 27pt / tracking -30) --- */
-p, .brxe-text-basic,
-li, span, label, select, option, textarea {
+/* body:not(.bricks-is-admin) → 브릭스빌더 에디터 UI 제외 */
+body:not(.bricks-is-admin) p,
+body:not(.bricks-is-admin) .brxe-text-basic,
+body:not(.bricks-is-admin) li,
+body:not(.bricks-is-admin) span,
+body:not(.bricks-is-admin) label,
+body:not(.bricks-is-admin) select,
+body:not(.bricks-is-admin) option,
+body:not(.bricks-is-admin) textarea {
   font-family: var(--feedus-font-body);
   font-size: 18px;
   color: var(--feedus-black);
@@ -208,13 +214,13 @@ li, span, label, select, option, textarea {
   margin: 0 0 20px 0 !important;
 }
 
-a {
+body:not(.bricks-is-admin) a {
   color: var(--feedus-black);
   text-decoration: none;
   transition: color var(--feedus-duration-default) ease;
 }
 
-a:hover {
+body:not(.bricks-is-admin) a:hover {
   color: var(--feedus-primary-hover);
   text-decoration: none;
 }

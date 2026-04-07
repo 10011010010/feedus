@@ -65,6 +65,20 @@ if ( ! function_exists( 'feedus_format_kr_phone' ) ) {
 
 
 /* ==========================================================================
+   0-1. Pretendard Variable 폰트 로딩
+   ========================================================================== */
+
+add_action( 'wp_enqueue_scripts', function() {
+    wp_enqueue_style(
+        'pretendard-variable',
+        'https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/variable/pretendardvariable-dynamic-subset.min.css',
+        [],
+        null
+    );
+} );
+
+
+/* ==========================================================================
    1. 통화 기호 변경 (₩ → 원)
    ========================================================================== */
 
