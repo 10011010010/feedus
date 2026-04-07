@@ -553,6 +553,9 @@ form.cart .single_add_to_cart_button {
 }
 form.cart .single_add_to_cart_button span {
   color: #ffffff !important;
+  margin-bottom: 0 !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
 }
 form.cart .single_add_to_cart_button:hover {
   color: var(--feedus-primary) !important;
