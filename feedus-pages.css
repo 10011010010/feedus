@@ -535,6 +535,22 @@ form.cart .quantity {
   -webkit-appearance: auto !important;
 }
 
+/* Simple product: Add to cart button (match variation button style) */
+form.cart .single_add_to_cart_button {
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  color: var(--feedus-white) !important;
+  background-color: var(--feedus-primary) !important;
+  border-color: var(--feedus-primary) !important;
+  padding: 14px 40px !important;
+  width: 100% !important;
+}
+form.cart .single_add_to_cart_button:hover {
+  color: var(--feedus-primary) !important;
+  background-color: var(--feedus-white) !important;
+}
+
 /* Fix: Mobile button visibility */
 .brxe-product-add-to-cart,
 .brxe-product-add-to-cart .variations_form,
