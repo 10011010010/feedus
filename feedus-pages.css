@@ -540,15 +540,26 @@ form.cart .single_add_to_cart_button {
   display: inline-flex !important;
   justify-content: center;
   align-items: center;
-  color: var(--feedus-white) !important;
+  color: #ffffff !important;
   background-color: var(--feedus-primary) !important;
-  border-color: var(--feedus-primary) !important;
+  border: 1px solid var(--feedus-primary) !important;
+  border-radius: var(--feedus-border-radius-pill) !important;
   padding: 14px 40px !important;
   width: 100% !important;
+  font-family: var(--feedus-font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all var(--feedus-duration-medium) ease;
+}
+form.cart .single_add_to_cart_button span {
+  color: #ffffff !important;
 }
 form.cart .single_add_to_cart_button:hover {
   color: var(--feedus-primary) !important;
-  background-color: var(--feedus-white) !important;
+  background-color: #ffffff !important;
+}
+form.cart .single_add_to_cart_button:hover span {
+  color: var(--feedus-primary) !important;
 }
 
 /* Fix: Mobile button visibility */
