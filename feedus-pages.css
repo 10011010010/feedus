@@ -402,7 +402,8 @@
 }
 
 /* Quantity input */
-.variations_form .quantity input.qty {
+.variations_form .quantity input.qty,
+form.cart .quantity input.qty {
   border: none;
   outline: none;
   box-shadow: none;
@@ -414,7 +415,9 @@
 
 /* +/- buttons */
 .variations_form .quantity .action.minus,
-.variations_form .quantity .action.plus {
+.variations_form .quantity .action.plus,
+form.cart .quantity .action.minus,
+form.cart .quantity .action.plus {
   margin-bottom: 0 !important;
   border-color: var(--feedus-primary) !important;
   border-radius: 100% !important;
@@ -422,7 +425,8 @@
   height: 46px !important;
 }
 
-.variations_form .quantity {
+.variations_form .quantity,
+form.cart .quantity {
   margin-bottom: 14px;
 }
 
