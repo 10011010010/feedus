@@ -401,11 +401,6 @@
   color: var(--feedus-primary) !important;
 }
 
-/* Quantity span margin reset (all pages) */
-.quantity span {
-  margin-bottom: 0 !important;
-}
-
 /* Quantity input */
 .variations_form .quantity input.qty {
   border: none;
