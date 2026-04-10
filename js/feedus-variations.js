@@ -37,16 +37,31 @@ jQuery(function($) {
             if ($(this).text().trim() === "View cart") $(this).text("장바구니 보기");
         });
 
-        // 가격 소수점 제거 + 천단위 콤마 (₩22000.00 → ₩22,000)
+        // 가격 포맷 수정:
+        // 1) ₩22000.00 → ₩22,000 (₩ 기호 패턴)
+        // 2) 원55000.00 → 55,000원 ("원"이 앞에 오는 플러그인 출력 패턴)
         $(".wc-summary-table td, .wc-locked-variation-price").each(function() {
             var el = $(this);
             var html = el.html();
-            if (html && /₩[\d,]+\.\d{1,2}/.test(html)) {
-                el.html(html.replace(/₩([\d,]+)\.\d{1,2}/g, function(m, digits) {
+            if (!html) return;
+
+            // ₩ 기호 패턴
+            if (/₩[\d,]+\.\d{1,2}/.test(html)) {
+                html = html.replace(/₩([\d,]+)\.\d{1,2}/g, function(m, digits) {
                     var num = parseInt(digits.replace(/,/g, ''), 10);
                     return isNaN(num) ? m : '₩' + num.toLocaleString('ko-KR');
-                }));
+                });
             }
+
+            // "원" 기호가 숫자 앞에 오는 패턴: 원55000.00 → 55,000원
+            if (/원\d/.test(html)) {
+                html = html.replace(/원([\d,]+)(?:\.\d+)?/g, function(m, digits) {
+                    var num = parseInt(digits.replace(/,/g, ''), 10);
+                    return isNaN(num) ? m : num.toLocaleString('ko-KR') + '원';
+                });
+            }
+
+            el.html(html);
         });
     }
 

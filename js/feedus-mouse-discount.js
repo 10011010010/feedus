@@ -112,10 +112,10 @@ jQuery(function ($) {
             totalQty += parseInt($(this).val(), 10) || 0;
         });
 
-        // 총 금액 파싱 (마지막 행의 td)
-        var $totalCell = $summaryTable.find("tr:last td");
-        var totalText = $totalCell.text().replace(/[^\d]/g, "");
-        var originalTotal = parseInt(totalText, 10) || 0;
+        // 총 금액 파싱 (마지막 행의 td — feedus-product-discount 제외)
+        var $totalCell = $summaryTable.find("tr:not(.feedus-product-discount):last td");
+        var totalText = $totalCell.text().replace(/[^\d.]/g, "");
+        var originalTotal = Math.round(parseFloat(totalText)) || 0;
 
         if (totalQty >= MIN_QTY) {
             var totalDiscount = totalQty * DISCOUNT_PER;
