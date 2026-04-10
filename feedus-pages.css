@@ -348,60 +348,559 @@
 
 /* ==========================================================================
    3. MAIN PAGE - HOME (WPCode id:496)
-
-   TODO: WPCode id:496의 CSS 내용을 여기에 붙여넣으세요.
-   이 스니펫은 WordPress WPCode 플러그인에만 존재하며,
-   이 저장소에는 포함되어 있지 않습니다.
    ========================================================================== */
+
+/* ==========================================================================
+   FEEDUS - 메인 페이지 (HOME) 전용 스타일
+   Bricks Builder 요소별 ID 스타일 + 메인 페이지 레이아웃
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 히어로 섹션 (#brxe-kejsix)
+   -------------------------------------------------------------------------- */
+#brxe-neasfq {
+  font-weight: 500;
+  font-size: clamp(38px, 6vw, 74px);
+  line-height: 126%;
+  letter-spacing: -0.05em;
+}
+
+@media (max-width: 991px) {
+  #brxe-neasfq {
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  #brxe-neasfq {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 478px) {
+  #brxe-neasfq {
+    font-weight: 500;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+#brxe-ewaoqp {
+  justify-content: center;
+  padding-top: 0;
+  padding-right: 135px;
+  padding-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  #brxe-ewaoqp {
+    padding-right: 0;
+  }
+}
+
+#brxe-lamirm {
+  width: 100%;
+}
+
+#brxe-decwhj {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#brxe-mqmpiu {
+  display: grid;
+  align-items: initial;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-gap: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  #brxe-mqmpiu {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 478px) {
+  #brxe-mqmpiu {
+    grid-template-columns: 1fr;
+  }
+}
+
+#brxe-kejsix {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   2. 구분선 (divider)
+   -------------------------------------------------------------------------- */
+/* 구분선 공통: 헤더 하단 라인과 동일한 좌우 여백 */
+#brxe-vqojzv,
+#brxe-qytliq,
+#brxe-nhjovq {
+  margin: 0;
+  padding-right: var(--feedus-container-padding) !important;
+  padding-left: var(--feedus-container-padding) !important;
+  width: auto !important;
+}
+
+#brxe-vqojzv.horizontal .line,
+#brxe-qytliq.horizontal .line,
+#brxe-nhjovq.horizontal .line {
+  border-top-color: var(--feedus-primary);
+}
+
+#brxe-vqojzv.vertical .line,
+#brxe-qytliq.vertical .line,
+#brxe-nhjovq.vertical .line {
+  border-right-color: var(--feedus-primary);
+}
+
+#brxe-vqojzv .icon,
+#brxe-qytliq .icon,
+#brxe-nhjovq .icon {
+  color: var(--feedus-primary);
+}
+
+/* --------------------------------------------------------------------------
+   3. 상품 그리드 섹션 (#brxe-uiibcg)
+   5개 제품 - 데스크톱 5열 / 태블릿 3열 / 모바일 2열
+   -------------------------------------------------------------------------- */
+
+/* 모바일: 2열 강제 고정 (feedus-global.css .brx-grid 1fr 규칙 덮어쓰기) */
+@media screen and (max-width: 767px) {
+  #brxe-uiibcg.brxe-container.brx-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* 상품 카드 (query loop) */
+.brxe-mwshww .brxe-ugrzrp.brxe-block {
+  background-size: cover;
+  background-blend-mode: normal;
+  background-position: center center;
+  border-radius: 25px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  margin: 0;
+  padding: 0;
+}
+
+.brxe-mwshww .brxe-bfaamr.brxe-product-title {
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .brxe-mwshww .brxe-bfaamr.brxe-product-title {
+    font-weight: 600;
+  }
+}
+
+.brxe-mwshww .brxe-kelcgg.brxe-text-basic {
+  font-size: 16px;
+}
+
+.brxe-mwshww .brxe-didsti.brxe-block {
+  display: flex;
+}
+
+.brxe-mwshww .brxe-ywvarv.brxe-block {
+  padding: 0 !important;
+  column-gap: 0px;
+  row-gap: 16px;
+  margin: 0 !important;
+}
+
+.brxe-mwshww.brxe-block {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#brxe-qaiscy {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   4. Why Feedus 섹션
+   -------------------------------------------------------------------------- */
+#brxe-ycsqzb {
+  font-size: clamp(32px, 5vw, 66px);
+  padding-bottom: 6px;
+}
+
+#brxe-jmftnc {
+  padding-right: 210px;
+}
+
+@media (max-width: 991px) {
+  #brxe-jmftnc {
+    padding-right: 0;
+  }
+}
+
+#brxe-ytpsao {
+  justify-content: center;
+  row-gap: 20px;
+}
+
+#brxe-ogxgky {
+  width: 100%;
+}
+
+#brxe-fpwmea {
+  display: grid;
+  align-items: initial;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+  #brxe-fpwmea {
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  #brxe-fpwmea {
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Our Farm 섹션
+   -------------------------------------------------------------------------- */
+#brxe-sgzvtt {
+  width: 100%;
+}
+
+#brxe-rvmtuf {
+  font-size: clamp(32px, 5vw, 66px);
+  padding-bottom: 6px;
+}
+
+#brxe-emqpbt {
+  justify-content: center;
+  row-gap: 20px;
+  padding-right: 70px;
+  padding-left: 70px;
+}
+
+@media (max-width: 991px) {
+  #brxe-emqpbt {
+    padding-right: 0;
+    padding-left: 15px;
+  }
+}
+
+#brxe-somkle {
+  display: grid;
+  align-items: initial;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-gap: var(--space-lg);
+}
+
+@media (max-width: 991px) {
+  #brxe-somkle {
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  #brxe-somkle {
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+
+  /* 모바일: 문구를 이미지 위로 (이미지가 DOM에서 먼저지만 아래로) */
+  #brxe-japcqb {
+    order: 2;
+  }
+
+  #brxe-emqpbt {
+    order: 1;
+  }
+}
+
+@media (max-width: 478px) {
+  #brxe-somkle {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. 서브 헤딩 공통
+   -------------------------------------------------------------------------- */
+.mainh3.brxe-heading {
+  font-weight: 600;
+  font-size: 16px;
+  padding-bottom: 25px;
+}
+
+/* --------------------------------------------------------------------------
+   7. 푸터 요소별 ID
+   -------------------------------------------------------------------------- */
+#brxe-yluuer {
+  font-size: 16px;
+}
+
+#brxe-aaidpv {
+  font-size: 16px;
+}
+
+#brxe-ikrsxm {
+  font-size: 16px;
+}
+
+#brxe-lesdmt {
+  font-size: 16px;
+}
+
+.foottt.brxe-heading {
+  padding-bottom: 6px;
+}
+
+@media (max-width: 767px) {
+  .foottt.brxe-heading {
+    padding-bottom: 0;
+  }
+}
+
+#brxe-rcebel {
+  row-gap: 0 !important;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#brxe-jiqwif {
+  row-gap: 0 !important;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#brxe-ovsczc {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#brxe-iflabo {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#brxe-jtpzrp {
+  display: grid;
+  align-items: initial;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width: 767px) {
+  #brxe-jtpzrp {
+    grid-template-columns: 1fr;
+  }
+}
+
+#brxe-qntbej {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+#brxe-vnqsxt {
+  padding-bottom: 0;
+}
 
 
 /* ==========================================================================
    4. SHOP PAGE (WPCode id:389)
-
-   TODO: WPCode id:389의 CSS 내용을 여기에 붙여넣으세요.
-   #007D51 → var(--feedus-primary) 로 치환 필요.
    ========================================================================== */
+
+/* ==========================================================================
+   FEEDUS - Shop Page Styles (WooCommerce)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   우커머스 기본 스타일 오버라이드
+   -------------------------------------------------------------------------- */
+.woocommerce .button,
+.woocommerce input.button,
+.woocommerce a.button {
+  font-family: var(--feedus-font-body);
+  background-color: var(--feedus-primary);
+  color: var(--feedus-white);
+  border: 1px solid var(--feedus-primary);
+  border-radius: var(--feedus-border-radius-pill);
+  padding: 10px 30px;
+  font-size: 1rem;
+  transition: all var(--feedus-duration-medium) ease;
+}
+
+.woocommerce .button:hover,
+.woocommerce input.button:hover,
+.woocommerce a.button:hover {
+  background-color: transparent;
+  color: var(--feedus-primary);
+}
+
+.woocommerce .price,
+.woocommerce .amount {
+  color: var(--feedus-primary);
+  font-weight: 600;
+}
+
+.woocommerce .onsale {
+  background-color: var(--feedus-primary);
+  color: var(--feedus-white);
+  border-radius: var(--feedus-border-radius-pill);
+}
+
+/* --------------------------------------------------------------------------
+   샵 페이지 모바일: 상품 그리드 2열 유지
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 767px) {
+  .woocommerce ul.products,
+  body.post-type-archive-product .brx-grid,
+  body.tax-product_cat .brx-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0 !important;
+  }
+  /* 상품 카드 overflow 방지 */
+  body.post-type-archive-product .brx-grid > *,
+  body.tax-product_cat .brx-grid > * {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  /* 썸네일 100% 채우기 */
+  body.post-type-archive-product .brx-grid img,
+  body.tax-product_cat .brx-grid img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  /* 모바일 상품명/가격 텍스트 크기 조정 */
+  body.post-type-archive-product .brx-grid .product-title,
+  body.post-type-archive-product .brx-grid .woocommerce-loop-product__title,
+  body.tax-product_cat .brx-grid .product-title,
+  body.tax-product_cat .brx-grid .woocommerce-loop-product__title {
+    font-size: 13px !important;
+    word-break: keep-all !important;
+    line-height: 1.3 !important;
+  }
+  body.post-type-archive-product .brx-grid .price,
+  body.tax-product_cat .brx-grid .price {
+    font-size: 12px !important;
+  }
+}
 
 
 /* ==========================================================================
    5. SINGLE PRODUCT - Gallery (WPCode id:172)
-
-   TODO: WPCode id:172의 CSS 내용을 여기에 붙여넣으세요.
-   (상품 갤러리 썸네일 스타일)
    ========================================================================== */
+
+/* ========================================
+   Product Gallery - 썸네일 좌측 상단 원형 배치
+   (redbrick.coffee 스타일 참고)
+   ======================================== */
+
+/* 썸네일 리스트: 좌측 상단에 세로 배치 */
+/* .woocommerce-product-gallery 는 이미 position: relative */
+.woocommerce-product-gallery .flex-control-thumbs {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+/* 썸네일 아이템 */
+.woocommerce-product-gallery .flex-control-thumbs li {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0 !important;
+}
+
+/* 썸네일 이미지: 원형 + primary color 테두리 */
+.woocommerce-product-gallery .flex-control-thumbs li img {
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: 50%;
+  border: 1px solid var(--feedus-primary, currentColor);
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+/* 활성/호버 상태 */
+.woocommerce-product-gallery .flex-control-thumbs li img.flex-active,
+.woocommerce-product-gallery .flex-control-thumbs li img:hover {
+  opacity: 1;
+}
+
+/* 모바일: 하단 가로 배치 */
+@media (max-width: 768px) {
+  .woocommerce-product-gallery .flex-control-thumbs {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+}
 
 
 /* ==========================================================================
    6. SINGLE PRODUCT - Variations & Add to Cart (WPCode id:256)
-   NOTE: This is the MORE COMPLETE version. id:381 (feedus-woocommerce-variations.css)
-   is an older subset and is superseded by this section.
    ========================================================================== */
 
-/* Size label + dropdown: vertical stack */
+/* Global input line-height */
+.input,
+input:not([type=submit]),
+select,
+textarea {
+  line-height: 30px !important;
+}
+
+/* WooCommerce Variations Form – Product Page Layout */
+
+/* 1) Size label + dropdown: vertical stack */
 .variations_form table.variations tr {
   display: flex;
   flex-direction: column;
+  margin-bottom: 14px !important;
 }
-
 .variations_form table.variations th.label,
 .variations_form table.variations td.value {
   display: block;
   width: 100%;
   text-align: left;
 }
-
 .variations_form table.variations th.label label {
   font-weight: 500 !important;
   margin-bottom: 6px !important;
   display: block;
 }
-
 .variations_form table.variations select,
 .variations_form table.variations select option {
   color: var(--feedus-primary) !important;
 }
 
-/* Quantity input */
+/* 2) Quantity input */
 .variations_form .quantity input.qty {
   border: none;
   outline: none;
@@ -412,7 +911,7 @@
   padding: 0 !important;
 }
 
-/* +/- buttons */
+/* 3) +/- buttons */
 .variations_form .quantity .action.minus,
 .variations_form .quantity .action.plus {
   margin-bottom: 0 !important;
@@ -421,9 +920,9 @@
   width: 46px !important;
   height: 46px !important;
 }
-
 .variations_form .quantity {
   margin-bottom: 14px;
+  justify-content: flex-end;
 }
 
 /* Reorder elements */
@@ -431,104 +930,151 @@
   display: flex;
   flex-direction: column;
 }
-
 .variations_form .wc-variation-mode-selector { order: 1; }
 .variations_form .woocommerce-variation-add-to-cart > .quantity { order: 2; }
 .variations_form .wc-locked-variations-container { order: 3; }
-.variations_form .single_add_to_cart_button { order: 4; }
+.variations_form .single_add_to_cart_button,
+.woocommerce-variation-add-to-cart .single_add_to_cart_button {
+  order: 4;
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
 .variations_form .wc-multiple-variation-buttons { order: 5; }
 
-/* Buttons: "Add to List" top, "Add All to Cart" bottom */
+/* 4) Buttons: "Add to List" top, "Add All to Cart" bottom */
 .variations_form .wc-multiple-variation-buttons {
   display: flex !important;
   flex-direction: column;
   gap: 16px;
 }
-
 .variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
   order: 1;
   margin: 0 !important;
 }
-
 .variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart {
   order: 2;
 }
 
-/* "Add All to Cart" styling */
+/* 5) "Add All to Cart" styling – green bg */
 .variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart {
   display: inline-flex !important;
-  color: var(--feedus-primary);
-  background-color: #ffffff;
-  border-color: var(--feedus-primary);
-}
-
-.variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart:hover {
   color: #ffffff;
   background-color: var(--feedus-primary);
+  border-color: var(--feedus-primary);
+}
+.variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart:hover {
+  color: var(--feedus-primary);
+  background-color: #ffffff;
 }
 
-/* "Add to List" styling */
+/* 6) "Add to List" styling – white bg */
 .variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
   display: inline-flex !important;
-  color: #ffffff;
-  background-color: var(--feedus-primary);
-  border-color: var(--feedus-primary);
-}
-
-.variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn:hover {
   color: var(--feedus-primary);
   background-color: #ffffff;
+  border-color: var(--feedus-primary);
+}
+.variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn:hover {
+  color: #ffffff;
+  background-color: var(--feedus-primary);
 }
 
-/* Button padding */
+/* 7) Button padding & weight */
 .variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart,
 .variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
   padding: 14px 40px;
   width: 100% !important;
+  font-weight: 500 !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
 
-/* Locked variations container */
-.wc-locked-variations-container b {
-  color: var(--feedus-primary) !important;
-}
-
+/* 8) Locked variations container */
+.wc-locked-variations-container b { color: var(--feedus-primary) !important; }
 .wc-locked-variations-container,
 .wc-locked-variations-container * {
   color: var(--feedus-primary) !important;
   border-color: var(--feedus-primary) !important;
 }
-
-.wc-locked-variations-container .wc-remove-locked-variation {
-  color: red !important;
-}
-
-.wc-locked-variation-details {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
+.wc-locked-variations-container .wc-remove-locked-variation { color: red !important; }
+.wc-locked-variations-container .dashicons-trash { margin-bottom: 0 !important; }
+.wc-locked-variation-details { display: flex; flex-direction: column; gap: 2px; }
 .wc-locked-variation-attributes,
-.wc-locked-variation-price {
-  margin: 0 !important;
-}
-
-.woocommerce-variation-price {
-  margin-bottom: 16px !important;
-}
-
+.wc-locked-variation-price { margin: 0 !important; }
+.woocommerce-variation-price { margin-bottom: 16px !important; }
 .wc-locked-variation-qty {
   padding: 8px 10px !important;
   color: var(--feedus-primary) !important;
   font-weight: 500 !important;
+  width: 120px !important;
 }
-
 .wc-locked-variation-qty::-webkit-inner-spin-button,
 .wc-locked-variation-qty::-webkit-outer-spin-button {
   opacity: 1 !important;
   -webkit-appearance: auto !important;
+}
+
+/* ===== Simple (non-variable) product: match variation form styles ===== */
+
+/* Quantity input */
+.brxe-product-add-to-cart > form.cart .quantity input.qty {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--feedus-primary) !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+}
+
+/* +/- buttons */
+.brxe-product-add-to-cart > form.cart .quantity .action.minus,
+.brxe-product-add-to-cart > form.cart .quantity .action.plus {
+  margin-bottom: 0 !important;
+  border-color: var(--feedus-primary) !important;
+  border-radius: 100% !important;
+  width: 46px !important;
+  height: 46px !important;
+}
+
+/* Quantity row spacing */
+.brxe-product-add-to-cart > form.cart .quantity {
+  margin-bottom: 14px;
+  justify-content: flex-end;
+}
+
+/* "장바구니" button: match variation button style */
+.brxe-product-add-to-cart > form.cart:not(.variations_form) .single_add_to_cart_button {
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: var(--feedus-primary);
+  border: 1px solid var(--feedus-primary);
+  border-radius: var(--feedus-border-radius-pill, 999px);
+  padding: 14px 40px;
+  width: 100% !important;
+  font-family: var(--feedus-font-body, inherit);
+  font-size: 1rem;
+  transition: all var(--feedus-duration-medium, 0.3s) ease;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.brxe-product-add-to-cart > form.cart:not(.variations_form) .single_add_to_cart_button span {
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+.brxe-product-add-to-cart > form.cart:not(.variations_form) .single_add_to_cart_button:hover {
+  color: var(--feedus-primary);
+  background-color: #ffffff;
+}
+.brxe-product-add-to-cart > form.cart:not(.variations_form) .single_add_to_cart_button:hover span {
+  color: var(--feedus-primary) !important;
 }
 
 /* Fix: Mobile button visibility */
@@ -538,87 +1084,2057 @@
 .brxe-product-add-to-cart .woocommerce-variation-add-to-cart {
   overflow: visible !important;
 }
-
 .woocommerce-variation-add-to-cart .wc-multiple-variation-buttons {
   display: flex !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
 
+/* Tablet and below */
+@media (max-width: 768px) {
+  .wc-locked-variation-qty {
+    width: 80px !important;
+  }
+}
+
 
 /* ==========================================================================
    7. CART PAGE (WPCode id:264, id:293, id:297)
-
-   TODO: WPCode에서 아래 스니펫의 CSS 내용을 여기에 붙여넣으세요:
-   - id:264 = 장바구니 수량 입력 스타일
-   - id:293 = 장바구니 페이지 레이아웃 (grid, totals, checkout button)
-   - id:297 = 배송 행 숨기기
-   #007D51 → var(--feedus-primary) 로 치환 필요.
    ========================================================================== */
+
+/* 장바구니 수량 입력 스타일 */
+
+/* 수량 컨테이너 */
+form.woocommerce-cart-form .quantity {
+    display: flex;
+    align-items: center;
+    width: 140px;
+    height: 44px;
+    border: 1px solid var(--bricks-border-color, #dddedf);
+    border-radius: var(--feedus-border-radius, 25px);
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* 수량 입력 필드 */
+form.woocommerce-cart-form .quantity .input-text.qty {
+    width: 50px;
+    height: 100%;
+    border: none !important;
+    outline: none !important;
+    text-align: center;
+    font-size: 15px;
+    font-weight: var(--fw-medium, 400);
+    color: var(--feedus-black, #1a1a1a);
+    background: transparent;
+    -moz-appearance: textfield;
+    padding: 0;
+    margin: 0;
+    order: 2;
+}
+
+/* 숫자 입력 스피너 제거 */
+form.woocommerce-cart-form .quantity .input-text.qty::-webkit-outer-spin-button,
+form.woocommerce-cart-form .quantity .input-text.qty::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* +/- 버튼 공통 */
+form.woocommerce-cart-form .quantity .action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 100%;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color var(--feedus-duration-default, 0.2s) ease;
+    color: var(--feedus-black, #1a1a1a);
+    background: transparent;
+    flex-shrink: 0;
+}
+
+/* - 버튼 (왼쪽) */
+form.woocommerce-cart-form .quantity .action.minus {
+    order: 1;
+    border-right: 1px solid var(--bricks-border-color, #dddedf);
+}
+
+/* + 버튼 (오른쪽) */
+form.woocommerce-cart-form .quantity .action.plus {
+    order: 3;
+    border-left: 1px solid var(--bricks-border-color, #dddedf);
+}
+
+/* 버튼 호버 효과 */
+form.woocommerce-cart-form .quantity .action:hover {
+    background-color: var(--feedus-gray-light, #f2f2f2);
+}
+
+/* 버튼 활성화 효과 */
+form.woocommerce-cart-form .quantity .action:active {
+    background-color: var(--bricks-color-grey-300, #e0e0e0);
+}
+
+/* SVG 아이콘 크기 */
+form.woocommerce-cart-form .quantity .action svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+/* 모바일 대응 */
+@media screen and (max-width: 767px) {
+    form.woocommerce-cart-form .quantity {
+        width: 120px;
+        height: 40px;
+    }
+
+    form.woocommerce-cart-form .quantity .action {
+        width: 38px;
+    }
+
+    form.woocommerce-cart-form .quantity .input-text.qty {
+        width: 44px;
+        font-size: 14px;
+    }
+
+    form.woocommerce-cart-form .quantity .action svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+/* ==========================================================================
+   FEEDUS - 장바구니 페이지 추가 스타일
+   ========================================================================== */
+
+/* 직배송 안내 버튼: 프라이머리 컬러 */
+#brxe-jioeie {
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+}
+
+/* ==========================================================================
+   FEEDUS - Cart Page Styles
+   ========================================================================== */
+
+/* Cart bottom section: 좌우 배치 (데스크탑) / 위아래 (모바일) */
+#brxe-dkgunk {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  #brxe-dkgunk {
+    flex-direction: row;
+    gap: 40px;
+  }
+  #brxe-dkgunk > #brxe-rlbrmv {
+    flex: 7;
+  }
+  #brxe-dkgunk > #brxe-yfybre {
+    flex: 3;
+  }
+}
+
+.woocommerce-cart-form .cart_item,
+.woocommerce-cart-form .cart_item td,
+.woocommerce-cart-form .cart_item th {
+  border: none !important;
+}
+
+/* 장바구니 테이블 영역 패딩 제거 */
+#brxe-ayskvm {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 장바구니 수량 컨테이너 border 색상 */
+form.woocommerce-cart-form .quantity {
+  border-color: var(--feedus-primary) !important;
+  width: 140px !important;
+  min-width: 140px !important;
+  flex-shrink: 0 !important;
+}
+form.woocommerce-cart-form .quantity .input-text.qty {
+  color: var(--feedus-primary) !important;
+  font-weight: 500 !important;
+}
+form.woocommerce-cart-form .quantity .action.minus,
+form.woocommerce-cart-form .quantity .action.plus {
+  color: var(--feedus-primary) !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  flex-shrink: 0 !important;
+}
+form.woocommerce-cart-form .quantity .action.minus {
+  border-right: 1px solid var(--feedus-primary) !important;
+  border-left: none !important;
+}
+form.woocommerce-cart-form .quantity .action.plus {
+  border-left: 1px solid var(--feedus-primary) !important;
+  border-right: none !important;
+}
+form.woocommerce-cart-form .quantity .action.minus svg,
+form.woocommerce-cart-form .quantity .action.plus svg {
+  stroke: var(--feedus-primary) !important;
+}
+
+/* 장바구니 테이블: 상품명 + 가격 세로 배치 */
+.woocommerce-cart-form .shop_table thead .product-price,
+.woocommerce-cart-form .shop_table thead .product-remove,
+.woocommerce-cart-form .shop_table thead .product-thumbnail {
+  display: none !important;
+}
+.woocommerce-cart-form .shop_table thead tr {
+  display: grid;
+  grid-template-columns: 1fr 150px 120px 40px;
+  align-items: center;
+  padding-left: 120px;
+}
+.woocommerce-cart-form .cart_item {
+  display: grid !important;
+  grid-template-columns: 110px 1fr 150px 120px auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 10px !important;
+  row-gap: 0 !important;
+  border: none !important;
+}
+.woocommerce-cart-form .cart_item .product-thumbnail {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+.woocommerce-cart-form .cart_item .product-name {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+  align-self: end;
+  font-size: 18px !important;
+}
+.woocommerce-cart-form .cart_item .product-name a {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+.woocommerce-cart-form .cart_item .product-price {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: left !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+  align-self: start;
+  margin-top: 2px !important;
+  font-size: 15px !important;
+}
+.woocommerce-cart-form .cart_item .product-quantity {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  justify-self: start;
+}
+.woocommerce-cart-form .cart_item .product-subtotal {
+  grid-column: 4;
+  grid-row: 1 / 3;
+  white-space: nowrap;
+  min-width: 0;
+  text-align: right !important;
+}
+.woocommerce-cart-form .cart_item .product-remove {
+  grid-column: 5;
+  grid-row: 1 / 3;
+}
+
+/* 장바구니 상품 썸네일 */
+.woocommerce-cart-form .product-thumbnail img {
+  width: 100px !important;
+  height: 100px !important;
+  min-width: 100px !important;
+}
+
+/* 장바구니 갱신 버튼 */
+.woocommerce-cart-form .actions button[name="update_cart"] {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-radius: 100px !important;
+  min-width: 160px !important;
+  float: right !important;
+  border: 1px solid var(--bricks-color-grey-300) !important;
+  background-color: var(--bricks-color-grey-100) !important;
+  color: var(--primary-color-green) !important;
+}
+.woocommerce-cart-form .shop_table .actions {
+  padding-top: 10px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+.woocommerce-cart-form .shop_table tbody tr:last-child {
+  display: block !important;
+  margin-top: 10px !important;
+}
+
+/* 장바구니 테이블 헤더 line-height 초기화 */
+.woocommerce-cart-form .shop_table thead th {
+  line-height: normal !important;
+}
+.woocommerce-cart-form .shop_table thead tr {
+  margin-top: 10px !important;
+}
+.woocommerce-cart-form .shop_table thead .product-subtotal {
+  text-align: right !important;
+}
+
+/* 결제하기 버튼 영역 위 마진 */
+.wc-proceed-to-checkout {
+  margin-top: 20px !important;
+}
+
+/* "결제하기" button: primary style */
+.wc-proceed-to-checkout .checkout-button {
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary) !important;
+  border: 1px solid var(--feedus-primary) !important;
+  border-radius: var(--feedus-border-radius-pill, 50px) !important;
+  padding: 14px 40px !important;
+  width: 100% !important;
+  line-height: normal !important;
+  font-family: var(--feedus-font-body, inherit);
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  transition: all var(--feedus-duration-medium, 0.3s) ease;
+}
+/* 장바구니 합계 테이블: 가격 우측 정렬 */
+.cart_totals .shop_table td {
+  text-align: right !important;
+}
+
+/* 장바구니 합계 테이블: 라인 색상 primary */
+.cart_totals .shop_table,
+.cart_totals .shop_table tr,
+.cart_totals .shop_table th,
+.cart_totals .shop_table td {
+  border-color: var(--feedus-primary) !important;
+}
+.cart_totals .shop_table th,
+.cart_totals .shop_table td {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+/* 총계 가격 스타일 */
+.cart_totals .order-total td .woocommerce-Price-amount {
+  font-size: 80px !important;
+  font-weight: 500 !important;
+}
+
+.wc-proceed-to-checkout .checkout-button:hover {
+  color: var(--feedus-primary) !important;
+  background-color: #ffffff !important;
+}
+
+/* 모바일 가로 이하: 수량/소계/삭제 아래로 */
+@media screen and (max-width: 767px) {
+  .woocommerce-cart-form .shop_table thead {
+    display: none !important;
+  }
+  .woocommerce-cart-form .cart_item td::before,
+  .woocommerce-cart-form .cart_item th::before {
+    display: none !important;
+  }
+  .woocommerce-cart-form .cart_item {
+    grid-template-columns: 150px 1fr auto auto !important;
+    grid-template-rows: auto auto auto !important;
+    margin-bottom: 20px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(0, 125, 81, 0.3) !important;
+  }
+  .woocommerce-cart-form .cart_item .product-thumbnail {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+  .woocommerce-cart-form .product-thumbnail img {
+    width: 140px !important;
+    height: 140px !important;
+    min-width: 140px !important;
+  }
+  .woocommerce-cart-form .cart_item .product-name {
+    grid-column: 2 / 5;
+    grid-row: 1;
+  }
+  .woocommerce-cart-form .cart_item .product-price {
+    grid-column: 2 / 5;
+    grid-row: 2;
+  }
+  .woocommerce-cart-form .cart_item .product-quantity {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    justify-self: start;
+  }
+  .woocommerce-cart-form .cart_item .product-subtotal {
+    grid-column: 3;
+    grid-row: 3;
+    justify-self: end;
+  }
+  .woocommerce-cart-form .cart_item .product-remove {
+    grid-column: 4;
+    grid-row: 3;
+    justify-self: end;
+  }
+  .woocommerce-cart-form .shop_table tbody tr:last-child {
+    margin-top: 20px !important;
+    border-top: 1px solid var(--feedus-primary) !important;
+    padding-top: 20px !important;
+  }
+}
+
+/* 배송 행 숨기기 */
+.woocommerce-shipping-totals shipping {
+	display: none !important;
+}
 
 
 /* ==========================================================================
    8. CHECKOUT PAGE (WPCode id:310, id:383)
-
-   TODO: WPCode에서 아래 스니펫의 CSS 내용을 여기에 붙여넣으세요:
-   - id:310 = 결제 폼 필드, 결제 수단, 주문 버튼
-   - id:383 = 결제 2단 레이아웃
-   #007D51 → var(--feedus-primary) 로 치환 필요.
    ========================================================================== */
+
+/* ==========================================================================
+   FEEDUS - Checkout Page Styles
+   WooCommerce Classic Checkout + Kakao Address Search
+   ========================================================================== */
+
+/* ── Layout: 2-column grid (Bricks 기본 grid 보완) ── */
+.woocommerce-checkout .col2-set {
+  display: contents;
+}
+
+.woocommerce-checkout .col2-set .col-1,
+.woocommerce-checkout .col2-set .col-2 {
+  width: 100%;
+}
+
+/* ── Section Headings ── */
+.woocommerce-checkout h3 {
+  font-family: var(--feedus-font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--feedus-primary);
+  margin-bottom: 24px !important;
+  letter-spacing: -0.03em;
+}
+
+/* ── Form Fields ── */
+.woocommerce-checkout .form-row {
+  margin-bottom: 16px !important;
+  padding: 0 !important;
+}
+
+.woocommerce-checkout .form-row label {
+  display: block;
+  font-family: var(--feedus-font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--feedus-primary);
+  margin-bottom: 6px !important;
+  letter-spacing: -0.02em;
+}
+
+.woocommerce-checkout .form-row label .required {
+  color: var(--feedus-primary);
+}
+
+.woocommerce-checkout .form-row label .optional {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(var(--feedus-primary-rgb), 0.5);
+}
+
+.woocommerce-checkout .form-row input.input-text,
+.woocommerce-checkout .form-row textarea,
+.woocommerce-checkout .form-row select {
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--feedus-black);
+  padding: 12px 20px;
+  border: 1px solid var(--feedus-primary);
+  border-radius: var(--feedus-border-radius-pill);
+  background-color: transparent;
+  width: 100%;
+  transition: border-color var(--feedus-duration-default) ease,
+    box-shadow var(--feedus-duration-default) ease;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 1.5;
+}
+
+.woocommerce-checkout .form-row input.input-text:focus,
+.woocommerce-checkout .form-row textarea:focus,
+.woocommerce-checkout .form-row select:focus {
+  outline: none;
+  border-color: var(--feedus-primary);
+  box-shadow: 0 0 0 2px rgba(var(--feedus-primary-rgb), 0.15);
+}
+
+.woocommerce-checkout .form-row input.input-text::placeholder,
+.woocommerce-checkout .form-row textarea::placeholder {
+  color: rgba(var(--feedus-primary-rgb), 0.4);
+  font-weight: 300;
+}
+
+/* Readonly fields (주소 검색으로 자동 입력되는 필드) */
+.woocommerce-checkout .form-row input.input-text[readonly] {
+  background-color: var(--feedus-gray-light);
+  cursor: pointer;
+  color: var(--feedus-black);
+}
+
+/* Textarea (주문 메모) */
+.woocommerce-checkout .form-row textarea {
+  border-radius: var(--feedus-border-radius);
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ── Kakao Address Search Button ── */
+.feedus-address-search-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--feedus-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary);
+  border: 1px solid var(--feedus-primary);
+  border-radius: var(--feedus-border-radius-pill);
+  padding: 8px 18px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all var(--feedus-duration-default) ease;
+  line-height: 1;
+}
+
+.feedus-address-search-btn span {
+  color: #ffffff !important;
+}
+
+.feedus-address-search-btn:hover {
+  background-color: transparent;
+  color: var(--feedus-primary) !important;
+}
+
+.feedus-address-search-btn:hover span {
+  color: var(--feedus-primary) !important;
+}
+
+.feedus-address-search-btn svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  stroke: #ffffff !important;
+}
+
+.feedus-address-search-btn:hover svg {
+  stroke: var(--feedus-primary) !important;
+}
+
+/* ── "다른 주소로 배송할까요?" 체크박스 ── */
+.woocommerce-checkout #ship-to-different-address {
+  margin-bottom: 20px !important;
+}
+
+.woocommerce-checkout #ship-to-different-address label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.woocommerce-checkout #ship-to-different-address input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--feedus-primary);
+  border: 1px solid var(--feedus-primary);
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Order Review (고객님의 주문) ── */
+.woocommerce-checkout #order_review_heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px !important;
+}
+
+.woocommerce-checkout-review-order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td {
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--feedus-primary);
+  padding: 14px 0 !important;
+  border-bottom: 1px solid var(--feedus-primary) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.woocommerce-checkout-review-order-table thead th {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.woocommerce-checkout-review-order-table .product-total,
+.woocommerce-checkout-review-order-table td:last-child {
+  text-align: right;
+}
+
+.woocommerce-checkout-review-order-table .product-name {
+  font-weight: 400;
+}
+
+.woocommerce-checkout-review-order-table .product-name .product-quantity {
+  font-weight: 500;
+}
+
+.woocommerce-checkout-review-order-table tfoot .order-total th,
+.woocommerce-checkout-review-order-table tfoot .order-total td {
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: none !important;
+  padding-top: 20px !important;
+}
+
+.woocommerce-checkout-review-order-table tfoot .order-total .woocommerce-Price-amount {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* ── Payment Methods ── */
+.woocommerce-checkout-payment {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-top: 24px;
+}
+
+.woocommerce-checkout-payment .payment_methods {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 20px !important;
+  border: none !important;
+}
+
+.woocommerce-checkout-payment .payment_methods li {
+  padding: 16px 20px !important;
+  border: 1px solid var(--feedus-primary) !important;
+  border-radius: var(--feedus-border-radius) !important;
+  margin-bottom: 10px !important;
+  background: transparent !important;
+}
+
+.woocommerce-checkout-payment .payment_methods li label {
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--feedus-primary);
+  cursor: pointer;
+  padding-left: 4px;
+}
+
+.woocommerce-checkout-payment .payment_methods li input[type="radio"] {
+  accent-color: var(--feedus-primary);
+}
+
+.woocommerce-checkout-payment .payment_box {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--feedus-primary);
+  padding: 10px 0 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  line-height: 1.6;
+}
+
+.woocommerce-checkout-payment .payment_box::before {
+  display: none !important;
+}
+
+.woocommerce-checkout-payment .payment_box p {
+  font-size: 14px !important;
+  color: rgba(var(--feedus-primary-rgb), 0.7) !important;
+}
+
+/* ── Place Order Button (주문 확정) ── */
+.woocommerce-checkout #place_order {
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 40px !important;
+  font-family: var(--feedus-font-body);
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  color: var(--feedus-white) !important;
+  background-color: var(--feedus-primary) !important;
+  border: 1px solid var(--feedus-primary) !important;
+  border-radius: var(--feedus-border-radius-pill) !important;
+  cursor: pointer;
+  transition: all var(--feedus-duration-medium) ease;
+  line-height: 1.4;
+}
+
+.woocommerce-checkout #place_order:hover {
+  color: var(--feedus-primary) !important;
+  background-color: var(--feedus-white) !important;
+}
+
+/* ── Privacy Policy ── */
+.woocommerce-checkout .woocommerce-privacy-policy-text p {
+  font-size: 13px !important;
+  color: rgba(var(--feedus-primary-rgb), 0.6) !important;
+  font-weight: 300 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 16px !important;
+}
+
+.woocommerce-checkout .woocommerce-privacy-policy-text a {
+  color: var(--feedus-primary);
+  text-decoration: underline;
+}
+
+/* ── Shipping: 무료배송 존재 시 유료배송 옵션 숨김 ── */
+ul.woocommerce-shipping-methods:has(input[value^="free_shipping"]) li:has(input[value^="flat_rate"]) {
+  display: none !important;
+}
+
+/* 무료배송 라디오 버튼 숨김 + 라벨 마진 제거 */
+#shipping_method_0_free_shipping1 {
+  display: none !important;
+}
+
+label[for="shipping_method_0_free_shipping1"] {
+  margin: 0 !important;
+}
+
+#shipping_method li:has(#shipping_method_0_free_shipping1) {
+  margin-bottom: 0 !important;
+}
+
+/* ── Responsive: Mobile ── */
+@media screen and (max-width: 767px) {
+  .woocommerce-checkout h3 {
+    font-size: 20px;
+  }
+
+  .woocommerce-checkout .form-row input.input-text,
+  .woocommerce-checkout .form-row textarea,
+  .woocommerce-checkout .form-row select {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+
+  .woocommerce-checkout-review-order-table tfoot .order-total .woocommerce-Price-amount {
+    font-size: 24px;
+  }
+
+  .woocommerce-checkout #place_order {
+    font-size: 18px !important;
+    padding: 14px 30px !important;
+  }
+}
+
+/* ==========================================================================
+   FEEDUS - Checkout 2컬럼 레이아웃 개선
+   ========================================================================== */
+
+/* 1. 배송 필드 영역 숨김 (다른 주소로 배송할까요?) */
+.woocommerce-checkout .woocommerce-shipping-fields {
+  display: none !important;
+}
+
+/* 2. 2컬럼 레이아웃: 좌측(청구+주문메모) / 우측(주문요약+결제)
+   form.checkout 자식 구조:
+   - div.col2-set > div.col-1 (billing)
+   - div.col-2 (shipping[숨김] + additional fields[주문메모])
+   - div (order review heading + order review + payment)
+*/
+.woocommerce-checkout form.checkout {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+/* 모바일: 1컬럼 */
+.woocommerce-checkout form.checkout > * {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  /* 좌측: 청구 필드 */
+  .woocommerce-checkout form.checkout > #customer_details {
+    width: calc(50% - 20px);
+    margin-right: 40px;
+  }
+
+  /* 좌측: 주문 메모 (col-2 = shipping + additional) */
+  .woocommerce-checkout form.checkout > .col-2 {
+    width: calc(50% - 20px);
+    margin-right: 40px;
+  }
+
+  /* 우측: 주문 요약 + 결제 */
+  .woocommerce-checkout form.checkout > div:last-child {
+    width: calc(50% - 20px);
+    position: sticky;
+    top: calc(var(--feedus-header-height, 90px) + 20px);
+    align-self: flex-start;
+  }
+}
+
+/* col2-set 내부는 1컬럼으로 */
+.woocommerce-checkout .col2-set {
+  display: block !important;
+}
+
+.woocommerce-checkout .col2-set .col-1,
+.woocommerce-checkout .col2-set .col-2 {
+  width: 100% !important;
+  float: none !important;
+}
 
 
 /* ==========================================================================
    9. CHECKOUT - Invoice/Receipt (WPCode id:312)
-
-   TODO: WPCode id:312의 CSS 내용을 여기에 붙여넣으세요.
-   (이미 CSS 변수를 대부분 사용하고 있을 것입니다)
    ========================================================================== */
+
+/* ==========================================================================
+   Feedus 영수증 발행 선택 - 체크아웃 스타일
+   feedus-tax-invoice.php 플러그인과 함께 사용
+   ========================================================================== */
+
+/* 체크아웃 주문요약 테이블 테두리 제거 */
+.woocommerce-checkout-review-order-table,
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td,
+.woocommerce-checkout-review-order-table tr {
+  border: none !important;
+}
+
+/* 소계, 배송, 총계 등 tfoot th */
+.woocommerce-checkout-review-order-table tfoot th {
+  font-weight: 500 !important;
+}
+
+/* --------------------------------------------------------------------------
+   영수증 발행 선택 박스
+   -------------------------------------------------------------------------- */
+.feedus-receipt-box {
+  background-color: var(--feedus-gray-light, #f2f2f2);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0 0 0;
+}
+
+/* 1단계: 메인 라벨 */
+.feedus-receipt-main-label {
+  font-family: var(--feedus-font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--feedus-primary, var(--feedus-primary));
+  margin: 0 0 12px 0 !important;
+}
+
+/* 라디오 버튼 행 */
+.feedus-receipt-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: var(--feedus-font-body);
+  font-size: 0.9rem;
+  color: var(--feedus-black, #1a1a1a);
+  padding: 8px 0;
+  margin: 0 !important;
+}
+
+.feedus-receipt-radio-label span {
+  margin: 0 !important;
+}
+
+/* 커스텀 라디오 버튼 */
+.feedus-receipt-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 2px solid var(--feedus-gray, #6c757d);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+.feedus-receipt-radio:checked {
+  border-color: var(--feedus-primary, var(--feedus-primary));
+}
+
+.feedus-receipt-radio:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--feedus-primary, var(--feedus-primary));
+  border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   2단계: 분기 영역 공통
+   -------------------------------------------------------------------------- */
+.feedus-receipt-tax-invoice,
+.feedus-receipt-cash {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* 확인 체크박스 */
+.feedus-receipt-confirm-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-family: var(--feedus-font-body);
+  font-size: 0.85rem;
+  color: var(--feedus-black, #1a1a1a);
+  margin: 0 0 14px 0 !important;
+  line-height: 1.5;
+}
+
+.feedus-receipt-confirm-label span {
+  margin: 0 !important;
+}
+
+/* 커스텀 체크박스 */
+.feedus-receipt-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+  border: 2px solid var(--feedus-gray, #6c757d);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+.feedus-receipt-checkbox:checked {
+  background-color: var(--feedus-primary, var(--feedus-primary));
+  border-color: var(--feedus-primary, var(--feedus-primary));
+}
+
+.feedus-receipt-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--feedus-white, #fff);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* --------------------------------------------------------------------------
+   입력 필드
+   -------------------------------------------------------------------------- */
+.feedus-receipt-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.feedus-receipt-input {
+  font-family: var(--feedus-font-body);
+  font-size: 0.9rem;
+  color: var(--feedus-black, #1a1a1a);
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.feedus-receipt-input:focus {
+  outline: none;
+  border-color: var(--feedus-primary, var(--feedus-primary));
+}
+
+.feedus-receipt-input::placeholder {
+  color: #aaa;
+}
+
+/* 현금영수증 드롭다운 */
+.feedus-receipt-select {
+  font-family: var(--feedus-font-body);
+  font-size: 0.9rem;
+  color: var(--feedus-black, #1a1a1a);
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  width: 100%;
+  cursor: pointer;
+}
+
+.feedus-receipt-select:focus {
+  outline: none;
+  border-color: var(--feedus-primary, var(--feedus-primary));
+}
+
+.feedus-receipt-cash-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.feedus-receipt-cash-input-wrap {
+  margin-top: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   안내 문구
+   -------------------------------------------------------------------------- */
+.feedus-receipt-notice {
+  margin-top: 14px;
+  padding: 12px;
+  background-color: rgba(0, 125, 81, 0.05);
+  border-radius: 6px;
+}
+
+.feedus-receipt-notice p {
+  font-family: var(--feedus-font-body);
+  font-size: 0.8rem;
+  color: var(--feedus-gray, #6c757d);
+  line-height: 1.6;
+  margin: 0 0 4px 0 !important;
+}
+
+.feedus-receipt-notice p:last-child {
+  margin-bottom: 0 !important;
+}
 
 
 /* ==========================================================================
    10. THANK YOU PAGE (WPCode id:327)
-
-   TODO: WPCode id:327의 CSS 내용을 여기에 붙여넣으세요.
-   #007D51 → var(--feedus-primary) 로 치환 필요.
    ========================================================================== */
+
+/* ==========================================================================
+   FEEDUS - Thank You (Order Received) Page Styles
+   WPCode #327 [Thank you] CSS 스니펫에 적용
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 주문 요약 리스트 숨김 (JS 로드 전 깜빡임 방지)
+   -------------------------------------------------------------------------- */
+.woocommerce-thankyou-order-received,
+.woocommerce-order-overview.woocommerce-thankyou-order-details {
+  display: none !important;
+}
+
+.woocommerce-table--order-details .shipped_via {
+  display: none !important;
+}
+
+/* 결제 방법 행 숨김 */
+.woocommerce-table--order-details tfoot tr.feedus-hide {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   1-1. 은행 세부 사항(BACS) 섹션 완전 제거
+   -------------------------------------------------------------------------- */
+section.woocommerce-bacs-bank-details {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. 주문 상품 정보 테이블 - border 제거
+   -------------------------------------------------------------------------- */
+.woocommerce-order-details .woocommerce-table--order-details,
+.woocommerce-order-details .woocommerce-table--order-details th,
+.woocommerce-order-details .woocommerce-table--order-details td,
+.woocommerce-order-details .woocommerce-table--order-details tr,
+.woocommerce-order-details .woocommerce-table--order-details thead,
+.woocommerce-order-details .woocommerce-table--order-details tbody,
+.woocommerce-order-details .woocommerce-table--order-details tfoot {
+  border: none !important;
+  border-collapse: collapse;
+}
+
+/* 행 간 구분선: 얇은 하단 라인만 유지 */
+.woocommerce-order-details .woocommerce-table--order-details tbody tr {
+  border-bottom: 1px solid rgba(0, 125, 81, 0.15) !important;
+}
+
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr {
+  border-bottom: 1px solid rgba(0, 125, 81, 0.15) !important;
+}
+
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child {
+  border-bottom: none !important;
+}
+
+/* 테이블 셀 패딩 */
+.woocommerce-order-details .woocommerce-table--order-details th,
+.woocommerce-order-details .woocommerce-table--order-details td {
+  padding: 14px 0 !important;
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  color: var(--feedus-primary);
+}
+
+/* thead 숨김 */
+.woocommerce-order-details .woocommerce-table--order-details thead {
+  display: none;
+}
+
+/* 상품명 */
+.woocommerce-order-details .woocommerce-table--order-details .product-name {
+  font-weight: 400;
+}
+
+.woocommerce-order-details .woocommerce-table--order-details .product-name a {
+  color: var(--feedus-primary);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* 수량 */
+.woocommerce-order-details .woocommerce-table--order-details .product-quantity {
+  font-weight: 500;
+}
+
+/* 가격 우측 정렬 */
+.woocommerce-order-details .woocommerce-table--order-details .product-total,
+.woocommerce-order-details .woocommerce-table--order-details td:last-child {
+  text-align: right;
+}
+
+/* tfoot: 소계, 배송, 총계 */
+.woocommerce-order-details .woocommerce-table--order-details tfoot th {
+  font-weight: 400;
+}
+
+.woocommerce-order-details .woocommerce-table--order-details tfoot td {
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   2-1. 총계 행 강조 (34px 가격)
+   .feedus-total-row 클래스로 타겟팅 (주의 행이 뒤에 올 수 있으므로)
+   -------------------------------------------------------------------------- */
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr.feedus-total-row th,
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr.feedus-total-row td {
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  padding-top: 20px !important;
+}
+
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr.feedus-total-row td .woocommerce-Price-amount,
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr.feedus-total-row td .woocommerce-Price-amount span {
+  font-size: 34px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+/* --------------------------------------------------------------------------
+   2-2. 주의메세지 행
+   총계 뒤에 동적으로 추가됨 — feedus-total-row가 아닌 마지막 행
+   총계가 마지막이면 이 스타일은 feedus-total-row에 의해 덮어씌워짐
+   -------------------------------------------------------------------------- */
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child:not(.feedus-total-row) th {
+  font-size: 0 !important;
+}
+.woocommerce-order-details .woocommerce-table--order-details tfoot tr:last-child:not(.feedus-total-row) th::before {
+  content: "주의 메세지" !important;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--feedus-primary);
+}
+
+/* --------------------------------------------------------------------------
+   3. 청구 주소 숨김
+   -------------------------------------------------------------------------- */
+.woocommerce-column--billing-address {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. 배송지 정보 스타일
+   -------------------------------------------------------------------------- */
+.woocommerce-column--shipping-address {
+  width: 100% !important;
+}
+
+/* 2컬럼 레이아웃 → 1컬럼으로 (청구 주소 삭제 후) */
+.woocommerce-columns--addresses {
+  display: block !important;
+}
+
+.woocommerce-column--shipping-address .woocommerce-column__title {
+  font-family: var(--feedus-font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--feedus-primary);
+  margin-bottom: 12px !important;
+}
+
+.woocommerce-column--shipping-address address {
+  font-style: normal;
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--feedus-primary);
+}
+
+.woocommerce-column--shipping-address .woocommerce-customer-details--phone {
+  margin-top: 8px !important;
+  margin-bottom: 0 !important;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   5. 주문 상품 정보 / 배송지 정보 제목 스타일
+   -------------------------------------------------------------------------- */
+.woocommerce-order-details__title,
+.woocommerce-column--shipping-address .woocommerce-column__title {
+  font-family: var(--feedus-font-heading);
+  font-size: 28px !important;
+  font-weight: 600;
+  color: var(--feedus-primary);
+  margin-bottom: 16px !important;
+  padding-top: 10px;
+  border-top: 1px solid var(--feedus-primary);
+}
+
+@media screen and (max-width: 767px) {
+  .woocommerce-order-details__title,
+  .woocommerce-column--shipping-address .woocommerce-column__title {
+    font-size: 24px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. 전체 감사 페이지 섹션 간격
+   -------------------------------------------------------------------------- */
+.woocommerce-order-details {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.woocommerce-customer-details {
+  margin-top: 10px;
+}
 
 
 /* ==========================================================================
    11. MY ACCOUNT - Navigation & Layout (WPCode id:363, id:372)
-
-   TODO: WPCode에서 아래 스니펫의 CSS 내용을 여기에 붙여넣으세요:
-   - id:363 = 마이 어카운트 페이지 스타일, 네비게이션, 주소 표시, 인라인 편집 폼
-   - id:372 = 로그인 폼 가운데 정렬 및 테두리 제거
-   #007D51 → var(--feedus-primary) 로 치환 필요.
    ========================================================================== */
+
+/* ==========================================================================
+   FEEDUS - My Account 페이지 스타일
+   WPCode snippet #363 (CSS 스니펫 - 사이트 전체 헤더)
+   ========================================================================== */
+
+/* 대시보드 인사말 & 안내 문구 숨김 */
+.woocommerce-MyAccount-content > p:first-of-type,
+.woocommerce-MyAccount-content > p:nth-of-type(2) {
+  display: none;
+}
+
+/* 주문 보기/결제 버튼 패딩 제거 */
+.woocommerce-MyAccount-orders .woocommerce-button.button {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* 주문 테이블 셀 패딩 */
+.woocommerce-MyAccount-orders th,
+.woocommerce-MyAccount-orders td {
+  padding: 4px;
+}
+
+/* 네비게이션 li 하단 마진 제거 및 좌우 패딩 */
+.woocommerce-MyAccount-navigation-link {
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* 주소 표시 페이지: "배송 시 사용될 기본 주소입니다" 숨김 */
+.woocommerce-Addresses ~ p,
+.woocommerce-MyAccount-content > p {
+  display: none;
+}
+
+/* 편집 링크: header 안에서 h2 아래로 배치 */
+.woocommerce-Address-title {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.woocommerce-Address-title .edit {
+  order: 2 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+  text-decoration: underline !important;
+  margin-top: 4px !important;
+}
+
+/* JS로 이동된 편집 링크 스타일 */
+.feedus-edit-address-link {
+  display: inline-block !important;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+  text-decoration: underline;
+}
+
+.feedus-edit-address-link:hover {
+  opacity: 0.7;
+}
+
+/* 우편번호 검색 버튼 */
+.feedus-postcode-search {
+  margin-left: 8px;
+  padding: 8px 16px;
+  background: var(--feedus-primary, var(--feedus-primary));
+  color: #fff !important;
+  border: 1px solid var(--feedus-primary, var(--feedus-primary)) !important;
+  border-radius: var(--feedus-border-radius-pill, 50px) !important;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: all var(--feedus-duration-default, 0.2s) ease;
+}
+
+.feedus-postcode-search:hover {
+  background: transparent;
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+}
+
+/* 읽기전용 필드 스타일 */
+.woocommerce-address-fields input[readonly] {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   주소 인라인 편집 폼 (계정 정보 페이지 스타일과 통일)
+   -------------------------------------------------------------------------- */
+.feedus-address-inline-edit {
+  margin-top: 10px;
+}
+
+.feedus-address-inline-edit .form-row {
+  margin-bottom: 16px !important;
+}
+
+.feedus-address-inline-edit label {
+  display: block;
+  font-family: var(--feedus-font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--feedus-primary, var(--feedus-primary));
+  margin-bottom: 6px !important;
+}
+
+.feedus-address-inline-edit input,
+.feedus-address-inline-edit select {
+  font-family: var(--feedus-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--feedus-black, #1a1a1a);
+  padding: 12px 20px;
+  border: 1px solid var(--feedus-primary, var(--feedus-primary));
+  border-radius: var(--feedus-border-radius-pill, 50px);
+  background-color: transparent;
+  width: 100%;
+  transition: border-color var(--feedus-duration-default, 0.2s) ease,
+    box-shadow var(--feedus-duration-default, 0.2s) ease;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 30px !important;
+}
+
+.feedus-address-inline-edit input:focus,
+.feedus-address-inline-edit select:focus {
+  outline: none;
+  border-color: var(--feedus-primary, var(--feedus-primary));
+  box-shadow: 0 0 0 2px rgba(0, 125, 81, 0.15);
+}
+
+.feedus-address-inline-edit input::placeholder {
+  color: rgba(0, 125, 81, 0.4);
+  font-weight: 300;
+}
+
+.feedus-address-inline-edit input[readonly] {
+  background-color: var(--feedus-gray-light, #f2f2f2);
+  cursor: pointer;
+}
+
+/* 저장 버튼 */
+.feedus-address-inline-edit .feedus-address-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.feedus-address-inline-edit .feedus-address-save {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 14px 40px !important;
+  font-family: var(--feedus-font-body);
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary, var(--feedus-primary)) !important;
+  border: 1px solid var(--feedus-primary, var(--feedus-primary)) !important;
+  border-radius: var(--feedus-border-radius-pill, 50px) !important;
+  cursor: pointer;
+  transition: all var(--feedus-duration-medium, 0.3s) ease;
+}
+
+.feedus-address-inline-edit .feedus-address-save:hover {
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+  background-color: #ffffff !important;
+}
+
+/* 우편번호 행: 검색 버튼과 입력 필드 정렬 */
+.feedus-address-inline-edit .form-row[style*="display:flex"] .feedus-postcode-search {
+  height: 54px;
+  margin-left: 8px;
+  padding: 0 20px;
+}
+
+/* --------------------------------------------------------------------------
+   내 계정 네비게이션: 불필요한 메뉴 숨김
+   (대시보드, 다운로드, 계정 정보)
+   -------------------------------------------------------------------------- */
+.woocommerce-MyAccount-navigation-link--dashboard,
+.woocommerce-MyAccount-navigation-link--downloads,
+.woocommerce-MyAccount-navigation-link--edit-account {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   글로벌 header 셀렉터 리셋
+   feedus-global.css의 `header` 셀렉터가 WooCommerce <header> 태그에
+   position:fixed 등을 적용하여 레이아웃이 깨지는 문제 수정
+   -------------------------------------------------------------------------- */
+.woocommerce-Address-title,
+.woocommerce-MyAccount-content header {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  width: auto !important;
+  height: auto !important;
+  z-index: auto !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  transition: none !important;
+}
+
+/* 주소 제목 h2 스타일 */
+.woocommerce-Address-title h2 {
+  font-size: 18px !important;
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+}
+
+/* 주소 컨테이너 overflow 리셋 (편집 링크가 잘리지 않도록) */
+.woocommerce-Addresses,
+.woocommerce-Addresses .woocommerce-Address {
+  overflow: visible !important;
+}
+
+/* 주소 텍스트 프라이머리 색상 */
+.woocommerce-Address address,
+.woocommerce-Address .feedus-edit-address-link {
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+}
+
+/* --------------------------------------------------------------------------
+   청구 주소 숨김 (배송 주소만 표시)
+   -------------------------------------------------------------------------- */
+.woocommerce-Addresses .woocommerce-Address:first-child {
+  display: none !important;
+}
+
+/* 배송 주소를 전체 너비로 */
+.woocommerce-Addresses .woocommerce-Address:last-child {
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+/* --------------------------------------------------------------------------
+   주소 편집 폼 페이지 (/edit-address/shipping/)
+   -------------------------------------------------------------------------- */
+
+/* 배송 주소 편집 제목 */
+.woocommerce-address-fields ~ h2,
+.woocommerce-MyAccount-content > form > h2 {
+  font-size: 28px !important;
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+  margin-bottom: 20px !important;
+}
+
+/* 성(last_name) 필드 숨김 */
+#shipping_last_name_field {
+  display: none !important;
+}
+
+/* 이름 필드를 전체 너비로 (성 필드 숨겼으므로) */
+#shipping_first_name_field {
+  width: 100% !important;
+  float: none !important;
+}
+
+/* 국가 필드 숨김 (한국 고정) */
+#shipping_country_field {
+  display: none !important;
+}
+
+/* 시/도 필드 숨김 (카카오 API가 자동 입력) */
+#shipping_city_field {
+  display: none !important;
+}
+
+/* 우편번호 필드 숨김 (카카오 API가 자동 입력) */
+#shipping_postcode_field {
+  display: none !important;
+}
+
+/* 주소 검색 버튼 (체크아웃 페이지와 동일) */
+.woocommerce-address-fields .feedus-address-search-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--feedus-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary, var(--feedus-primary));
+  border: 1px solid var(--feedus-primary, var(--feedus-primary));
+  border-radius: var(--feedus-border-radius-pill, 50px);
+  padding: 8px 18px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all var(--feedus-duration-default, 0.2s) ease;
+  line-height: 1;
+}
+
+.woocommerce-address-fields .feedus-address-search-btn:hover {
+  background-color: transparent;
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+}
+
+/* 읽기전용 필드 배경 */
+.woocommerce-address-fields input[readonly] {
+  background-color: #f5f5f5 !important;
+  cursor: pointer;
+}
+
+/* 전화번호 필드: 전체 너비 */
+#shipping_phone_field {
+  width: 100% !important;
+}
+
+/* ==========================================================================
+   FEEDUS - 로그아웃 상태 로그인 폼 스타일
+   WooCommerce My Account 로그인 페이지
+   ========================================================================== */
+
+/* 로그인 폼 가운데 정렬 */
+.woocommerce-account .woocommerce-form-login {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 로그인 제목(h2) 가운데 정렬 */
+.woocommerce-account #brxe-trvuhl > h2 {
+  text-align: center;
+}
+
+/* 로그인 폼 테두리 제거 */
+.woocommerce-account .woocommerce-form-login {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
 
 
 /* ==========================================================================
    12. MY ACCOUNT - Address Edit (WPCode id:371)
-
-   TODO: WPCode id:371의 CSS 내용을 여기에 붙여넣으세요.
    ========================================================================== */
+
+/* ==========================================================================
+   FEEDUS - WooCommerce Address Fields
+   체크아웃 & 마이어카운트 주소 편집 페이지 스타일
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   주소 편집 페이지 폰트 크기
+   -------------------------------------------------------------------------- */
+.woocommerce-address-fields h2 {
+  font-size: 24px !important;
+}
+
+.woocommerce-address-fields label,
+.woocommerce-address-fields input,
+.woocommerce-address-fields select,
+.woocommerce-address-fields .button {
+  font-size: 15px !important;
+}
+
+/* --------------------------------------------------------------------------
+   카카오 주소 검색 버튼 (체크아웃 + 주소 편집 공통)
+   -------------------------------------------------------------------------- */
+button.feedus-address-search-btn,
+.woocommerce-address-fields button.feedus-address-search-btn,
+.woocommerce-checkout button.feedus-address-search-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--feedus-font-body) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary) !important;
+  border: 1px solid var(--feedus-primary) !important;
+  border-radius: var(--feedus-border-radius-pill) !important;
+  padding: 8px 18px !important;
+  margin-bottom: 10px !important;
+  cursor: pointer !important;
+  transition: all var(--feedus-duration-default) ease !important;
+  line-height: 1 !important;
+}
+
+button.feedus-address-search-btn:hover,
+.woocommerce-address-fields button.feedus-address-search-btn:hover,
+.woocommerce-checkout button.feedus-address-search-btn:hover {
+  background-color: transparent !important;
+  color: var(--feedus-primary) !important;
+}
+
+button.feedus-address-search-btn span,
+button.feedus-address-search-btn svg {
+  font-size: 15px !important;
+  line-height: 1 !important;
+  margin-bottom: 0 !important;
+}
+
+button.feedus-address-search-btn svg {
+  flex-shrink: 0 !important;
+  width: 18px !important;
+  height: 18px !important;
+}
 
 
 /* ==========================================================================
    13. MY ACCOUNT - Login/Register (WPCode id:547)
-
-   TODO: WPCode id:547의 CSS 내용을 여기에 붙여넣으세요.
    ========================================================================== */
+
+/* ==========================================================================
+   FEEDUS - MY ACCOUNT 로그인/회원가입 페이지 개선
+   WPCode CSS 스니펫으로 등록
+   ========================================================================== */
+
+/* "MY 피더스" 제목 블록 숨김 */
+#brxe-fdwsgo {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   비로그인 상태: 헤더 "내 계정" → "로그인" 텍스트 변경
+   -------------------------------------------------------------------------- */
+body:not(.logged-in) .feedus-header__account {
+  visibility: hidden !important;
+  position: relative;
+  font-size: 0 !important;
+}
+
+body:not(.logged-in) .feedus-header__account::after {
+  content: "로그인";
+  visibility: visible;
+  font-size: 1rem;
+}
+
+body:not(.logged-in) .feedus-mobile-menu a[href="/my-account"],
+body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"] {
+  visibility: hidden !important;
+  position: relative;
+  font-size: 0 !important;
+}
+
+body:not(.logged-in) .feedus-mobile-menu a[href="/my-account"]::after,
+body:not(.logged-in) .feedus-mobile-menu a[href*="my-account"]::after {
+  content: "로그인";
+  visibility: visible;
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   카카오 로그인 버튼 (JS로 삽입됨)
+   -------------------------------------------------------------------------- */
+.feedus-kakao-wrap {
+  margin-bottom: 8px;
+}
+
+.feedus-kakao-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #FEE500;
+  color: #191919 !important;
+  border: none;
+  border-radius: var(--feedus-border-radius-pill, 50px);
+  font-family: var(--feedus-font-body);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none !important;
+  line-height: 1.4;
+}
+
+.feedus-kakao-btn:hover {
+  background-color: #F0D900;
+  color: #191919 !important;
+  text-decoration: none !important;
+}
+
+.feedus-kakao-btn svg {
+  flex-shrink: 0;
+}
+
+.feedus-kakao-btn span {
+  color: #191919 !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+/* "또는" 구분선 */
+.feedus-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.feedus-divider::before,
+.feedus-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--feedus-primary);
+}
+
+.feedus-divider span {
+  padding: 0 14px;
+  color: var(--feedus-primary);
+  font-family: var(--feedus-font-body);
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   로그인/회원가입 폼 레이아웃
+   -------------------------------------------------------------------------- */
+.woocommerce-account .u-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.woocommerce-account .u-columns .u-column1 {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.woocommerce-account .u-columns .u-column2 {
+  width: calc(100% + 40px) !important;
+  max-width: calc(100% + 40px) !important;
+  flex: none;
+  margin: 0 -20px !important;
+}
+
+/* 로그인/회원가입 제목 가운데 정렬 */
+.woocommerce-account .u-column1 > h2,
+.woocommerce-account .u-column2 > h2 {
+  text-align: center;
+}
+
+.woocommerce-account .u-column1 > h2 {
+  padding-bottom: 10px;
+}
+
+/* 라벨 하단 마진 축소 */
+.woocommerce-account .u-columns label {
+  margin-bottom: 5px !important;
+  margin-top: 0 !important;
+}
+
+/* 이 페이지 폰트 16px */
+.woocommerce-account .u-columns p,
+.woocommerce-account .u-columns .brxe-text-basic,
+.woocommerce-account .u-columns li,
+.woocommerce-account .u-columns span,
+.woocommerce-account .u-columns label,
+.woocommerce-account .u-columns select,
+.woocommerce-account .u-columns option,
+.woocommerce-account .u-columns textarea {
+  font-size: 16px !important;
+}
+
+/* p 하단 마진 축소 */
+.woocommerce-account .u-columns p {
+  margin-bottom: 10px !important;
+}
+
+/* 폼 내부 갭 축소 */
+.woocommerce-account .woocommerce-form-login:not([class^=brxe-]),
+.woocommerce-account .woocommerce-form-register:not([class^=brxe-]) {
+  gap: 6px !important;
+}
+
+/* 비밀번호 필드 하단 마진 제거 */
+.woocommerce-account .u-columns .form-row-wide:has(#password) {
+  margin-bottom: 0 !important;
+}
+
+/* 로그인 버튼 풀너비 */
+.woocommerce-account .woocommerce-form-login__submit {
+  width: 100% !important;
+  padding: 16px 24px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+
+/* 비밀번호 분실 링크 + 개인정보 보호정책 텍스트 크기 */
+.woocommerce-account .lost_password,
+.woocommerce-account .lost_password a,
+.woocommerce-account .woocommerce-privacy-policy-text p,
+.woocommerce-account .woocommerce-privacy-policy-text a {
+  font-size: 16px !important;
+}
+
+/* 회원가입 섹션 */
+.woocommerce-account .u-columns .u-column2 {
+  background-color: #F5FAF8 !important;
+  border: 1px solid #F5FAF8 !important;
+  border-radius: 40px !important;
+  padding: 30px 20px !important;
+}
+
+.woocommerce-account .u-column2 > h2 {
+  font-size: 32px !important;
+}
+
+.woocommerce-account .woocommerce-form-register {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
 
 
 /* ==========================================================================
    14. SCHEDULE TABLE - 직배송 (WPCode id:332)
-
-   TODO: WPCode id:332의 CSS 내용을 여기에 붙여넣으세요.
    ========================================================================== */
+
+/* ==========================================================================
+   FEEDUS - 직배송 지역 테이블 스타일
+   WPCode > CSS 스니펫 > 사이트 전체 헤더에 추가
+   ========================================================================== */
+
+/* 테이블 전체 border 초기화 */
+#footable_329,
+#footable_329 th,
+#footable_329 td,
+#footable_329 tr,
+#footable_329 thead,
+#footable_329 tbody {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+#footable_329 {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* 전치 후: 요일 셀 (월/수/금) */
+#footable_329 th.feedus-schedule-day {
+  font-family: var(--feedus-font-body) !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  background-color: var(--feedus-primary, var(--feedus-primary)) !important;
+  padding: 14px 16px !important;
+  text-align: left !important;
+  white-space: nowrap;
+  vertical-align: middle !important;
+}
+
+/* 전치 후: 지역 셀 */
+#footable_329 td.feedus-schedule-region {
+  font-family: var(--feedus-font-body) !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+  padding: 14px 16px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+/* 행 간 구분선 */
+#footable_329.feedus-transposed tbody tr {
+  border-bottom: 1px solid var(--feedus-primary, var(--feedus-primary)) !important;
+}
+
+/* 요일 셀 하단 라인 흰색 */
+#footable_329 th.feedus-schedule-day {
+  border-bottom: 1px solid #ffffff !important;
+}
+
+#footable_329.feedus-transposed tbody tr:last-child {
+  border-bottom: none !important;
+}
+
+/* 전치 전 원본 테이블 글자색도 프라이머리로 (폴백) */
+#footable_329 thead th {
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+}
+
+#footable_329 tbody td {
+  color: var(--feedus-primary, var(--feedus-primary)) !important;
+}
 
 
 /* ==========================================================================
    15. TABLEPRESS (WPCode id:443)
-
-   TODO: WPCode id:443의 CSS 내용을 여기에 붙여넣으세요.
    ========================================================================== */
+
+/* ==========================================================================
+   FEEDUS - TablePress 전용 테이블 스타일
+   프라이머리 컬러 기반 테이블 디자인
+   ========================================================================== */
+
+.tablepress {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--feedus-primary);
+}
+
+.tablepress th,
+.tablepress td {
+  border: none !important;
+  border-bottom: 1px solid var(--feedus-primary) !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 10px 14px;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: var(--feedus-primary) !important;
+  text-align: left;
+}
+
+/* 첫 번째 td 왼쪽 라인 유지 */
+.tablepress th:first-child,
+.tablepress td:first-child {
+  border-left: 1px solid var(--feedus-primary) !important;
+}
+
+/* 마지막 td 오른쪽 라인 유지 */
+.tablepress th:last-child,
+.tablepress td:last-child {
+  border-right: 1px solid var(--feedus-primary) !important;
+}
+
+/* 헤더: 프라이머리 배경 + 흰색 글자 */
+.tablepress thead th {
+  background-color: var(--feedus-primary) !important;
+  color: #ffffff !important;
+}
+
+/* 교차 행 */
+.tablepress tbody tr:nth-child(even) td {
+  background-color: #FAFCFC !important;
+}
+
+.tablepress tbody tr:nth-child(odd) td {
+  background-color: #ffffff !important;
+}
+
+/* Hover */
+.tablepress tbody tr:hover td {
+  background-color: #F5FAF8 !important;
+}
 
 
 /* ==========================================================================
