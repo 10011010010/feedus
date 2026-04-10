@@ -74,9 +74,10 @@ jQuery(function($) {
         var $ctr = $(".wc-locked-variations-container");
         var hasLocked = $ctr.find(".wc-locked-variation-item, .wc-locked-variation-row, .wc-locked-variation").length > 0;
         if (hasLocked) {
-            $btn.show();
+            $btn[0].style.setProperty("display", "inline-flex", "important");
+            $btn.prop("disabled", false);
         } else {
-            $btn.hide();
+            $btn[0].style.setProperty("display", "none", "important");
         }
     }
 

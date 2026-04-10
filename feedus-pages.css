@@ -959,9 +959,8 @@ textarea {
   order: 2;
 }
 
-/* 5) "Add All to Cart" styling – green bg */
+/* 5) "Add All to Cart" styling – green bg (display는 JS가 제어) */
 .variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart {
-  display: inline-flex !important;
   color: #ffffff;
   background-color: var(--feedus-primary);
   border-color: var(--feedus-primary);
@@ -984,13 +983,17 @@ textarea {
 }
 
 /* 7) Button padding & weight */
-.variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart,
 .variations_form .wc-multiple-variation-buttons .wc-lock-variation-btn {
   padding: 14px 40px;
   width: 100% !important;
   font-weight: 500 !important;
   visibility: visible !important;
   opacity: 1 !important;
+}
+.variations_form .wc-multiple-variation-buttons .wc-add-locked-to-cart {
+  padding: 14px 40px;
+  width: 100% !important;
+  font-weight: 500 !important;
 }
 
 /* 8) Locked variations container */
