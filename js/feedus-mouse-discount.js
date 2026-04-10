@@ -172,9 +172,13 @@ jQuery(function ($) {
         $(document).on("click", ".wc-locked-variation-actions button, .quantity button, .plus, .minus", runProductDiscount);
         $(document).on("input", "input.wc-locked-variation-qty", runProductDiscount);
 
-        var observer = new MutationObserver(function (mutations) {
+        var discountObserverTarget = document.querySelector(".wc-locked-variations-container")
+            || document.querySelector(".brxe-product-add-to-cart");
+        var discountObserver = new MutationObserver(function (mutations) {
+            // feedus-product-discount 자체 변경은 무시 (무한 루프 방지)
             for (var j = 0; j < mutations.length; j++) {
                 var t = mutations[j].target;
+                if (t && t.className && t.className.toString().indexOf("feedus-product-discount") > -1) continue;
                 if (t && (
                     (t.className && t.className.toString().indexOf("wc-") > -1) ||
                     (t.nodeName === "INPUT") ||
@@ -187,12 +191,23 @@ jQuery(function ($) {
             }
             for (var k = 0; k < mutations.length; k++) {
                 if (mutations[k].addedNodes.length) {
-                    runProductDiscount();
-                    return;
+                    var dominated = false;
+                    for (var n = 0; n < mutations[k].addedNodes.length; n++) {
+                        var node = mutations[k].addedNodes[n];
+                        if (node.className && node.className.toString().indexOf("feedus-product-discount") > -1) {
+                            dominated = true;
+                        }
+                    }
+                    if (!dominated) {
+                        runProductDiscount();
+                        return;
+                    }
                 }
             }
         });
-        observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+        if (discountObserverTarget) {
+            discountObserver.observe(discountObserverTarget, { childList: true, subtree: true, characterData: true });
+        }
 
         setTimeout(runProductDiscount, 500);
         setTimeout(runProductDiscount, 1500);

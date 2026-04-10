@@ -68,12 +68,6 @@ jQuery(function($) {
     /* =========================================================
        "모두 장바구니 담기" — 목록 비어 있으면 자동 등록 후 담기
        ========================================================= */
-    function enableAddToCartButton() {
-        var $btn = $(".wc-add-locked-to-cart");
-        // 항상 클릭 가능하게 disabled 해제
-        $btn.prop("disabled", false).removeAttr("disabled");
-    }
-
     var _addToCartBound = false;
     function bindAddToCart() {
         if (_addToCartBound) return;
@@ -84,9 +78,15 @@ jQuery(function($) {
             var btn = e.target.closest(".wc-add-locked-to-cart");
             if (!btn) return;
 
-            var container = document.querySelector(".wc-locked-variations-container");
-            var hasLocked = container &&
-                container.querySelectorAll(".wc-locked-variation-row, .wc-locked-variation").length > 0;
+            // disabled 상태면 즉시 해제
+            if (btn.disabled) {
+                btn.disabled = false;
+                btn.removeAttribute("disabled");
+            }
+
+            var ctr = document.querySelector(".wc-locked-variations-container");
+            var hasLocked = ctr &&
+                ctr.querySelectorAll(".wc-locked-variation-row, .wc-locked-variation, .wc-locked-variation-item").length > 0;
 
             if (!hasLocked) {
                 // 옵션이 선택되어 있는지 확인
@@ -143,9 +143,11 @@ jQuery(function($) {
         var $priceWrap = $form.find(".woocommerce-variation-price");
         if ($priceWrap.length) {
             var formatted = totalPrice.toLocaleString("ko-KR");
+            pauseObserver();
             $priceWrap.find(".woocommerce-Price-amount bdi").html(
                 formatted + '<span class="woocommerce-Price-currencySymbol">원</span>'
             );
+            resumeObserver();
         }
     }
 
@@ -183,25 +185,38 @@ jQuery(function($) {
             }, 300);
         }
 
+        pauseObserver();
         translateAll();
-        enableAddToCartButton();
+        resumeObserver();
         bindAddToCart();
         updatePriceByQty();
     }
 
-    // MutationObserver: 플러그인이 DOM을 변경할 때마다 번역 + 가격 수정 + 버튼 활성화
+    // MutationObserver: 플러그인이 DOM을 변경할 때마다 번역 + 가격 수정
+    // disconnect → 수정 → reconnect 패턴으로 무한 루프 방지
     var _observerTimer;
+    var _observerTarget = document.querySelector(".brxe-product-add-to-cart");
+    var _observerOpts = { childList: true, subtree: true, characterData: true };
+
     var observer = new MutationObserver(function() {
         clearTimeout(_observerTimer);
         _observerTimer = setTimeout(function() {
+            pauseObserver();
             translateAll();
-            enableAddToCartButton();
-        }, 50);
+            resumeObserver();
+        }, 150);
     });
-    var container = document.querySelector(".brxe-product-add-to-cart");
-    if (container) {
-        observer.observe(container, { childList: true, subtree: true, characterData: true });
+
+    function pauseObserver() {
+        observer.disconnect();
     }
+    function resumeObserver() {
+        if (_observerTarget) {
+            observer.observe(_observerTarget, _observerOpts);
+        }
+    }
+
+    resumeObserver();
 
     setTimeout(init, 1000);
     setTimeout(init, 2000);
