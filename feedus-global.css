@@ -177,11 +177,23 @@ h2, .brxe-heading[data-tag="h2"] {
 
 /* --- h3 : 카테고리 라벨 (Redbrick "Blends", "Singles" 스타일) --- */
 h3, .brxe-heading[data-tag="h3"] {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 155%;
   letter-spacing: -0.03em;
   font-weight: 500;
   margin: 0 0 30px 0;
+}
+
+@media only screen and (min-width: 600px) {
+  h3, .brxe-heading[data-tag="h3"] {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  h3, .brxe-heading[data-tag="h3"] {
+    font-size: 22px;
+  }
 }
 
 h4, .brxe-heading[data-tag="h4"] {
