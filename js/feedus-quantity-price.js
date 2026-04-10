@@ -9,6 +9,9 @@
 jQuery(function ($) {
     if (!$("body").hasClass("single-product")) return;
 
+    // 옵션(variations) 있는 상품은 제외 — 단순 상품만 적용
+    if (!$("body").hasClass("product-type-simple")) return;
+
     var $priceWrap = $(".brxe-product-price .price");
     if (!$priceWrap.length) return;
 
