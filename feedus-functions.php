@@ -656,11 +656,16 @@ function feedus_quantity_price_script() {
         var unitPrice = parseInt(priceText.replace(/[^\d]/g,""),10);
         if (!unitPrice || isNaN(unitPrice)) return;
 
-        var originalHtml = $priceWrap.html();
+        // 페이지 로드 시 원본도 "숫자+원" 순서로 통일
+        var priceHtml =
+            '<span class="woocommerce-Price-amount amount"><bdi>' +
+            unitPrice.toLocaleString("ko-KR") +
+            '<span class="woocommerce-Price-currencySymbol">원</span>' +
+            '</bdi></span>';
+        $priceWrap.html(priceHtml);
 
         function updatePrice(){
             var qty = parseInt($("form.cart input.qty").val(),10) || 1;
-            if (qty <= 1){ $priceWrap.html(originalHtml); return; }
             var total = unitPrice * qty;
             var formatted = total.toLocaleString("ko-KR");
             $priceWrap.html(
