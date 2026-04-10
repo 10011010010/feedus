@@ -522,18 +522,6 @@ header,
               background-color var(--feedus-duration-medium) ease;
 }
 
-/* 헤더 하단 라인은 항상 표시 (고정 헤더 구분) */
-#brx-header::after,
-header.feedus-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: var(--feedus-container-padding);
-  width: calc(100% - var(--feedus-container-padding) * 2);
-  height: 1px;
-  background-color: var(--feedus-primary);
-  pointer-events: none;
-}
 
 /* Header 높이만큼 본문 패딩 */
 #brx-content,
