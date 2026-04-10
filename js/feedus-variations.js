@@ -64,29 +64,36 @@ jQuery(function($) {
         if (_addToCartBound) return;
         _addToCartBound = true;
 
-        $(document).on("click", ".wc-add-locked-to-cart", function(e) {
-            var $container = $(".wc-locked-variations-container");
-            var hasLocked = $container.find(".wc-locked-variation-row, .wc-locked-variation").length > 0;
+        // 캡처링 단계에서 잡아야 플러그인 핸들러보다 먼저 실행됨
+        document.addEventListener("click", function(e) {
+            var btn = e.target.closest(".wc-add-locked-to-cart");
+            if (!btn) return;
+
+            var container = document.querySelector(".wc-locked-variations-container");
+            var hasLocked = container &&
+                container.querySelectorAll(".wc-locked-variation-row, .wc-locked-variation").length > 0;
 
             if (!hasLocked) {
                 // 옵션이 선택되어 있는지 확인
-                var variationId = $("input.variation_id").val();
-                if (!variationId || variationId === "0") return;
+                var variationId = document.querySelector("input.variation_id");
+                if (!variationId || !variationId.value || variationId.value === "0") return;
 
                 e.preventDefault();
+                e.stopPropagation();
                 e.stopImmediatePropagation();
 
                 // "목록에 담기" 클릭 → 자동 등록
-                $(".wc-lock-variation-btn").trigger("click");
+                var lockBtn = document.querySelector(".wc-lock-variation-btn");
+                if (lockBtn) lockBtn.click();
 
                 // 등록 후 "모두 장바구니 담기" 재클릭
                 setTimeout(function() {
-                    var $addBtn = $(".wc-add-locked-to-cart");
-                    $addBtn.prop("disabled", false).removeAttr("disabled");
-                    $addBtn[0].click();
-                }, 300);
+                    btn.disabled = false;
+                    btn.removeAttribute("disabled");
+                    btn.click();
+                }, 400);
             }
-        });
+        }, true); // true = 캡처링 단계 (플러그인보다 먼저 실행)
     }
 
     /* =========================================================
