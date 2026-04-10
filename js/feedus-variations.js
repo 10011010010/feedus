@@ -4,7 +4,7 @@
  *
  * "Add Multiple Variations to Cart" 플러그인 한글화 및
  * ₩22000.00 → ₩22,000 가격 포맷 수정
- * + "모두 장바구니 담기" 즉시 동작 (목록 미등록 시 자동 등록 후 담기)
+ * + "모두 장바구니 담기" 목록 비어있으면 숨김, 항목 있으면 노출
  * + 단가 × 수량 실시간 표시
  *
  * jQuery 필요
@@ -66,49 +66,18 @@ jQuery(function($) {
     }
 
     /* =========================================================
-       "모두 장바구니 담기" — 목록 비어 있으면 자동 등록 후 담기
+       "모두 장바구니 담기" — 목록에 항목이 있을 때만 표시
        ========================================================= */
-    var _addToCartBound = false;
-    function bindAddToCart() {
-        if (_addToCartBound) return;
-        _addToCartBound = true;
-
-        // 캡처링 단계에서 잡아야 플러그인 핸들러보다 먼저 실행됨
-        document.addEventListener("click", function(e) {
-            var btn = e.target.closest(".wc-add-locked-to-cart");
-            if (!btn) return;
-
-            // disabled 상태면 즉시 해제
-            if (btn.disabled) {
-                btn.disabled = false;
-                btn.removeAttribute("disabled");
-            }
-
-            var ctr = document.querySelector(".wc-locked-variations-container");
-            var hasLocked = ctr &&
-                ctr.querySelectorAll(".wc-locked-variation-row, .wc-locked-variation, .wc-locked-variation-item").length > 0;
-
-            if (!hasLocked) {
-                // 옵션이 선택되어 있는지 확인
-                var variationId = document.querySelector("input.variation_id");
-                if (!variationId || !variationId.value || variationId.value === "0") return;
-
-                e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation();
-
-                // "목록에 담기" 클릭 → 자동 등록
-                var lockBtn = document.querySelector(".wc-lock-variation-btn");
-                if (lockBtn) lockBtn.click();
-
-                // 등록 후 "모두 장바구니 담기" 재클릭
-                setTimeout(function() {
-                    btn.disabled = false;
-                    btn.removeAttribute("disabled");
-                    btn.click();
-                }, 400);
-            }
-        }, true); // true = 캡처링 단계 (플러그인보다 먼저 실행)
+    function toggleAddToCartBtn() {
+        var $btn = $(".wc-add-locked-to-cart");
+        if (!$btn.length) return;
+        var $ctr = $(".wc-locked-variations-container");
+        var hasLocked = $ctr.find(".wc-locked-variation-item, .wc-locked-variation-row, .wc-locked-variation").length > 0;
+        if (hasLocked) {
+            $btn.show();
+        } else {
+            $btn.hide();
+        }
     }
 
     /* =========================================================
@@ -187,8 +156,8 @@ jQuery(function($) {
 
         pauseObserver();
         translateAll();
+        toggleAddToCartBtn();
         resumeObserver();
-        bindAddToCart();
         updatePriceByQty();
     }
 
@@ -203,6 +172,7 @@ jQuery(function($) {
         _observerTimer = setTimeout(function() {
             pauseObserver();
             translateAll();
+            toggleAddToCartBtn();
             resumeObserver();
         }, 150);
     });

@@ -132,6 +132,7 @@ add_action( 'wp_head', function () {
     echo '<style id="feedus-multi-variation-fix">
     .variations_form .wc-variation-mode-selector { display: none !important; }
     .variations_form .single_add_to_cart_button { display: none !important; }
+    .variations_form .wc-add-locked-to-cart { display: none; }
     </style>';
 } );
 
