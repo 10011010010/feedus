@@ -1275,6 +1275,10 @@ form.woocommerce-cart-form .quantity .action.minus svg,
 form.woocommerce-cart-form .quantity .action.plus svg {
   stroke: var(--feedus-primary) !important;
 }
+form.woocommerce-cart-form .quantity .action.minus,
+form.woocommerce-cart-form .quantity .action.plus {
+  margin-bottom: 0 !important;
+}
 
 /* 장바구니 테이블: 상품명 + 가격 세로 배치 */
 .woocommerce-cart-form .shop_table thead .product-price,
