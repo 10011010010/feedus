@@ -1153,6 +1153,7 @@ form.woocommerce-cart-form .quantity .action {
     color: var(--feedus-black, #1a1a1a);
     background: transparent;
     flex-shrink: 0;
+    margin-bottom: 0 !important;
 }
 
 /* - 버튼 (왼쪽) */
