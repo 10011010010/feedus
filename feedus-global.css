@@ -122,90 +122,103 @@ body {
 }
 
 /* ==========================================================================
-   3. TYPOGRAPHY - 피더스 타이포그래피
+   3. TYPOGRAPHY - 피더스 타이포그래피 (네이버 결 기반)
+   Mobile → Tablet(≥768) → Desktop(≥1200)
    ========================================================================== */
 h1, h2, h3, h4, h5, h6,
 .brxe-heading {
   font-family: var(--feedus-font-heading);
-  color: var(--feedus-primary);
-  line-height: 1.2;
+  font-weight: var(--feedus-font-heading-weight);
+  color: var(--feedus-black);
+  line-height: 1.3;
   word-break: keep-all;
   margin: 0;
 }
 
-/* --- h1 : 히어로 대제목 (디자인 시안: 74pt / 93pt / tracking -50) --- */
+/* --- h1 : 히어로 대제목 --- */
 h1, .brxe-heading[data-tag="h1"] {
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 126%;
-  letter-spacing: -0.05em;
-  margin: 0 0 30px 0;
+  font-size: 32px;
+  line-height: 130%;
+  letter-spacing: -0.035em;
+  margin: 0 0 24px 0;
 }
 
-@media only screen and (min-width: 600px) {
-  h1, .brxe-heading[data-tag="h1"] {
-    font-size: 56px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  h1, .brxe-heading[data-tag="h1"] {
-    font-size: 74px;
-  }
-}
-
-/* --- h2 : 섹션 제목 (Redbrick "Make it more chocolatey" 스타일) --- */
+/* --- h2 : 섹션 제목 --- */
 h2, .brxe-heading[data-tag="h2"] {
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 127%;
-  letter-spacing: -0.05em;
-  margin: 0 0 30px 0;
+  font-size: 26px;
+  line-height: 132%;
+  letter-spacing: -0.032em;
+  margin: 0 0 20px 0;
 }
 
-@media only screen and (min-width: 600px) {
-  h2, .brxe-heading[data-tag="h2"] {
-    font-size: 50px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  h2, .brxe-heading[data-tag="h2"] {
-    font-size: 66px;
-  }
-}
-
-/* --- h3 : 카테고리 라벨 (Redbrick "Blends", "Singles" 스타일) --- */
+/* --- h3 : 서브섹션 제목 --- */
 h3, .brxe-heading[data-tag="h3"] {
-  font-size: 22px;
-  line-height: 155%;
-  letter-spacing: -0.03em;
-  font-weight: 500;
-  margin: 0 0 30px 0;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px 0;
 }
 
+/* --- h4 : 카드 / 블록 제목 --- */
 h4, .brxe-heading[data-tag="h4"] {
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-size: 18px;
+  line-height: 145%;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px 0;
 }
 
+/* --- h5 : 소제목 --- */
 h5, .brxe-heading[data-tag="h5"] {
-  font-size: 1.125rem;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.015em;
+  margin: 0 0 10px 0;
 }
 
+/* --- h6 : 작은 제목 / 라벨 --- */
 h6, .brxe-heading[data-tag="h6"] {
-  font-size: 1rem;
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px 0;
 }
 
-/* --- p : 본문 텍스트 (디자인 시안: 18pt / 27pt / tracking -30) --- */
+/* Tablet (≥768) */
+@media only screen and (min-width: 768px) {
+  h1, .brxe-heading[data-tag="h1"] { font-size: 40px; }
+  h2, .brxe-heading[data-tag="h2"] { font-size: 32px; }
+  h3, .brxe-heading[data-tag="h3"] { font-size: 22px; }
+  h4, .brxe-heading[data-tag="h4"] { font-size: 19px; }
+  h5, .brxe-heading[data-tag="h5"] { font-size: 17px; }
+}
+
+/* Desktop (≥1200) */
+@media only screen and (min-width: 1200px) {
+  h1, .brxe-heading[data-tag="h1"] { font-size: 48px; }
+  h2, .brxe-heading[data-tag="h2"] { font-size: 38px; }
+  h3, .brxe-heading[data-tag="h3"] { font-size: 24px; }
+  h4, .brxe-heading[data-tag="h4"] { font-size: 20px; }
+  h5, .brxe-heading[data-tag="h5"] { font-size: 18px; }
+  h6, .brxe-heading[data-tag="h6"] { font-size: 16px; }
+}
+
+/* --- p : 본문 텍스트 (body) --- */
 p, .brxe-text-basic,
 li, span, label, select, option, textarea {
   font-family: var(--feedus-font-body);
-  font-size: 18px;
-  color: var(--feedus-primary);
+  font-size: 15px;
+  color: var(--feedus-black);
   font-weight: 400;
-  line-height: 150%;
-  letter-spacing: -0.03em;
-  margin: 0 0 20px 0 !important;
+  line-height: 1.65;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+}
+
+@media only screen and (min-width: 1200px) {
+  p, .brxe-text-basic,
+  li, span, label, select, option, textarea {
+    font-size: 16px;
+  }
 }
 
 a {
