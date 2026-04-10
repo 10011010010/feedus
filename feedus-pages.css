@@ -63,16 +63,6 @@
   font-weight: 500;
 }
 
-.feedus-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: var(--feedus-container-padding, 20px);
-  width: calc(100% - var(--feedus-container-padding, 20px) * 2);
-  height: 1px;
-  background-color: var(--feedus-primary, #2d6b2d);
-  pointer-events: none;
-}
 
 .feedus-header__row {
   display: flex;
@@ -1284,6 +1274,10 @@ form.woocommerce-cart-form .quantity .action.plus {
 form.woocommerce-cart-form .quantity .action.minus svg,
 form.woocommerce-cart-form .quantity .action.plus svg {
   stroke: var(--feedus-primary) !important;
+}
+form.woocommerce-cart-form .quantity .action.minus,
+form.woocommerce-cart-form .quantity .action.plus {
+  margin-bottom: 0 !important;
 }
 
 /* 장바구니 테이블: 상품명 + 가격 세로 배치 */
