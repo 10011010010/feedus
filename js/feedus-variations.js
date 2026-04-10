@@ -133,6 +133,46 @@ jQuery(function($) {
     });
 
     /* =========================================================
+       단일 상품(옵션 없음): 수량 × 단가 표시
+       ========================================================= */
+    function updateSingleProductPrice() {
+        var $form = $("form.cart").not(".variations_form");
+        if (!$form.length) return;
+        var $qtyInput = $form.find("input.qty");
+        if (!$qtyInput.length) return;
+
+        // 기본 단가 캐시 (최초 1회만 .brxe-product-price에서 읽기)
+        var basePrice = $form.data("feedus-base-price");
+        if (basePrice === undefined) {
+            var $priceEl = $(".brxe-product-price .woocommerce-Price-amount bdi").first();
+            if (!$priceEl.length) return;
+            var priceText = $priceEl.text().replace(/[^\d]/g, "");
+            basePrice = parseInt(priceText, 10) || 0;
+            $form.data("feedus-base-price", basePrice);
+        }
+        if (!basePrice) return;
+
+        var qty = parseInt($qtyInput.val(), 10) || 1;
+        var total = basePrice * qty;
+
+        // 가격 표시 (수량 input 앞에 삽입, 없으면 생성)
+        var $calc = $form.find(".feedus-single-calc-price");
+        if (!$calc.length) {
+            $calc = $('<div class="feedus-single-calc-price woocommerce-variation-price"><span class="price"><span class="woocommerce-Price-amount amount"><bdi></bdi></span></span></div>');
+            $form.find(".quantity").before($calc);
+        }
+        $calc.find("bdi").html(
+            total.toLocaleString("ko-KR") + '<span class="woocommerce-Price-currencySymbol">원</span>'
+        );
+    }
+
+    // 단일 상품 수량 변경 이벤트
+    $(document).on("input change", "form.cart:not(.variations_form) input.qty", updateSingleProductPrice);
+    $(document).on("click", "form.cart:not(.variations_form) .quantity .action.plus, form.cart:not(.variations_form) .quantity .action.minus", function() {
+        setTimeout(updateSingleProductPrice, 50);
+    });
+
+    /* =========================================================
        init
        ========================================================= */
     function init() {
@@ -193,6 +233,10 @@ jQuery(function($) {
     setTimeout(init, 2000);
     setTimeout(init, 4000);
     setTimeout(init, 6000);
+
+    // 단일 상품 초기 가격 계산 (옵션 없는 상품용)
+    setTimeout(updateSingleProductPrice, 500);
+    setTimeout(updateSingleProductPrice, 1500);
 
     $(document.body).on("wc_variation_form added_to_cart", init);
 });
