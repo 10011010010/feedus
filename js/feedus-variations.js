@@ -3,7 +3,7 @@
  * 원본: WPCode snippet #614 (snippet #162 JS 부분 통합)
  *
  * "Add Multiple Variations to Cart" 플러그인 한글화 및
- * ₩22000.00 → ₩22,000 가격 포맷 수정
+ * 원5000.00 → 5,000원 가격 포맷 수정 (한국식 표기)
  *
  * jQuery 필요
  */
@@ -35,14 +35,14 @@ jQuery(function($) {
             if ($(this).text().trim() === "View cart") $(this).text("장바구니 보기");
         });
 
-        // 가격 소수점 제거 + 천단위 콤마 (₩22000.00 → ₩22,000)
+        // 가격 소수점 제거 + 천단위 콤마 + 한국식 표기 (원5000.00 → 5,000원)
         $(".wc-summary-table td, .wc-locked-variation-price").each(function() {
             var el = $(this);
             var html = el.html();
-            if (html && /₩[\d,]+\.\d{1,2}/.test(html)) {
-                el.html(html.replace(/₩([\d,]+)\.\d{1,2}/g, function(m, digits) {
+            if (html && /[₩원][\d,]+(\.\d{1,2})?/.test(html)) {
+                el.html(html.replace(/[₩원]([\d,]+)(\.\d{1,2})?/g, function(m, digits) {
                     var num = parseInt(digits.replace(/,/g, ''), 10);
-                    return isNaN(num) ? m : '₩' + num.toLocaleString('ko-KR');
+                    return isNaN(num) ? m : num.toLocaleString('ko-KR') + '원';
                 }));
             }
         });
