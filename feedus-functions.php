@@ -20,6 +20,7 @@
  * 10. 장바구니 - 빈 장바구니 메시지
  * 11. 마우스 대량 할인
  * 12. 장바구니 - 할인/배송료 표시
+ * 13. 상품 페이지 - 수량 변경 시 가격 실시간 업데이트
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -632,4 +633,46 @@ function feedus_show_cart_fees_and_shipping() {
         </tr>
         <?php
     }
+}
+
+
+/* ==========================================================================
+   13. 상품 페이지 - 수량 변경 시 가격 실시간 업데이트
+   ========================================================================== */
+
+add_action( 'wp_footer', 'feedus_quantity_price_script' );
+function feedus_quantity_price_script() {
+    if ( ! is_singular( 'product' ) ) return;
+    ?>
+    <script>
+    jQuery(function($){
+        var $priceWrap = $(".brxe-product-price .price");
+        if (!$priceWrap.length) return;
+
+        var priceText = $priceWrap.find(".woocommerce-Price-amount").first().text();
+        var unitPrice = parseInt(priceText.replace(/[^\d]/g,""),10);
+        if (!unitPrice || isNaN(unitPrice)) return;
+
+        var originalHtml = $priceWrap.html();
+
+        function updatePrice(){
+            var qty = parseInt($("form.cart input.qty").val(),10) || 1;
+            if (qty <= 1){ $priceWrap.html(originalHtml); return; }
+            var total = unitPrice * qty;
+            var formatted = total.toLocaleString("ko-KR");
+            $priceWrap.html(
+                '<span class="woocommerce-Price-amount amount"><bdi>' +
+                formatted +
+                '<span class="woocommerce-Price-currencySymbol">원</span>' +
+                '</bdi></span>'
+            );
+        }
+
+        $(document).on("change input","form.cart input.qty", updatePrice);
+        $(document).on("click","form.cart .quantity .action.plus, form.cart .quantity .action.minus", function(){
+            setTimeout(updatePrice, 50);
+        });
+    });
+    </script>
+    <?php
 }
